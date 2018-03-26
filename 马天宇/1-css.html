@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background:yellow;
+        }
+        #div1{
+            color:red;
+        }
+        #div2{
+            color:pink;
+        }
+        li{
+            background:lightskyblue;
+        }
+        .aa{
+            color :lightpink;
+        }
+        div span{
+            background:greenyellow;
+        }
+        div>span{
+            color:deeppink;
+        }
+        .aa,p{
+            color:indianred;
+        }
+        #div1+p{
+            background:limegreen;
+        }
+        a:hover{
+            color:red;
+        }
+        a:active{
+            color:hotpink;
+        }
+        #div3:first-letter{
+            color:orangered;
+        }
+        #div3{
+            height:500px;
+            width:200px;
+            background:yellowgreen;
+        }
+        #div3::first-line{
+            color:red;
+        }
+        #div4::after{
+            content:'hah  ';
+            color:pink;
+        }
+        #div4::before{
+            content:'hah 123456 ';
+            color:mediumvioletred;
+        }
+    </style>
+
+
+    <!--<link rel="stylesheet" href="11.css">-->
+
+</head>
+<body>
+   <!-- &#45;&#45;css选择器
+    1.标签选择器；
+    2.id选择器:#id
+    3.class选择器div:.class
+    4.后代选择器:aa  bb
+    5.子代选择器:aa》bb
+    6.分组选择器:aa,p
+    7伪类选择器:hover active visited
+    8.伪元素选择器：::first-letter
+    -->
+    <div id="div1">
+        hahahhahah
+    </div>
+    <!--<div style="background：red；color：green；">123</div>-->
+    <p>12321546</p>
+    <div id="div2">
+        online
+    </div>
+    <ul>
+        <li>001</li>
+        <li class="aa">002</li>
+        <li class="aa">003</li>
+        <li>004</li>
+    </ul>
+   <span>aaa</span>
+    <div>
+        <span>aaaaaaaaa</span>
+    </div>
+   <div>
+       <p>
+           <span>aaabbbcccddd</span>
+       </p>
+       <span>abababab</span>
+   </div>
+   <a href="">马天宇</a>
+    <div id="div3">
+       微微一笑里 sdfadfasdfadsfdsfsdgfdgrehtrhjrtjyt  很fadfafasdfadfdsfasdfasdfadfads倾城
+   </div>
+   <div id="div4">
+       hehehhehehehwlhlawhrlawhfalwhrla
+   </div>
+</body>
+</html>
+<!--
+内联
+外部
+内部-->
