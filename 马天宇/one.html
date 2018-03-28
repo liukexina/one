@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>撒野</title>
+    <meta name="keywords" content="关宪帅是猪🐖">
+    <meta name="description" content="关宪帅很烦人！！！1">
+    <style>
+        body{
+            background:lightpink;
+            font-family: "Felix Titling";
+        }
+        #div1{
+            background: white;
+            color:greenyellow;
+        }
+        li{
+            background:white;
+            color:cornflowerblue;
+        }
+        div span{
+            background: greenyellow;
+            color:white;
+        }
+        div>span{
+            color:yellow;
+        }
+        .aa{
+            color:deepskyblue;
+        }
+        a:hover{
+           color:dodgerblue;
+        }
+        a:active{
+            color:white;
+        }
+        #div1::first-letter{
+            color:black;
+        }
+        #div2{
+            height:200px;
+            width:300px;
+            background: dodgerblue;
+        }
+        #div1::after{
+            content:'hah  ';
+            color:paleturquoise;
+        }
+        #div1::before{
+            content:'hah  ';
+            color:palegoldenrod;
+        }
+        #div2::first-line{
+            color:brown;
+        }
+        #div3{
+            background-image: url("http://img.ycwb.com/news/attachement/jpg/site2/20160215/448a5bb32da0182c058507.jpg");
+            height:700px;
+            /*background-repeat:no-repeat;
+            background-position:-450px -200px;*/
+        }
+        #div4{
+            background-image: url("http://i.shangc.net/2017/0721/20170721020059826.jpg");
+            height:300px;
+            background-repeat:no-repeat;
+            background-position:-200px -200px;
+        }
+        #div5{
+            height:700px;
+            background:url("http://ww1.sinaimg.cn/large/0065tuSwgw1f5l7ov705qj30vr19qgsv.jpg") -500px -500px no-repeat;
+        }
+        #div6{
+            height:300px;
+            width:300px;
+            background: paleturquoise;
+            text-align:center;
+        }
+        #div7{
+            height:300px;
+            width:200px;
+            background-color:aliceblue;
+            /*文字水平剧终*/
+            text-aligh:center;
+            /*单行文字垂直剧中line-hight=height*/
+            line-height:300px;
+            /*多行文字垂直剧中*/
+
+            /*块级元素水平剧中*/
+            margin:0 auto;
+        }
+        #ac{
+            text-decoration: none;
+            /*没有下划线*/
+            color:rebeccapurple;
+            font-weight:bold;
+            font-size:20px;
+            font-family:"Felix Titling";
+            font-style:italic;
+        }
+        ul{
+            list-style:none;
+            /*去掉前面的小点点*/
+        }
+    </style>
+</head>
+<body>
+    <p style="color:red;font-size:20px">h1:标题：字体从大到小 块级元素</p>
+    <h1>😒哼😒</h1>
+    <h2>我是愤怒的化身</h2>
+    <h3>今天今天今天今天今天今天</h3>
+    <h4>心平气和，世界如此美妙，我却如此暴躁</h4>
+    <h5>这样不好不好！！！</h5>
+    <h6>开什么玩笑🐖</h6>
+    <hr>
+    <p style="color:red;font-size:20px">p:段落 块级元素</p>
+    <p style="color:blueviolet;font-size:15px;">可能你不快乐，可惜你不快乐</p>
+    <p style="color:red;font-size:20px">hr:横线</p>
+    <hr>
+    <p style="color:red;font-size:20px">table:表格</p>
+    <p style="color:red;font-size:18px">border:加了边框的单元格</p>
+    <table border="1">
+        <tr>
+            <th>饮料</th>
+            <th>水果</th>
+            <th>衣服</th>
+        </tr>
+        <tr>
+            <td>可乐</td><td>苹果</td><td>短袖</td>
+        </tr>
+        <tr>
+            <td>雪碧</td><td>香蕉</td><td>长袖</td>
+        </tr>
+        <tr>
+            <td>果粒橙</td><td>草莓</td><td>裤子</td>
+        </tr>
+    </table>
+    <p style="color:red;font-size:18px">th:加了行间距的单元格</p>
+    <table border="1" cellpadding="15">
+        <tr>
+            <th>饮料</th>
+            <th>水果</th>
+            <th>衣服</th>
+        </tr>
+        <tr>
+            <td>可乐</td><td>苹果</td><td>短袖</td>
+        </tr>
+        <tr>
+            <td>雪碧</td><td>香蕉</td><td>长袖</td>
+        </tr>
+        <tr>
+            <td>果粒橙</td><td>草莓</td><td>裤子</td>
+        </tr>
+    </table>
+    <p style="color:red;font-size:18px">colspan:横跨两行的单元格</p>
+    <table border="1" cellpadding="15">
+        <tr>
+            <th>姓名</th>
+            <th colspan="2">电话</th>
+        </tr>
+        <tr>
+            <td>关宪帅</td><td>18846832329</td><td>18846180523</td>
+        </tr>
+    </table>
+    <p style="color:red;font-size:18px">rowspan:横跨两列的单元格</p>
+    <table border="1" cellpadding="15">
+        <tr>
+            <th>姓名</th>
+            <td>关宪帅</td>
+        </tr>
+        <tr>
+            <th rowspan="2">电话</th>
+            <td>18846180523</td>
+        </tr>
+        <tr>
+            <td>18846832329</td>
+        </tr>
+    </table>
+    <hr>
+    <p style="color:red;font-size:20px">ul:无序列表 li:块级元素</p>
+    <ul>
+        <li>happy</li>
+        <li>sad</li>
+        <li>cold</li>
+    </ul>
+    <p style="color:red;font-size:20px">ol:有序列表 li:块级元素</p>
+    <ol>
+        <li>happy</li>
+        <li>sad</li>
+        <li>cold</li>
+    </ol>
+    <hr>
+    <p style="color:red;font-size:20px">div:布局 划分区块 块级元素</p>
+    <div>
+         We are family！
+    </div>
+    <div>
+        Happy New Year！
+    </div>
+    <hr>
+    <p style="color:red;font-size:20px">span:行局 行级元素</p>
+    <span>马天宇最帅！！！</span>
+    <span>郑爽</span>
+    <hr>
+    <p style="color:red;font-size:20px">form:表单 主要用于后台</p>
+    <form action="">
+        <p style="color:red;font-size:15px">文本输入：点击文字没有光标闪现</p>
+        <lable>姓名：</lable>
+        <input type="text"><br />
+        <lable>学号：</lable>
+        <input type="password">
+        <p style="color:red;font-size:15px">文本输入：点击文字有光标闪现</p>
+        <label for="name">姓名：</label>
+        <input id="name" type="text" /><br />
+        <label for="xuehao">学号：</label>
+        <input id="xuehao"type="password"><br />
+        <p style="color:red;font-size:15px"></p>
+        <p style="color:red;font-size:15px">单选按钮 未指定</p>
+        性别：
+        <input type="radio" name="sex">男
+        <input type="radio" name="sex">女
+        <p style="color:red;font-size:15px">单选按钮 已指定checked</p>
+        性别：
+        <input type="radio" name="sex" checked>男
+        <input type="radio" name="sex">女
+        <p style="color:red;font-size:15px">多选按钮 未指定</p>
+        爱好：
+        <input type="checkbox" name="one">唱歌
+        <input type="checkbox" name="one">跳舞
+        <input type="checkbox" name="one">吃
+        <p style="color:red;font-size:15px">下拉按钮</p>
+        学校：
+        <select>
+            <option value="1">黑龙江大学</option>
+            <option value="2">黑科技</option>
+            <option value="3">哈理工</option>
+        </select>
+        <p style="color:red;font-size:15px">多选按钮 已指定checked</p>
+        爱好：
+        <input type="checkbox" name="one" checked>唱歌
+        <input type="checkbox" name="one">跳舞
+        <input type="checkbox" name="one" checked>吃
+        <p style="color:red;font-size:15px">button：按钮</p>
+        <button type="button">click me！</button>
+        <p style="color:red;font-size:15px">提交按钮  直接返回该网页开头</p>
+        <input type="submit" value="提交按钮">
+        <p style="color:red;font-size:15px">textarea：多行文本框 文本框中可加字可不加字</p>
+        <textarea name="马天宇" id="ma" cols="30" rows="10">嘻嘻嘻</textarea>
+        <p style="color:red;font-size:15px">输入框 限制输入的类型</p>
+        <input type="number">
+        <input type="email">
+        <input type="date">
+        <input type="color">
+    </form>
+    <hr>
+    <p style="color:red;font-size:20px">打开网页前跳出来的显示框</p>
+    <script>
+        alert('欢迎来到我的小窝！');
+    </script>
+    <hr>
+    <p style="color:red;font-size:20px"> 空格 大于号 小于号</p>
+    &lt;&nbsp&gt;
+    <hr>
+    <p style="color:red;font-size:20px">a:加入网页 行级元素</p>
+    <a href="http://www.baidu.com">百度入口：本网页改变</a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="http://www.baidu.com" target="_blank">百度入口：弹出新的网页</a><br />
+    <hr>
+    <p style="color:red;font-size:20px">img:加入图片 行级块元素 alt：当图片未显示时 title：鼠标在图片停留一会</p>
+    <img src="../567.jpg" alt="马天宇" title="吐泡泡" width="200" height="300">
+    &nbsp&nbsp&nbsp&nbsp&nbsp
+    <img src="../图片/123.jpg" alt="马天宇" title="吐泡泡"  width="200" height="300">
+    <hr>
+    <div id="div1">
+        字体变绿吧，背景变白吧 <br/>
+        <span>字体变白吧，背景变绿吧</span> <br/>
+        <p class="aa">
+            字体变蓝吧 <br/>
+            <span>字体变黄吧</span>
+        </p>
+    </div>
+    <div id="div2">
+        happy new year birthday day 就歌唱吧，眼睛眯起来
+    </div>
+    <div id="div3"></div>
+    <hr>
+    <div id="div4"></div>
+    <hr>
+    <div id="div5"></div>
+    <hr>
+    <div id="div6">you are he she our out pink blue green pink meimei da </div>
+    <hr>
+    <div id="div7">you are he she our out pink blue green pink meimei da </div>
+    <hr>
+    <a id="ac" href="http://www.baidu.com">haha</a>
+    <hr>
+    <ul>
+        <li>happy birthday to you! </li>
+        <li>happy birthday to you!1 </li>
+        <li>happy birthday to you!2 </li>
+    </ul>
+</body>
+</html>
