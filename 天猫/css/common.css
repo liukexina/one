@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+ul{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+.wrapper{
+    width:1230px;
+    margin:0 auto;
+}
+/*nav开始*/
+.nav{
+    height:33px;
+    background:#f2f2f2;
+    border-bottom: 1px solid #e5e5e5;
+}
+.nav-login a{
+    color:#999;
+    padding:0 10px;
+    float:left;
+
+}
+.nav-login a:hover{
+    color:#FF0036;
+}
+.nav-login{
+    float:left;
+    color:#999;
+}
+.nav-box{
+    height:32px;
+    line-height:32px;
+}
+.nav-login span{
+    float:left;
+}
+.nav-login .login-btn{
+    padding-left:20px;
+}
+.nav-menu{
+    float:right;
+}
+.nav-menu>li{
+    float:left;
+}
+.nav-link{
+    display:block;
+    padding:0 10px;
+    color:#999;
+}
+.nav-link:hover{
+    color:#FF0036;
+}
+/*nav结束
