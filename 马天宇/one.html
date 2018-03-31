@@ -64,6 +64,7 @@
             height:300px;
             background-repeat:no-repeat;
             background-position:-200px -200px;
+            /*!*background-attachment:fixed;*!图片固定否*/
         }
         #div5{
             height:700px;
@@ -76,18 +77,32 @@
             text-align:center;
         }
         #div7{
-            height:300px;
-            width:200px;
             background-color:aliceblue;
             /*文字水平剧终*/
             text-aligh:center;
             /*单行文字垂直剧中line-hight=height*/
             line-height:300px;
-            /*多行文字垂直剧中*/
-
+            width:200px;
+            height:300px;
             /*块级元素水平剧中*/
             margin:0 auto;
         }
+
+        /*多行文字垂直剧中*/
+        #div8{
+            display:table;
+            height:500px;
+            width:1500px;
+            background-color:palegreen;
+            text-align: center;
+        }
+        #sub{
+            display:table-cell;
+            vertical-align:middle;
+            text-indent:100px; /*首行缩进*/
+            text-align: center; /*文字水平剧终*/
+        }
+
         #ac{
             text-decoration: none;
             /*没有下划线*/
@@ -289,7 +304,8 @@
     <hr>
     <div id="div6">you are he she our out pink blue green pink meimei da </div>
     <hr>
-    <div id="div7">you are he she our out pink blue green pink meimei da </div>
+    <div id="div7">you are he she  </div>
+
     <hr>
     <a id="ac" href="http://www.baidu.com">haha</a>
     <hr>
@@ -297,6 +313,8 @@
         <li>happy birthday to you! </li>
         <li>happy birthday to you!1 </li>
         <li>happy birthday to you!2 </li>
-    </ul>
+    </ul><hr><hr><hr>
+    <hr><hr>
+    <div id="div8"><div id="sub"><刘y></刘y>ou areaffdsa hsdedf dsfasdfadfafdsf fds df fads ffdf sdf sd fsdf ad fdfa afds sdf dsdf sdf dsf dsssahe our out pdasfdsfisafnk blue green pink meimei da可 刘you areaffdsa hsdedf dsfasdfadfafdsf fds df f刘you areaffdsa hsdedf dsfasdfadfafdsf fds df f刘you areaffdsa hsdedf dsfasdfadfafdsf fds df f刘you areaffdsa hsdedf dsfasdfadfafdsf fds df f刘you areaffdsa hsdedf dsfasdfadfafdsf fds df f</div></div>
 </body>
 </html>

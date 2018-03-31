@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            color:#f00; !important
+        }
+        .aa{
+            color:lightpink;
+        }
+        *{
+            padding:0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!--优先级从大到小
+    ！importan
+    style
+    id
+    class 后面的会把前面的覆盖
+    标签选择器
+    *通配符
+    元素自带的  body=》margin：8px；
+
+    （style  1000
+    id  100
+    class  伪类  10
+    标签   1）
+    同级计算
+    -->
+    <div id="div1" class="aa" style="color:#0000ff">zhuzhuzhu</div>
+</body>
+</html>

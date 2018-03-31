@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background:red;
+            width:100px;
+            height:60px;
+            display:inline-block;
+            border:1px solid black;
+        }
+        #div2{
+            /*position:relative;
+            left:80px;
+            top:20px;*/
+            position:absolute;
+            left:80px;
+            top:30px;
+        }
+        #div0{
+            height:500px;
+            width:800px;
+            background: #cccccc;
+            /*margin:200px;*/
+            position:relative;
+            left:200px;
+            top:200px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--
+    position
+        static 默认的
+        relative 相对定位  相对于自己原来的位置，空间不释放
+        absolute 绝对定位   元素绝对定位后脱离原来的文档流空间释放 相对最近已定位的祖先元素，如果没有就相对于body元素
+        固定定位;fixed 空间释放
+    -->
+    <div id="div0">
+        <div id="div1">div1； </div>
+        <div id="div2">div2； </div>
+        <div id="div3">div3； </div>
+    </div>
+
+</body>
+</html>

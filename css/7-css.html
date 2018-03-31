@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1,#div2,#div3{
+            height:80px;
+            width:100px;
+            border:1px solid #000;
+            background: #ff000f;
+            float:left;
+        }
+        #div0{
+            background:yellow ;
+            /*overflow:hidden;*/
+            /*height:200px;*/
+        }
+        #div1{
+            position:relative;
+
+        }
+        h3{
+            background:greenyellow;
+
+        }
+        .icon{
+            background:pink;
+            position:absolute;
+            right: -33px;
+            top: -6px;
+        }
+        /*.clear{*/
+            /*clear:both;*/
+            /*!*清除左右浮动*!*/
+        /*}*/
+        #div0::after{
+            content:' ';
+            clear:both;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+        float 脱离文档流空间释放
+        后边元素上去
+        塌陷 子元素浮动 父元素没有高度
+        1.给父元素高度
+        2.父元素overflow：hidden
+        3.新建div 清除浮动 clear:both
+    -->
+    <div id="div0">
+        <div id="div1">1
+            <span class="icon">hahahah</span>
+        </div>
+        <div id="div2">2</div>
+        <div id="div3">3</div>
+        <div class="clear" ></div>
+    </div>
+
+
+    <h3>sdfsdfsdf sdf asf  sfda wfwe wa asf ew</h3>
+
+</body>
+</html>

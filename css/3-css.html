@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background:lightpink;
+            /*padding:60px;*/
+            padding:10px 20px 30px 40px; /*上下左右*/
+            /*空心*/
+            /*border:5px dotted palegreen;*/
+            /*实心*/
+            border:10px solid palegreen;
+            margin:30px;
+        }
+        #div2{
+            width:200px;
+            height:200px;
+            background:lightpink;
+            padding:80px;
+            /*padding:10px 20px 30px 40px; !*上下左右*!*/
+            /*空心*/
+            border:10px dotted palegreen;
+            /*实心*/
+            /*border:5px solid palegreen;*/
+            margin:30px;
+
+        }
+        #div3{
+            box-sizing:content-box;/*标准盒模型，默认值*/
+            box-sizing:border-box;/*怪异盒模型*/
+            padding:20px;
+            border:20px solid orangered;
+
+        }
+    </style>
+</head>
+<body>
+    <p style="color:blueviolet;font-size:15px;">css标准盒模型</p>
+    <div id="div1">
+        x ixi sdf xx ii xxil ik exi n
+    </div>
+    <div id="div2">heheheheheheh fhewl ahl hwleah lhwlre hlweh lwe</div>
+    <hr>
+    <p style="color:blueviolet;font-size:15px;">css怪异盒模型 没写doctype  （!DOCTYPE html） ie6以下浏览器，往里缩</p>
+    <div id="div3">heheheheheheh fhewl ahl hwleah lhwlre hlweh lwe</div>
+    <hr>
+
+</body>
+</html>
