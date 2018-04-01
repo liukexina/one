@@ -1,0 +1,57 @@
+.logo{
+    width:240px;
+    height:130px;
+    float:left;
+}
+.search-box{
+    float:left;
+    margin:38px 0 0 120px;
+
+}
+.search{
+    width: 625px;
+    height: 36px;
+    border:2px solid #FF0036;
+}
+.search-text{
+    width: 491px;
+    height: 36px;
+    border:none;
+    outline:none;
+    float:left;
+}
+.search-btn{
+    width:134px;
+    height:36px;
+    border:none;
+    background:#FF0036;
+    float:left;
+    font-size:18px;
+    color:#fff;
+}
+.search-zhu{
+    width:625px;
+    height:28px;
+}
+/*.search-zhu:hover a{
+    color:#FF0036;
+}*/
+.zhu a{
+    float:left;
+    padding:2px 12px;
+    color:#999;
+}
+.zhu-xian{
+    position:relative;
+    width: 1px;
+    height: 14px;
+    border-left: 1px solid #ccc;
+    top:3px;
+    color:#999999;
+}
+.zhu-xian,.zhu{
+    float:left;
+}
+.zhu0 a{
+    color:#FF0036;
+}
