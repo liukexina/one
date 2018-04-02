@@ -55,3 +55,42 @@
 .zhu0 a{
     color:#FF0036;
 }
+
+.nav-logo{
+    height:130px;
+}
+.content{
+    background: #ffffff;
+    float:left;
+}
+.main-nav{
+    height: 35.5px;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 0 0 1.5px;
+    border-color: #FF0036;
+    width:1903px;
+}
+.main-nav .main-nav-menu{
+    height:36px;
+    line-height:36px;
+}
+.main-nav-menu{
+    margin:0 auto;
+    width: 1030px;
+}
+.main-menu a {
+    float: left;
+    padding: 0 8px;
+    height: 35px;
+    font-weight: 500;
+    font-size:16px;
+    color:#333;
+
+}
+.main-menu a img{
+    width: 100px;
+    height: 30px;
+    margin-top: 3px
+
+}
