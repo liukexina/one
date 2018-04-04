@@ -6,8 +6,8 @@
 .search-box{
     float:left;
     margin:38px 0 0 120px;
-
 }
+
 .search{
     width: 625px;
     height: 36px;
@@ -32,21 +32,25 @@
 .search-zhu{
     width:625px;
     height:28px;
+    margin-top:3px;
+    margin-left:-12px;
 }
-/*.search-zhu:hover a{
-    color:#FF0036;
-}*/
+
 .zhu a{
     float:left;
     padding:2px 12px;
     color:#999;
+    font-size:14px;
 }
+/*.zhu-first a{
+    padding-left:0
+}*/
 .zhu-xian{
     position:relative;
     width: 1px;
     height: 14px;
     border-left: 1px solid #ccc;
-    top:3px;
+    top:6px;
     color:#999999;
 }
 .zhu-xian,.zhu{
@@ -55,42 +59,60 @@
 .zhu0 a{
     color:#FF0036;
 }
-
 .nav-logo{
     height:130px;
 }
-.content{
-    background: #ffffff;
-    float:left;
-}
+
 .main-nav{
     height: 35.5px;
-    background-color: #fff;
-    border-style: solid;
-    border-width: 0 0 1.5px;
-    border-color: #FF0036;
-    width:1903px;
+    border-bottom: 1.5px solid #FF0036;
 }
-.main-nav .main-nav-menu{
+.main-menu{
+    float:left;
     height:36px;
     line-height:36px;
 }
+
 .main-nav-menu{
-    margin:0 auto;
     width: 1030px;
+    margin-left: 249px;
 }
 .main-menu a {
     float: left;
     padding: 0 8px;
-    height: 35px;
-    font-weight: 500;
+    height: 30px;
     font-size:16px;
     color:#333;
-
+    display:block;
+    font-weight:500;
 }
 .main-menu a img{
     width: 100px;
     height: 30px;
-    margin-top: 3px
+    margin-top: 3px;
+}
+.slide-box{
+    position:relative;
+}
+.slide-item{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+}
+.slide-item1{
+    background:#1da3ec;
+}
+.slide-item2{
+    background:#5a0234;
+}
 
+.slide-item-link{
+    width:1230px;
+    margin: 0 auto;
+    display:block;
+}
+.slide-item-link img{
+    width:1230px;
+    height:500px;
 }
