@@ -1,3 +1,4 @@
+/*search start*/
 .logo{
     width:240px;
     height:130px;
@@ -62,7 +63,9 @@
 .nav-logo{
     height:130px;
 }
+/*search end*/
 
+/*menu*/
 .main-nav{
     height: 35.5px;
     border-bottom: 1.5px solid #FF0036;
@@ -85,12 +88,16 @@
     color:#333;
     display:block;
     font-weight:500;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
 }
 .main-menu a img{
     width: 100px;
     height: 30px;
     margin-top: 3px;
 }
+
+
+/*轮播图*/
 .slide-box{
     position:relative;
 }
@@ -99,6 +106,7 @@
     left:0;
     top:0;
     width:100%;
+    z-index:-1;
 }
 .slide-item1{
     background:#1da3ec;
@@ -115,4 +123,43 @@
 .slide-item-link img{
     width:1230px;
     height:500px;
+}
+
+/*category*/
+.category-title{
+    height:36px;
+    line-height: 36px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    font-size:16px;
+    font-weight:600;
+    color:#fff;
+    background:#FF0036;
+}
+.category-box{
+    width:200px;
+    position:relative;
+    top:-36px;
+}
+.category-list{
+    background:rgba(0,0,0,0.55);
+}
+.category-box i{
+    color:#fff;
+    margin:0 14px;
+}
+.category-item{
+    height:31.2px;
+    line-height: 31.2px;
+}
+.category-item>a{
+    color:#fff;
+    font-size:14px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+.category-item:hover>a,.category-item:hover>i{
+    color:#FF0036;
+}
+.category-item:hover{
+    background: #fff;
 }
