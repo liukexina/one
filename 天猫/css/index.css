@@ -114,6 +114,18 @@
 .slide-item2{
     background:#5a0234;
 }
+.slide-item3{
+    background:#ffa699;
+}
+.slide-item4{
+    background:#e8e8e8;
+}
+.slide-item5{
+    background:#0865e5;
+}
+.slide-item6{
+    background:#198ee1;
+}
 
 .slide-item-link{
     width:1230px;
@@ -123,6 +135,7 @@
 .slide-item-link img{
     width:1230px;
     height:500px;
+    display:block;
 }
 
 /*category*/
@@ -142,6 +155,9 @@
 }
 .category-list{
     background:rgba(0,0,0,0.55);
+   /* background: #000;
+    opacity: 0.55;*/
+    height:500px;
 }
 .category-box i{
     color:#fff;
@@ -162,4 +178,7 @@
 }
 .category-item:hover{
     background: #fff;
+}
+.icon-liebiao2{
+    font-size:17px;
 }
