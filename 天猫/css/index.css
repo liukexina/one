@@ -182,3 +182,64 @@
 .icon-liebiao2{
     font-size:17px;
 }
+
+.category-pannel{
+    background: #fff;
+    height: 500px;
+    width: 852px;
+    position:absolute;
+    left:200px;
+    top:0;
+}
+.pannel{
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    width: 583px;
+    height: 462px;
+    margin: 19px 30px;
+    background-color: #fff;
+}
+.pannel-1-title{
+    width: 60px;
+    color: #333;
+    margin-right: 30px;
+    position: relative;
+    height:43.2px;
+    float: left;
+}
+.pannel h1{
+    width:60px;
+    float:left;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+}
+.pannel-menu{
+    float:left;
+    width:493px;
+    height:96px;
+}
+.pannel-1-one{
+    float:left;
+}
+.pannel-1-one a{
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #666;
+    margin-left: 13px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.pannel-1-special a{
+    color:#e54077;
+}
+.pannel-1-one:hover a{
+    color:#e54077;
+}
+.pannel-xian{
+    margin-bottom: 10.5px;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #eee;
+    border-bottom-color: rgba(0,0,0,.1);
+    height: 10.5px;
+}
