@@ -159,7 +159,7 @@
     opacity: 0.55;*/
     height:500px;
 }
-.category-box i{
+.category-box .a{
     color:#fff;
     margin:0 14px;
 }
@@ -179,6 +179,9 @@
 .category-item:hover{
     background: #fff;
 }
+.category-item:hover .category-pannel{
+    display:block;
+}
 .icon-liebiao2{
     font-size:17px;
 }
@@ -189,7 +192,8 @@
     width: 852px;
     position:absolute;
     left:200px;
-    top:0;
+    top:36px;
+    display:none;
 }
 .pannel{
     font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
@@ -197,29 +201,33 @@
     height: 462px;
     margin: 19px 30px;
     background-color: #fff;
+    float:left;
 }
 .pannel-1-title{
     width: 60px;
     color: #333;
     margin-right: 30px;
     position: relative;
-    height:43.2px;
+    height:22px;
     float: left;
+    margin-top:2px;
 }
-.pannel h1{
-    width:60px;
+.title-text{
     float:left;
     font-size: 14px;
     line-height: 22px;
     height: 22px;
+    font-weight: 900;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
 }
 .pannel-menu{
     float:left;
     width:493px;
-    height:96px;
 }
 .pannel-1-one{
     float:left;
+    margin-top:0;
+    height:22px;
 }
 .pannel-1-one a{
     height: 22px;
@@ -242,4 +250,47 @@
     border-bottom-color: #eee;
     border-bottom-color: rgba(0,0,0,.1);
     height: 10.5px;
+    float:left;
+}
+.icon-dayuhao{
+    color:#333;
+    float:left;
+    font-size: 14px;
+    font-weight: 100;
+    height: 22px;
+    line-height: 22px;
+    position:absolute;
+    top:0;
+    left:60px;
+}
+.pannel-picture{
+    background-color: #FAFAFA;
+    width: 189px;
+    padding: 10px;
+    height: 480px;
+    float:left;
+}
+.picture-always img{
+    width: 73px;
+    display: block;
+    margin: 0 auto;
+}
+.pannel-picture .picture-always{
+    float: left;
+    width: 73px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    height: 37px;
+    padding: 5px 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.pannel-picture .picture-feature{
+    float:left;
+    border-top: 10px solid #fafafa;
+}
+.picture-feature img{
+    width: 189px;
+    height: 87px;
+    float:left;
 }
