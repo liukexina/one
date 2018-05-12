@@ -270,6 +270,50 @@ a{
     height:16.8px;
     float:left;
 }
-
 /*nav结束*/
+
+.fix-div{
+    width: 35px;
+    background: #000;
+    height:600px;
+    position: fixed;
+    right:0;
+    top:0;
+
+}
+.fix-div-zong{
+    position: relative;
+    top: 0;
+    margin: 35px 0 0;
+}
+.fix-div-one{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCQUNDQzFCQTM0NjYxMUU3QTJFOUQxQzc2RkY2NDgxNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCQUNDQzFCQjM0NjYxMUU3QTJFOUQxQzc2RkY2NDgxNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhBRUEyOUZGMzQ2NjExRTdBMkU5RDFDNzZGRjY0ODE3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhBRUEyQTAwMzQ2NjExRTdBMkU5RDFDNzZGRjY0ODE3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+kISq3QAAAP5JREFUeNpi/P//P8NgAUwMgwiMOmbUMaOOGXXMqGMGq2P0gPg4EIMqsHAy7YiC6j8KxDp4VYIqSjx4BxDvB2L//xBgRUA9OraB6vOHmrMNn3pCISMJxK+BeCMQT4T6TpjIEBEB4sNA3A/VDzJHGp8GFiIMZYTSBUAsC8TPgXgNEHMiyaEENhB/B+IQIF4HxEVo5lAtAQcDcSnUIV+A+BMW/AUqXwpVTzRgISNBToTi0XJmZDqGUJq5DMS+QKwPxA+BmJcMO0AJWgyI7YF4DyWOyQLiz0B8AYhfQLMtqQCUpSWAeD4Ql+BVONpVGXXMqGNGHTPqmFHHDDLHAAQYAHaPmCj50S3SAAAAAElFTkSuQmCC);
+    height:35px;
+    width: 35px;
+}
+.fix-div-two{
+    width: 25px;
+    height: 100px;
+    border-bottom:1px solid #444;
+    border-top:1px solid #444;
+    margin:0 auto;
+}
+.fix-div-two span{
+    color:#fff;
+    display: block;
+    margin-left: 7px;
+    margin-top: 0;
+    width: 20px;
+    height: 50px;
+    line-height: 16px;
+    font-family: "Microsoft Yahei","\5fae\8f6f\96c5\9ed1","\5b8b\4f53";
+}
+.icon-shopcart{
+    display: block;
+    margin-top:15px;
+    color:red;
+    padding-left:4px;
+    font-size:18px;
+}
+
 

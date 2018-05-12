@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        var k = "abc";   //string
+        var f = true;  //boolean
+        var u;      //undefined
+        var a = 5;    //全局变量 number
+       // console.log(a);
+
+        function ok(){
+            var a = b = 5;   //a：局部变量    b:全局变量
+            var c = 6;       // 局部变量
+            d = 7;          // 全局变量
+        }
+        ok();
+        //alert(d);
+
+        const c = 6;    //常量  不能修改
+
+        function test(b){    //形参是局部变量   b-> var b
+              b = 6;
+        }
+        test(a);
+       //alert(a);    //a=5  不变   因为b为局部变量
+
+        var o1 = new Object();
+        o1.name = 'lisi';
+        function test1(o2) {     //严格来讲js 中没有引用的概念    都是进行的值传递
+            o2.name = "wangwu";
+        }
+        test1(o1);
+        //console.log(o1);
+
+        var q = new Object();
+        q.name = 'lisi';
+        var b = q;
+        b.name = 'wangwu';
+        //console.log(a);      //值传递 a b指向同一个对象，b改变对象的值 a 也随之变化
+
+
+
+
+
+
+        function aa(){
+
+        }
+        console.log(typeof  aa);    //function
+        var bb = 5;
+        var cc = "abc";
+        var dd = true;
+        var ee = null;
+        console.log(typeof  bb);    //“number”
+        console.log(typeof  cc);    // “string”
+        console.log(typeof  dd);    //“boolean”
+        console.log(typeof  ee);    //“object”
+
+
+        parseInt("12.25");          //12
+        parseInt("12.65");            //12
+        parseFloat("12.35");        //12.35
+        parseFloat("abc12");    //NaN
+        parseFloat("12abc");      //12
+        parseFloat("12.34.56")     //12.34
+
+    </script>
+</body>
+</html>
