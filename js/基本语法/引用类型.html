@@ -13,25 +13,18 @@
 
         /*对象：Object   ：一切皆对象
                属性
-
                方法*/
 
-        /* var o1 = new Object();
-            o1.name = "lisi";
-            o1.age = 23;
-            o1.sayHi = function(){
-                alert(o1.name + "say hi......");
-            };
-            o1.sayHi();*/
 
-     var o1 = {   //对象直接量   同上
+
+     var o2 = {   //对象直接量   同上
          name:"lisi",
          age:23,
          sayHi:function(){
-             alert(o1.name + "say hi......");
+             alert(o2.name + "say hi......");
          }
      };
-     o1.sayHi();
+    //o2.sayHi();
 
 
      var o = {
@@ -45,8 +38,65 @@
                  name:"haha"
              }
          }
-     }
+     };
 
+     var o1 = new Object();
+     o1.name = "lisi";
+     o1.age = 23;
+     o1.sayHi = function(){
+         //this代表对当前对象的引用  只能在对象的方法中使用  this指向离他最近的那个函数
+         alert(this.name + "say hi......");
+     };
+     //o1.sayHi();
+
+
+     function test() {
+         console.log(this);    //在普通的函数中。this指向window
+     }
+     //test();     //test（）=== window.test（）
+
+     //全局变量，全局方法  都是window下的对象
+
+
+
+
+
+
+
+
+
+     /*setInterval(function(){          //每隔1000ms 执行方法
+       console.log(Math.random());
+      },1000);*/
+
+     var o3 = new Object();
+     o3.name = "lisi";
+     o3.age = 23;
+     o3.sayHi = function(){
+         console.log(this.name);       //this指向
+         setInterval(function(){          //每隔1000ms 执行方法
+             // console.log(this.name + "," + this.age);    //this指向window   this指向离他最近的那个函数
+         },1000);
+     };
+     //o3.sayHi();
+
+     var u = {
+         name:"lisi",
+         age:23
+     };
+     //console.log(u.hasOwnProperty("name"));    //判断“a”是否为u的自有属性     true
+     //console.log(u.hasOwnProperty("construction"));             //flase   construction是 u从父类继承过来的
+
+
+
+        var ff = {
+            name:"lisi",
+            age:23
+        };
+        for(var p in ff)     //p:属性的名字  o：属性得值   只能打印自有属性
+        {
+            console.log(p + ":" + ff[p]);
+        }
     </script>
 </body>
 </html>

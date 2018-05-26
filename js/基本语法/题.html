@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    1.
+    输入x:<input type="text" id="x">
+    输入y:<input type="text" id="y">
+    <input type="button" id="xy" value="获取输入数据" />
+    <br/><br/>
+    2.
+    输入年份:<input type="text" id="year">
+    <input type="button" id="yearbit" value="获取输入数据" />
+    <br/><br/>
+    3.输入年龄:<input type="text" id="age">
+    <input type="button" id="agebit" value="获取输入数据" />
+    <br/><br/>
+    4.输入:<input type="text" id="num">
+    <input type="button" id="numbit" value="获取输入数据" />
+    <br/><br/>
+    11.输入x求y:<input type="text" id="x1">
+    <input type="button" id="xbit" value="获取输入数据" />
+    <br/><br/>
+    求最小值:输入x:<input type="text" id="xx">
+    输入y:<input type="text" id="yy">
+    <input type="button" id="xy1" value="获取输入数据" />
+    <br/><br/>
+    15.输入行数:<input type="text" id="numm">
+    <input type="button" id="nummbit" value="获取输入数据" />
+    <br/><br/>
+    16.输入:<input type="text" id="nn1">
+    <input type="button" id="nnbit" value="获取输入数据" />
+    <br/><br/>
+    19.输入:<input type="text" id="shu">
+    <input type="button" id="shubit" value="获取输入数据" />
+<script>
+    var x = document.getElementById("x");
+    var y = document.getElementById("y");
+    var xybi = document.getElementById("xy");
+    xybi.onclick = function() {
+        if(x.value >= y.value) {
+            alert("最大值x:" + x.value);
+        }
+        else{
+            alert("最大值y:" + y.value);
+        }
+    };
+
+    var xx = document.getElementById("xx");
+    var yy = document.getElementById("yy");
+    var xy1 = document.getElementById("xy1");
+    xy1.onclick = function() {
+        if(xx.value >= yy.value) {
+            alert("最小值y:" + yy.value);
+        }
+        else{
+            alert("最小值x:" + xx.value);
+        }
+    };
+
+    var year = document.getElementById("year");
+    var yearbit = document.getElementById("yearbit");
+    yearbit.onclick = function(){
+        if((year.vaule % 100 != 0 && year.value % 4 == 0) || year.value % 400 == 0)
+        {
+            alert(year.value + "是闰年");
+        }
+        else{
+            alert(year.value + "不是闰年");
+        }
+    };
+
+    var age = document.getElementById("age");
+    var agebit = document.getElementById("agebit");
+    agebit.onclick = function () {
+        if(age.value <= 14)
+        {
+            alert(age.value + ":儿童");
+        }
+        else if(age.value <= 24){
+            alert(age.value + ":青少年");
+        }
+        else if(age.value <=40){
+            alert(age.value + ":青年");
+        }
+        else if(age.value<=60)
+        {
+            alert(age.value + ":中年");
+        }
+        else if(age.value >= 60){
+            alert(age.value + ":老年");
+        }
+    };
+
+    var num3 = document.getElementById("num");
+    var numbit = document.getElementById("numbit");
+    numbit.onclick = function () {
+        var data = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+        alert(num3.value + ":" + data[num3.value]);
+    };
+
+
+
+    document.write("<br />");
+    document.write("<br />");
+   function abc (i){
+        if(i == 1){
+            return 1;
+        }
+        else
+            return i*abc(i-1);
+    }
+    var num = abc(10);
+    document.write("5.10!=" + num);
+
+
+    document.write("<br />");
+    document.write("<br />");
+    var sum =0;
+    function abc1 (i){
+        if(i == 1){
+            return 1;
+        }
+        else
+            sum = sum + i*abc1(i-1);
+            return i*abc1(i-1);
+    }
+    sum  = sum +1;
+    var num1 = abc1(10);
+    document.write("6.1!+2!+3!+...+10!=" + sum);
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("7.");
+    document.write("<br />");
+    var arr = [1,2,3,4,5];
+    for(var i = 0 ; i < 5 ; i ++)
+    {
+        for(var j = 0 ; j <= i ;j ++){
+            document.write(arr[j] + " ");
+        }
+        document.write("<br />");
+    }
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("8.");
+    document.write("<br />");
+    for(var a = 0 ; a < 5 ; a ++)
+    {
+        for(var c = 0 ; c <= 4-a ; c++)
+        {
+            document.write("&nbsp;");
+        }
+        for(var b = 0 ; b <= a ; b ++)
+        {
+
+            document.write("*" + " ");
+        }
+        document.write("<br />");
+    }
+
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("9.");
+    document.write("<br />");
+    for(var z = 100 ; z <1000 ; z ++){
+        if((z % 4 == 2) && (z % 7 == 3) && (z % 9 == 5)){
+            document.write(z);
+            document.write("<br />");
+        }
+    }
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("10.");
+    document.write("<br />");
+    for(var q = 1000 ; q < 10000 ; q ++){
+        var h4= Math.floor(q/1000);
+        var h3= Math.floor(q/100) - h4 * 10;
+        var h2= Math.floor(q/10) - h4 * 100 - h3 * 10;
+
+        if((q % 13 == 0) && (h4 == h2 + h3))
+        {
+            document.write(q);
+            document.write("<br />");
+        }
+    }
+
+
+    var x1 = document.getElementById("x1");
+    var xbit = document.getElementById("xbit");
+    xbit.onclick = function () {
+        alert(4 * x1.value * x1.value + 3 * x1.value + 2);
+    };
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("12.");
+    document.write("<br />");
+    var bo = function(number){
+        if((number % 3 == 0) && (number % 5 == 0) && (number % 7 == 0)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    };
+    var u = 0;
+    for(i = 1 ; i < 1000 ; i ++){
+       if(bo(i))
+       {
+           if(u % 6 == 0)
+           {
+               document.write("<br />");
+           }
+           document.write(i);
+           document.write("  ");
+           u = u + 1;
+       }
+    }
+
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("13.");
+    document.write("<br />");
+    var p = 0;
+    for(i = 100 ; i < 1000 ; i ++){
+        f = 0;
+        for(j = 2 ; j < i; j ++)
+        {
+            if(i % j == 0){
+                f = f + 1;
+            }
+        }
+        if(f == 0){
+
+            if(p % 6 == 0) {
+                document.write("<br />");
+            }
+            document.write(i);
+            document.write("  ");
+            p = p + 1;
+        }
+    }
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("14.");
+    document.write("<br />");
+    var f =function(n){
+        r = 1;
+        for(i = 1 ; i <= n ; i ++)
+        {
+            r = r * i;
+        }
+        return r;
+    };
+    var f1=f(10);
+    console.log(f1);
+    var f3=f(12);
+    console.log(f3);
+    document.write(f3-f1);
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("15.");
+    document.write("<br />");
+
+    var numm = document.getElementById("numm");
+    var nummbit = document.getElementById("nummbit");
+    nummbit.onclick = function () {
+        for(var a = 0 ; a < numm.value ; a ++)
+        {
+            for(var c = 0 ; c <= numm.value-1-a ; c++)
+            {
+                document.write("&nbsp;");
+            }
+            for(var b = 0 ; b <= a ; b ++)
+            {
+                document.write("*" + " ");
+            }
+            document.write("<br />");
+        }
+    }
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("16.");
+    document.write("<br />");
+    var nn1 = document.getElementById("nn1");
+    var nnbit = document.getElementById("nnbit");
+    nnbit.onclick = function(){
+        u = nn1.value;
+        var ff =Fibonacci(u);
+        alert(ff);
+    };
+    function Fibonacci(n) {
+        if (n == 1 || n == 2)
+        {
+            return 1;
+        }
+        else{
+            return Fibonacci(n-1)+Fibonacci(n-2);
+        }
+    }
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("17.");
+    document.write("<br />");
+    var pro =function (n){
+        var ps = 0;
+        for(i = 1 ; i < n ;i ++){
+            if( i % 2 == 0)
+            {
+                m = -1;
+            }
+            else {
+                m = 1;
+            }
+            w = m * 1/(2*i-1);
+            ps = ps + w;
+        }
+        return ps*4;
+    };
+    document.write(pro(100) + " ");
+    document.write(pro(500) + " ");
+    document.write(pro(1000)+ " ");
+    document.write(pro(10000));
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("18.");
+    document.write("<br />");
+
+    var isWin = false;
+    sum = 0;
+    winNum = 0;
+    function  foo() {
+        isWin = false;
+        sum ++;
+        for(i = 0 ; i < 3 ; i ++) {
+            var thisNum = Math.floor(Math.random() * 9) + 1;
+            console.log(thisNum);
+            if (thisNum == 8) {
+                winNum ++;
+                isWin = true;
+                console.log("win");
+                break;
+            }
+        }
+    }
+    while(true){
+        var winStr = "开始";
+        var thisNum = 0;
+        if(sum != 0){
+            winStr = isWin ? "本轮胜利" : "本轮失败";
+            thisNum = (winNum/sum);
+        }
+        if(confirm("继续?"+winStr+"概率为:"+thisNum)){
+            foo();
+        }
+        else{
+            break;
+        }
+    }
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("19.");
+    document.write("<br />");
+    var shu = document.getElementById("shu");
+    var shubit = document.getElementById("shubit");
+    shubit.onclick = function () {
+        alert("平方根:"+Math.sqrt(shu.value)+" "+"平方:"+Math.pow(shu.value,2)+" "+"自然对数:"+Math.log(shu.value));
+    };
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("20.");
+    document.write("<br />");
+    var ff1 = Math.floor(Math.random()*101);
+    document.write(ff1);
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("21.");
+    document.write("<br />");
+    var dd = new Date();
+    var year1 =dd.getFullYear();
+    var mouth = dd.getMonth();
+    var date = dd.getDate();
+    var hour = dd.getHours();
+    var mun = dd.getMinutes();
+    var secound = dd.getSeconds();
+    alert("现在是"+ year1 +"年" + mouth+1 +"月"+ date + "日" + hour + "时" + mun + "分" + secound + "秒" );
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("22.");
+    document.write("<br />");
+    var str = "h7a1d8456dasf4";
+    var bb = new Array();
+    var uu = 0;
+    function Con (str){
+        for(i = 0 ; i < str.length ; i ++){
+            if(str.charAt(i)> '0' && str.charAt(i)<'9'){
+                bb[uu] = str.charAt(i);
+                uu = uu + 1;
+            }
+        }
+        var cc = bb.join("");
+        return cc;
+    }
+    document.write(Con(str));
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("23.");
+    document.write("<br />");
+
+   var str1 = "abcde";
+   var str2 = "12345678";
+   var bb1 = new Array();
+   function Conone (str1,str2) {
+       j = -2;
+       if(str1.length - str2.length > 0)
+       {
+           pq = str2.length;
+           jj = 0;
+       }
+       else {
+           pq = str1.length;
+           jj = 1;
+       }
+       for(i = 0 ;i < pq ; i ++){
+                j = j + 2;
+               bb1[j] = str1.charAt(i);
+               bb1[j+1] = str2.charAt(i);
+       }
+       if(jj = 0 ){
+           for(i = pq ; i < str1.length ; i ++){
+               j = j + 1 ;
+               bb1 [j] = str1.charAt(i);
+           }
+       }
+       else {
+           for (i = pq; i < str2.length; i++) {
+               j = j + 1;
+               bb1 [j] = str2.charAt(i);
+           }
+       }
+       var bq = bb1.join("");
+       return bq;
+   }
+   document.write(Conone(str1,str2));
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("24.");
+    document.write("<br />");
+   var achive = new Array(60,85,90,45,30,80,70);
+   sum = 0;
+   for(i = 0 ; i < 7 ; i ++){
+       sum = sum + achive[i];
+       if(achive[i]< 60)
+       {
+           document.write(achive[i]+ " ") ;
+       }
+   }
+    document.write("<br />");
+   average = sum / 7;
+   document.write("总成绩:"+sum + "<br />");
+   document.write("平均分:"+average);
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("25.");
+    document.write("<br />");
+    //document.write(Fibonacci(40));
+    y = 1;
+    for(i = 40 ; i >= 1 ; i --){
+        if(y % 6 == 0){
+            document.write("<br />");
+        }
+        document.write(Fibonacci(i)+" ");
+        y ++;
+    }
+
+
+    document.write("<br />");
+    document.write("<br />");
+    document.write("26.");
+    document.write("<br />");
+
+    sum2 = 0;
+    function yearo (year,mouth,date){
+        if((year% 100 != 0 && year % 4 == 0) || year% 400 == 0)
+        {
+            var mouth1=new Array(31,29,31,30,31,30,31,31,30,31,30,31);
+            for(i = 0 ; i < mouth-1 ; i ++){
+                sum2 = sum2 + mouth1[i];
+            }
+            sum2 = sum2 + date;
+            return sum2;
+        }
+        else{
+            var mouth2=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+            for(i = 0 ; i < mouth-1 ; i ++){
+                sum2 = sum2 + mouth2[i];
+            }
+            sum2 = sum2 + date;
+            return sum2;
+        }
+    }
+    var data = yearo(2000,2,8);
+    document.write(data);
+</script>
+
+
+
+
+
+
+</body>
+</html>

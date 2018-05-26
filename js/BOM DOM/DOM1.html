@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="div2">
+        hello!
+    </div>
+    <div class="div-arr div-hehe">a
+        <span>haha</span>
+        <span>lululu</span>
+    </div>
+    <div class="div-arr">b</div>
+    <div class="div-arr">c
+        <span>LALALAL</span>
+    </div>
+    <div class="div-arr">d</div>
+    <div class="div-arr">e</div>
+    <span class="div3">very beautiful!</span>
+    <script>
+        /*var oDIV = document.getElementById("div1");
+        console.log(oDIV);
+        console.log(oDIV.innerHTML);    //获取div中的内容
+        oDIV.innerHTML = "guanxianshuai!";   //改变div中的内容
+        console.log(oDIV.innerHTML);
+
+        var aDIV = document.getElementsByClassName("div-arr");
+        console.log(aDIV);    //html集合
+        for(var i = 0 ; i < aDIV.length ; i ++)
+        {
+            console.log(aDIV[i].innerHTML);
+        }*/
+        /*function getClass(cName){
+            var thisArr = [];
+            var aDiv = document.getElementsByTagName("*");
+            for(var i = 0 ; i < aDiv.length ; i ++)
+            {
+                //console.log(aDiv[i].className);      //输出标签的类名
+                if(aDiv[i].className == cName){
+                    thisArr.push(aDiv[i]);  //写入数组
+                }
+            }
+            return thisArr;
+        }
+        console.log(getClass("div-arr")[1].innerHTML);*/
+        /*function getClass(cName){
+            var thisArr = [];
+            var aDiv = document.getElementsByTagName("*");
+            for(var i = 0 ; i < aDiv.length ; i ++)
+            {
+                //console.log(aDiv[i].className);      //输出标签的类名
+                if(aDiv[i].className == cName){
+                    thisArr.push(aDiv[i]);  //写入数组
+                }
+            }
+            return thisArr;
+        }
+        console.log(getClass("div-arr")[1].innerHTML);*/
+
+        function getClass(cName,oDiv){
+            var thisDiv = [];
+            var aDiv;
+            if(oDiv)
+            {
+                var yDiv = document.getElementsByTagName("*");
+                for(i = 0; i <yDiv.length ; i++){
+                    if(yDiv[i].className == oDiv)
+                    {
+                        thisDiv.push(yDiv[i]);
+                    }
+                }
+                for(i = 0 ; i <thisDiv.length ; i ++){
+                    aDiv = thisDiv[i].getElementsByTagName(cName);
+                    for(y = 0 ; y <aDiv.length ; y ++){
+                        console.log(aDiv[y].innerHTML);
+                    }
+                }
+               /* var yDiv = document.getElementsByClassName(oDiv);
+                for(i = 0 ; i < yDiv.length ; i ++){
+                    aDiv = yDiv[i].getElementsByTagName(cName);
+                    for(y = 0 ; y <aDiv.length ; y ++){
+                        console.log(aDiv[y].innerHTML);
+                    }
+                }*/
+            }
+            else{
+                aDiv = document.getElementsByTagName(cName);
+                for(i = 0 ; i < aDiv.length ; i ++){
+                    console.log(aDiv[i].innerHTML);
+                }
+            }
+        }
+
+        function arrIn(arr,str) {
+            arr = arr.split(" ");
+            for(i = 0 ; i < arr.length ; i++){
+               if(arr[i] == str) {
+                   return true;
+               }
+            }
+            return false;
+        }
+       getClass("span","div-hehe");
+       getClass("span");
+
+
+
+
+    </script>
+</body>
+</html>

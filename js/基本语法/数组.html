@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //数组本身是对象
+        var a = new Array();
+        var b = new Array(3);
+        // b[0]="abc";
+        // b[1]="cdf";
+        // b[2]="uft";
+        var c = new Array(1,2,3,4);           //var a = [1,2,3,4]
+        console.log(c[0]);
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(a.length);
+        console.log(b.length);
+        console.log(c.length);
+
+        console.log(a.constructor);            //属性
+        console.log(c.constructor == Array);          //true  无继承概念
+        console.log(c.constructor == Object);         //flase
+
+        console.log(typeof c);          //object    只能返回对象，有缺陷     运算符
+        console.log( c instanceof Array);    //true   判断 c是不是 array的实例   是：true  否：flase   有继承概念    运算符
+
+        var o = {};    //new Object()
+
+
+
+
+        //排序数字
+
+        var arr = [3,5,9,12,30,59,7];
+        var acc = [3,5,7,9,12,16,20];
+        acc.sort(function(a,b){              //打乱数组顺序
+            return 0.5 - Math.random();
+        });
+        arr.sort(function(a,b){                 //排序数组   a-b<0 降序  b-a>0 升序
+            return a-b;
+        });
+        //arr.sort();
+        console.log(arr);
+        console.log(acc);
+
+
+
+        //for循环
+        for(var i = 0 ; i < arr.length ; i ++)
+        {
+            console.log(arr[i]);
+        }
+
+        //同上
+        arr.forEach(function(a,b,c){   //a:元素  b:元素的下标  c:arr本身    全部循环输出
+            console.log(a);
+
+        });
+
+        var numbers = [1,4,9];
+        var num = numbers.map(function(a){
+            return a*2;
+        });
+        console.log(num);    //2,8,18
+
+        var num1 = numbers.map(Math.sqrt);
+        console.log(num1);    //1,2,3
+
+
+    </script>
+</body>
+</html>

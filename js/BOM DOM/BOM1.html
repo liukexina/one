@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            background-color: #f2f2f2;
+            height:2000px;
+            width:200px;
+        }
+        .btn{
+            position:fixed;
+            bottom:20px;
+            right:10px;
+        }
+    </style>
+</head>
+<body>
+
+
+   <!--返回页面顶端  过度性的-->
+    <div class="div1">
+        hahaahhahaha我就是这么强大
+    </div>
+    <button class="btn" onclick="goTop()">返回顶部</button>
+    <script>
+        var thisTop;
+        window.onscroll = function () {
+            thisTop = document.documentElement.scrollTop;
+            console.log(thisTop);
+        };
+        function goTop(){
+            var sit = setInterval(function(){
+                 thisTop= thisTop - 10;
+                window.scrollTo(0,thisTop);
+                if(thisTop <= 0){
+                    clearInterval(sit);
+                }
+            },5);
+        }
+    </script>
+
+</body>
+</html>

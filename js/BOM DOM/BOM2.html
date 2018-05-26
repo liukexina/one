@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .lei{
+            width:100px;
+            list-style:none;
+            border: 1px solid #f2f2f2;
+            padding:0;
+            display: none;
+            position:absolute;
+        }
+        .lei li{
+            font-weight: 500;
+            border-bottom:1px solid #f2f2f2;
+            text-align: center;
+        }
+        li:hover{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="lei" id="div2">
+            <li>设置待办</li>
+            <li>设置未读</li>
+            <li>设置已读</li>
+            <li>删除右键</li>
+        </ul>
+    </div>
+    <script>
+        var oDiv = document.getElementById("div2");
+        document.oncontextmenu = function (event){
+            var x=event.clientX;
+            var y = event.clientY;
+            oDiv.style.top = y+"px";
+            oDiv.style.left = x+"px";
+            oDiv.style.display = "block";
+            //return false;   //取消浏览器默认行为
+            event.preventDefault();
+        };
+        var lei = document.getElementsByTagName("li");
+        for(i = 0 ; i < lei.length ; i ++){
+            lei[i].onclick = function () {
+                for(j = 0 ; j < lei.length ;j ++){
+                    lei[j].className = '';
+                }
+                console.log(this.innerHTML);
+                this.className = "aa";
+            }
+        }
+
+    </script>
+</body>
+</html>
