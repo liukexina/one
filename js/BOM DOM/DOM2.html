@@ -13,11 +13,10 @@
             list-style:none;
             background-color: #000;
             overflow: hidden;
-            width:500px;
+            width:450px;
             height:25px;
             line-height: 25px;
             border:1px solid #000;
-
         }
         .li{
             width:100px;
@@ -29,7 +28,7 @@
             position:absolute;
             border:1px solid #000;
             top:25px;
-            width:498px;
+            width:450px;
             background-color: white;
             display:none;
         }
@@ -40,36 +39,45 @@
 </head>
 <body>
 <div id="one">
-    <ul class="ul1" id="two">
-        <li class="li" id="div1">第一节</li>
-        <li class="li">第二节</li>
-        <li class="li" >第三节</li>
-    </ul>
-    <div class="sp">
-        <ul>
-            <li>页面特效原理分析</li>
-            <li>页面特效原理分析</li>
-            <li>第一页</li>
+    <div class="one-ul">
+        <ul class="ul1" id="two">
+            <li class="li" id="div1">第一节</li>
+            <li class="li">第二节</li>
+            <li class="li" >第三节</li>
         </ul>
     </div>
-    <div class="sp">
-        <ul>
-            <li>第二页</li>
-            <li>网页特效原理分析</li>
-            <li>one two three</li>
-        </ul>
+    <div id="three">
+        <div class="sp">
+            <ul>
+                <li>页面特效原理分析</li>
+                <li>页面特效原理分析</li>
+                <li>第一页</li>
+            </ul>
+        </div>
+        <div class="sp">
+            <ul>
+                <li>第二页</li>
+                <li>网页特效原理分析</li>
+                <li>one two three</li>
+            </ul>
+        </div>
+        <div class="sp">
+            <ul>
+                <li>第三页</li>
+                <li>one two three</li>
+                <li>嗯嗯嗯</li>
+            </ul>
+        </div>
     </div>
-    <div class="sp">
-        <ul>
-            <li>第三页</li>
-            <li>one two three</li>
-            <li>嗯嗯嗯</li>
-        </ul>
-    </div>
+
 </div>
 
 <script>
-    var oo = document.getElementById("one");
+    var hah = document.getElementsByClassName("ul1")[0];
+    console.log(hah);
+    var haha = hah.getElementsByTagName("li");
+    console.log(haha[0]);
+    var oo = document.getElementById("three");
     var oDiv = oo.getElementsByTagName("div");
     var uu = document.getElementById("two");
     var arr = uu.getElementsByTagName("li");
@@ -79,9 +87,11 @@
             for(j = 0 ; j < arr.length ; j ++){
                 arr[j].style.backgroundColor = '';
                oDiv[j].style.display = "none";
+               arr[j].style.color="white";
             }
             this.style.backgroundColor = "#ccc";
             oDiv[this.index].style.display = "block";
+            this.style.color="#000";
         }
     }
 

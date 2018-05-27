@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            background-color: #000;
+        }
+        .content{
+            position:relative;
+            width:600px;
+            margin:0 auto;
+        }
+        .content-ul{
+            list-style: none;
+            padding:0;
+        }
+
+        .content-ul li img{
+            height:300px;
+            width:600px;
+            border:4px solid white;
+        }
+        .two{
+            display: block;
+        }
+        .two-num{
+            background-color: yellow;
+            color:blueviolet;
+        }
+        .one-num{
+            background-color: paleturquoise;
+            color:#ff000f;
+        }
+        .one{
+            display: none;
+        }
+        .content-num{
+            list-style: none;
+            padding:0;
+            position:absolute;
+            bottom:0;
+            right:5px;
+            background-color: transparent;
+        }
+        .content-num li{
+            font-size:15px;
+            width:20px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 100%;
+
+        }
+        .content-char{
+            list-style: none;
+            padding:0;
+            position:absolute;
+            bottom:0;
+            left:10px;
+            background-color: transparent;
+        }
+        .content-char li{
+            background-color: paleturquoise;
+            border-radius: 100%;
+            color:#ff000f;
+            width:20px;
+            text-align: center;
+            display: inline-block;
+            font-size:15px;
+        }
+        .content-char li:hover{
+            background-color: yellow;
+            color:blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul class="content-ul">
+            <li class="two"><img src="https://img01.sogoucdn.com/app/a/100520024/81b9b7bf8a59c1935de8d72833937f2b" alt="" ></li>
+            <li class="one"><img src="https://img01.sogoucdn.com/app/a/100520024/b3bc2d46378e4732d6c55dd1134f13c1" alt=""></li>
+            <li class="one"><img src="https://img02.sogoucdn.com/app/a/100520024/65942bbd107b6aae59164ce2d821971c" alt=""></li>
+            <li class="one"><img src="https://img03.sogoucdn.com/app/a/100520024/fbdb08271d318cdcda7535e61bc42119" alt=""></li>
+            <li class="one"><img src="https://img01.sogoucdn.com/app/a/100520024/a9a72b6522d6cb6a672c6520912d2f98" alt=""></li>
+        </ul>
+        <ul class="content-num">
+            <li class="two-num">1</li>
+            <li class="one-num">2</li>
+            <li class="one-num">3</li>
+            <li class="one-num">4</li>
+            <li class="one-num">5</li>
+        </ul>
+        <ul class="content-char">
+            <li>&lt;</li>
+            <li>&gt;</li>
+        </ul>
+    </div>
+    <script>
+        var ul1 = document.getElementsByClassName("content-ul")[0];
+        var imgLi = ul1.getElementsByTagName("li");
+        var ul2 = document.getElementsByClassName("content-num")[0];
+        var imgNum = ul2.getElementsByTagName("li");
+        var ul3 = document.getElementsByClassName("content-char")[0];
+        var imgDir = ul3.getElementsByTagName("li");
+        console.log(imgDir);
+        console.log(imgNum);
+        console.log(imgLi);
+        var j = -1 ;
+        var sit;
+        change();
+        function change() {
+            sit = setInterval(function () {
+                for(i = 0 ; i < imgLi.length ; i ++){
+                    imgLi[i].className = "one";
+                    imgNum[i].className = "one-num";
+                }
+                j = j + 1 ;
+                if(j > 4){
+                    j = 0;
+                }
+                imgLi[j].className = "two";
+                imgNum[j].className = "two-num";
+            },1000);
+        }
+
+        for(i = 0 ; i < imgDir.length ; i ++){
+            imgDir[i].index = i;
+            imgDir[i].onclick = function () {
+                for(f = 0 ; f < imgLi.length ; f ++){
+                    imgLi[f].className = "one";
+                    imgNum[f].className = "one-num";
+                }
+                if(this.index == 0){
+                    j = j - 1 ;
+                    if(j < 0 ){
+                        j = 0;
+                    }
+                }
+                else if(this.index == 1){
+                    j = j + 1 ;
+                    if(j > 4 ){
+                        j = 4;
+                    }
+                }
+                imgLi[j].className = "two";
+                imgNum[j].className = "two-num";
+            }
+        }
+        for(i = 0 ; i < imgNum.length ; i ++){
+            imgNum[i].index = i;
+            imgNum[i].onclick = function () {
+                for(f = 0 ; f < imgLi.length ; f ++){
+                    imgLi[f].className = "one";
+                    imgNum[f].className = "one-num";
+                }
+                j = this.index;
+                imgLi[this.index].className = "two";
+                this.className = "two-num";
+            }
+        }
+        ul1.onmouseover = function () {
+            clearInterval(sit);
+        };
+        ul1.onmouseout = function () {
+            change();
+        }
+    </script>
+</body>
+</html>
