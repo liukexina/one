@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            height:100px;
+            width:150px;
+            background: #bfbfbf;
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin:-50px -75px;
+            /*transform:translate(-50%,-50%);*/
+        }
+        .main div{
+            color:#000;
+            display: block;
+            text-align: center;
+            padding-top:20px;
+            padding-bottom:10px;
+        }
+        .main button{
+            height:30px;
+            width:50px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="num">100</div>
+        <button>开始</button>
+    </div>
+    <script>
+        var num = document.getElementsByClassName("num")[0];
+        var btn = document.getElementsByTagName("button")[0];
+        var time = 0;
+        var sit;
+        btn.onclick = function () {
+            time++;
+            if(time % 2 == 1){
+                change();
+                btn.innerHTML = "暂停";
+            }
+            else if(time % 2 == 0){
+                clearInterval(sit);
+                btn.innerHTML = "开始";
+            }
+        };
+        function change() {
+            sit = setInterval(function () {
+                num.innerHTML = num.innerHTML - 1;
+                if(num.innerHTML == 0){
+                    clearInterval(sit);
+                    alert("倒计时结束!");
+                    time = 0;
+                    num.innerHTML = 100;
+                    btn.innerHTML = "重新开始";
+                }
+            },1000);
+        }
+    </script>
+</body>
+</html>

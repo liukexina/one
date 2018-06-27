@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        div{
+            margin:0;
+        }
+        .warpper{
+            width: 996px;
+            margin: 0 auto;
+            border:1px solid #888;
+        }
+        .title{
+            height: 120px;
+            border-bottom:1px solid #888;
+        }
+        .user{
+            margin:10px 20px;
+            width:100px;
+            height: 100px;
+            float:left;
+        }
+        .userinf {
+            height: 100px;
+        }
+        .userinf p{
+            font-size: 20px;
+        }
+        .head{
+            border-top:1px solid #888;
+            position:relative;
+        }
+        .select{
+            height:50px;
+        }
+        .kan,.zhao,.shouye,.gouwuche{
+            height: 50px;
+            line-height: 50px;
+            float:left;
+        }
+        .look{
+            width: 996px;
+            position: absolute;
+            display: none;
+            left:-1px;
+            border: 1px solid #888;
+            background: #f2f2f2;
+        }
+        .look1{
+            width: 996px;
+        }
+        .look2{
+            width: 996px;
+        }
+        .sou{
+            width: 996px;
+            position: absolute;
+            left:-1px;
+            border: 1px solid #888;
+            background: #f2f2f2;
+            display: none;
+         }
+        .gou{
+            width: 996px;
+            position: absolute;
+            left:-1px;
+            border: 1px solid #888;
+            background: #f2f2f2;
+            display: none;
+        }
+        .kan:hover{
+            background: #f2f2f2;
+        }
+        .shouye:hover{
+            background: #f2f2f2;
+        }
+        .kan span:hover{
+            color:firebrick;
+        }
+        .shouye span:hover{
+            color:firebrick;
+        }
+        .bianxian{
+            width: 996px;
+            font-size: 14px;
+            position:relative;
+            padding-top:10px;
+            border-bottom: 1px solid #888;
+        }
+        .bianxian1{
+            font-size: 14px;
+            position:relative;
+            padding-top:10px;
+            border-top:1px solid #888;
+        }
+        .bianxian div {
+            line-height:20px;
+        }
+        .Deff,.Dname,.factor {
+            margin:3px 20px;
+        }
+        .price{
+            position:absolute;
+            bottom:25.2px;
+            right:110px;
+        }
+        .userdate{
+            position:absolute;
+            right:110px;
+            bottom:3px;
+        }
+        .prodate{
+            position: absolute;
+            right:300px;
+            bottom:3px;
+        }
+        .main{
+            width: 996px;
+            position: absolute;
+            border: 1px solid #888;
+            border-top:0;
+            left:-1px;
+            display: block;
+            /*display: none;*/
+        }
+        .main img{
+            width:996px;
+            display: block;
+            margin:0 auto;
+            margin-top:2px;
+            height:450px;
+        }
+        .spe{
+            width: 84px;
+            text-align: center;
+        }
+        .shuru{
+            padding-left:20px;
+            position:relative;
+        }
+        .shuru button{
+            margin-left:20px;
+            width: 70px;
+        }
+        .result{
+            text-align: center;
+            font-size: 14px;
+            color:#999999;
+        }
+        .action{
+            position: absolute;
+            right:20px;
+            bottom:5px;
+        }
+        .icon-htmal5icon29{
+            font-size:30px;
+            color:red;
+            height:20px;
+            display: block;
+            margin:8px 12px 5px 12px;
+        }
+        .action span{
+            font-size:12px;
+        }
+        .join{
+            position: absolute;
+            right:10px;
+            top:-19px;
+        }
+        .join span{
+            font-size: 10px;
+        }
+        .allprice{
+            width: 996px;
+            position: absolute;
+            left:-1px;
+            border: 1px solid #888;
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="warpper">
+        <div class="title">
+            <img src="image/个人中心.png" alt="" class="user">
+            <div class="userinf">
+                <br>
+                <p id="usern">用户姓名</p>
+                <br>
+                <p id="userid">用户身份证号</p>
+            </div>
+        </div>
+        <div class="head">
+            <div class="select">
+                <div class="shouye">
+                    <div class="spe">
+                        <span>首页</span>
+                    </div>
+                    <div class="main">
+                        <img src="image/main2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="kan">
+                    <div class="spe">
+                        <span>查看药品</span>
+                    </div>
+                    <div class="look">
+                        <div class="bianxian" >
+                            <div class="Dname">
+                                药品名：<span>哈哈哈123</span>
+                            </div>
+                            <div class="Deff">
+                                药品功效：<span>ixixixi</span>
+                            </div>
+                            <div class="price">
+                                单价：<span>lililil</span>元
+                            </div>
+                            <div class="factor">
+                                生产厂家：<span>lalalla</span>
+                            </div>
+                            <div class="prodate">
+                                生产日期：<span>lilie</span>
+                            </div>
+                            <div class="userdate">
+                                使用期限：<span>hahahaha</span>年
+                            </div>
+                            <div class="action">
+                                <i class="iconfont icon-htmal5icon29"></i>
+                                <span>加入购物车</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zhao">
+                    <div class="spe">
+                        <span>查询药品</span>
+                    </div>
+                    <div class="sou">
+                        <div class="shuru">
+                            输入药品名称：<input type="text" id="intname">
+                            <button id="btn">搜索</button>
+                            <div class="join">
+                                <i class="iconfont icon-htmal5icon29"></i>
+                                <span>加入购物车</span>
+                            </div>
+                        </div>
+                        <div class="look1">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="gouwuche">
+                    <div class="spe">
+                        <span>购物车</span>
+                    </div>
+                    <div class="gou">
+                        <div class="look2">
+
+                        </div>
+                        <div class="allprice">
+                            共计：<span>0</span>元
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="number.js"></script>
+    <script src="elem.js"></script>
+
+</body>
+</html>

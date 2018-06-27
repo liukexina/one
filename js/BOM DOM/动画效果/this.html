@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="btn">点击</div>
+<script>
+    /*var a = "hello";
+    function foo(){     //全局变量下的方法中this指向
+        var a = "world";
+        console.log(this.a);   //hello
+    }
+    foo();    //window调用foo this指向window
+    console.log(this.a);*/
+
+    /*var name = "xiaohong";
+    var obj = {
+        name:"xiaoming",
+        show:function () {    //对象调用。this指向对象
+            console.log(this.name)
+        }
+    };
+    obj.show()    //小明*/
+
+
+    var index = "1";
+    var oBtn = document.getElementById("btn");
+    oBtn.index = "2";
+    oBtn.onclick = function () {
+        setInterval(function () {
+            console.log(this.index);    //window
+        },1000)
+    }
+
+
+</script>
+</body>
+</html>

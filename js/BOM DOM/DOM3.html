@@ -16,7 +16,6 @@
             list-style: none;
             padding:0;
         }
-
         .content-ul li img{
             height:300px;
             width:600px;
@@ -111,52 +110,42 @@
         change();
         function change() {
             sit = setInterval(function () {
-                for(i = 0 ; i < imgLi.length ; i ++){
-                    imgLi[i].className = "one";
-                    imgNum[i].className = "one-num";
-                }
                 j = j + 1 ;
-                if(j > 4){
-                    j = 0;
-                }
-                imgLi[j].className = "two";
-                imgNum[j].className = "two-num";
+                bian();
             },1000);
         }
+        function  bian() {
+            for(i = 0 ; i < imgLi.length ; i ++){
+                imgLi[i].className = "one";
+                imgNum[i].className = "one-num";
+            }
+            if(j > 4){
+                j = 0;
+            }
+            else if(j < 0){
+                j = 4;
+            }
+            imgLi[j].className = "two";
+            imgNum[j].className = "two-num";
+        }
 
-        for(i = 0 ; i < imgDir.length ; i ++){
+        for(i = 0 ; i <imgDir.length ; i++){
             imgDir[i].index = i;
             imgDir[i].onclick = function () {
-                for(f = 0 ; f < imgLi.length ; f ++){
-                    imgLi[f].className = "one";
-                    imgNum[f].className = "one-num";
-                }
                 if(this.index == 0){
                     j = j - 1 ;
-                    if(j < 0 ){
-                        j = 0;
-                    }
                 }
                 else if(this.index == 1){
                     j = j + 1 ;
-                    if(j > 4 ){
-                        j = 4;
-                    }
                 }
-                imgLi[j].className = "two";
-                imgNum[j].className = "two-num";
+                bian();
             }
         }
         for(i = 0 ; i < imgNum.length ; i ++){
             imgNum[i].index = i;
             imgNum[i].onclick = function () {
-                for(f = 0 ; f < imgLi.length ; f ++){
-                    imgLi[f].className = "one";
-                    imgNum[f].className = "one-num";
-                }
                 j = this.index;
-                imgLi[this.index].className = "two";
-                this.className = "two-num";
+                bian();
             }
         }
         ul1.onmouseover = function () {

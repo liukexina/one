@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1,#div2{
+            width: 300px;
+            height: 60px;
+            background: red;
+        }
+        #div3{
+            width:100%;
+            height:60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div3"></div>
+    <div id="div2"></div>
+    <script>
+
+        //知识点
+        var oDiv = document.getElementById("div1");
+        console.log(oDiv);
+        oDiv.onclick = function () {
+                var thisWidth = 0;
+                thisWidth = this.offsetWidth;    //取值  offset
+                this.style.width =  thisWidth + 400 +"px";
+                console.log(thisWidth);
+        };
+
+        //实例
+        var oDiv1 = document.getElementById("div2");
+        console.log(oDiv1);
+        var sit1,sit2;
+        var start = oDiv1.offsetWidth;
+        var finish = 1000 + "px";
+        console.log(start);
+        oDiv1.onmouseover = function () {
+            clearInterval(sit2);
+            sit1 = setInterval(function(){
+                if(oDiv1.offsetWidth > 600){
+                    clearInterval(sit1);
+                }
+                else{
+                    oDiv1.style.width = oDiv1.offsetWidth + 10 + "px";
+                }
+            },50)
+        };
+        oDiv1.onmouseout = function () {
+            clearInterval(sit1);
+            sit2 = setInterval(function(){
+                if(oDiv1.offsetWidth <= 300){
+                    clearInterval(sit2);
+                }
+                else{
+                    oDiv1.style.width = oDiv1.offsetWidth - 10 + "px";
+                }
+            },50)
+        }
+    </script>
+</body>
+</html>

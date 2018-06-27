@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .main{
+            height:300px;
+            width:600px;
+            overflow: hidden;
+            position:relative;
+            background: #000;
+            border:8px solid #000000;
+            margin:10px auto;
+        }
+        .content-ul{
+            padding:0;
+            margin:0;
+            list-style: none;
+            width:3000px;
+            height: 300px;
+            position: absolute;
+        }
+        .content-ul li{
+            float:left;
+        }
+        .content-ul li img{
+            height:300px;
+            width:600px;
+        }
+        .content-num{
+            list-style: none;
+            padding:0;
+            position:absolute;
+            bottom:2px;
+            right:5px;
+        }
+        .content-num li{
+            font-size:15px;
+            width:20px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 100%;
+            background-color: paleturquoise;
+            color:#ff000f;
+        }
+        .content-char{
+            list-style: none;
+            padding:0;
+            position:absolute;
+            bottom:2px;
+            left:10px;
+            background-color: transparent;
+        }
+        .content-char li{
+            background-color: paleturquoise;
+            border-radius: 100%;
+            color:#ff000f;
+            width:20px;
+            text-align: center;
+            display: inline-block;
+            font-size:15px;
+        }
+        .content-char li:hover{
+            background-color: yellow;
+            color:blueviolet;
+        }
+        .content-num .two-num{
+            background-color: yellow;
+            color:blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ul class="content-ul">
+            <li ><img src="https://img01.sogoucdn.com/app/a/100520024/81b9b7bf8a59c1935de8d72833937f2b" alt="" ></li>
+            <li ><img src="https://img01.sogoucdn.com/app/a/100520024/b3bc2d46378e4732d6c55dd1134f13c1" alt=""></li>
+            <li ><img src="https://img02.sogoucdn.com/app/a/100520024/65942bbd107b6aae59164ce2d821971c" alt=""></li>
+            <li ><img src="https://img03.sogoucdn.com/app/a/100520024/fbdb08271d318cdcda7535e61bc42119" alt=""></li>
+            <li ><img src="https://img01.sogoucdn.com/app/a/100520024/a9a72b6522d6cb6a672c6520912d2f98" alt=""></li>
+        </ul>
+        <ul class="content-num">
+            <li class="two-num">1</li>
+            <li class="one-num">2</li>
+            <li class="one-num">3</li>
+            <li class="one-num">4</li>
+            <li class="one-num">5</li>
+        </ul>
+        <ul class="content-char">
+            <li>&lt;</li>
+            <li>&gt;</li>
+        </ul>
+    </div>
+    <script>
+        var oBox = document.getElementsByClassName("main")[0];
+        var oImg = document.getElementsByClassName("content-ul")[0];
+        var num = document.getElementsByClassName("content-num")[0].getElementsByTagName("li");
+        var fang = document.getElementsByClassName("content-char")[0].getElementsByTagName("li");
+        var globalIndex = 0;
+        var isRun = true;
+        var isTime = true;
+        for(i = 0 ; i < num.length ; i++){
+            num[i].index = i ;
+            num[i].onclick = function () {
+                if(isRun){
+                    changImg(this.index);
+                }
+            }
+        }
+        fang[0].onclick = function () {
+            if(isRun){
+                changImg(globalIndex-1);
+            }
+        };
+        fang[1].onclick = function () {
+            if(isRun){
+                changImg(globalIndex+1);
+            }
+        };
+        oBox.onmouseover = function () {
+            isTime = false;
+        };
+        oBox.onmouseout = function () {
+            isTime = true;
+        };
+        setInterval(function () {
+            if(isRun && isTime){
+                changImg(globalIndex+1);
+            }
+        },2000);
+        function changImg(index){
+            isRun = false;
+            var dir;
+            if(index > globalIndex){
+                dir = -1;
+            }
+            else if(index < globalIndex){
+                dir = 1;
+            }
+            if(index == -1){
+                index = 4;
+                dir = -1;
+            }
+            else if(index == 5){
+                index = 0;
+                dir = 1;
+            }
+            globalIndex = index;
+            timer = setInterval(function () {
+                oImg.style.left = oImg.offsetLeft + dir * 10 +"px";
+                if(index * -600 == oImg.offsetLeft){
+                    clearInterval(timer);
+                    isRun = true;
+                }
+            },16);
+            for(i = 0 ; i <num.length ; i++){
+                num[i].style.backgroundColor = "paleturquoise";
+            }
+            num[globalIndex].style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            color: #555;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .warpper{
+            width: 996px;
+            margin: 0 auto;
+        }
+        .header{
+            height: 106px;
+        }
+        .logo4{
+            height: 106px;
+            float:right;
+        }
+        .logo1{
+            height: 106px;
+        }
+        .logo2{
+            height: 106px;
+            line-height: 106px;
+        }
+        .area{
+            width: 990px;
+            height: 392px;
+            margin: 0 auto;
+            border: 3px solid #dedede;
+        }
+        .footer{
+            width: 700px;
+            height: 24px;
+            text-align: left;
+            line-height: 24px;
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+        .footer span {
+            line-height: 24px;
+            float: right;
+            color: #999;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .container{
+            width: 690px;
+            height: 392px;
+            position: relative;
+            overflow: hidden;
+            float:left;
+            border-right:1px solid #dedede;
+        }
+        .content ul{
+            width: 3450px;
+            position: absolute;
+        }
+        .content ul li{
+            float: left;
+        }
+        .content ul li img{
+            width: 690px;
+            height: 392px;
+        }
+        .btn{
+            position: absolute;
+            z-index: 10;
+            bottom: 10px;
+        }
+        .btn li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #888;
+            margin-left: 5px;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        .left-btn {
+            left: 10px;
+        }
+        .right-btn {
+            right: 10px;
+        }
+        .right-btn .active{
+            background:palegoldenrod;
+        }
+        .login-right {
+            float: right;
+            width: 260px;
+            padding: 8px 15px;
+        }
+        .fw {
+            font-weight: bold;
+            width: 270px;
+        }
+        .login-right h1 {
+            font-size: 22px;
+            font-family: 'microsoft yahei';
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        .form span {
+            display: inline-block;
+            font-weight: normal;
+        }
+        .form p {
+            line-height: 34px;
+            font-size:12px;
+        }
+        .form .ipt {
+            width: 170px;
+            border: 1px solid #ccc;
+            height: 24px;
+            line-height: 24px;
+            text-indent: 2px;
+            font-weight: normal;
+            color: #666;
+        }
+        .login-btn{
+            margin-top: 6px;
+            margin-left:50px;
+        }
+        .login-btn input{
+            margin-right:10px;
+            height:30px;
+            width: 80px;
+        }
+        .form-content p {
+             line-height: 22px;
+            font-weight: normal;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="warpper">
+    <div class="header">
+        <img src="image/logo1.jpg" alt="" class="logo1">
+        <img src="image/logo2.png" alt="" class="logo2">
+        <img src="image/logo4.jpg" alt="" class="logo4">
+    </div>
+    <div class="area">
+        <div class="container">
+            <div class="content">
+                <ul class="c-img clearfix">
+                    <li><img src="image/1.jpg" alt=""></li>
+                    <li><img src="image/2.jpg" alt=""></li>
+                    <li><img src="image/3.jpg" alt=""></li>
+                    <li><img src="image/4.jpg" alt=""></li>
+                    <li><img src="image/5.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="btn left-btn">
+                <ul id="l-btn">
+                    <li>&lt;</li>
+                    <li>&gt;</li>
+                </ul>
+            </div>
+            <div class="btn right-btn">
+                <ul id="b-btn">
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+        <div class="login-right">
+            <div class="fw">
+                <h1>用户登录</h1>
+                <div class="form">
+                    <form class="formhead" action="">
+                        <p>
+                            <span>用户名：</span>
+                            <input id="username" placeholder="用户名" class="ipt" type="text" value="">
+                        </p>
+                        <p>
+                            <span>密&nbsp&nbsp&nbsp码：</span>
+                            <input id="password" placeholder="密码" class="ipt" type="password" value="">
+                        </p>
+                        <p class="login-btn">
+                            <input id="loginA" value="登录" type="button"></input>
+                            <input id="loginB" value="重置" type="submit"></input>
+                        </p>
+                    </form>
+
+                </div>
+                <div class="form-content" style="margin-top:7px;">
+                    <p>说明：  【密码找回】【解决无法登陆问题】</p>
+                    <p>1.用户名:(1)药品管理员用户名为“管理员” 密码为111，如密码有问题请咨询人事处。(2)客户用户名为姓名，密码为身份证号</p>
+                    <p>2.密码：(1)首次登录：初始密码为本人身份证号。(2)用户使用药品管理系统密码登陆；</p>
+                    <p>3.服务电话：用户86604835，药品管理员86609104，或QQ在线咨询</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <span>Copyright <font class="copy">©</font> 2016 黑龙江大学   All rights reserved.</span>
+        <p>移动客户端下载 | 密码找回 | DNS | 药品管理系统</p>
+    </div>
+</div>
+<script src="gundong.js"></script>
+<script src="number.js"></script>
+<script src="login.js"></script>
+
+</body>
+</html>

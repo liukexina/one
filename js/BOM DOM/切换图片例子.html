@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .all{
+            margin:0 auto;
+            background: #fff;
+            height:510px;
+            width: 600px;
+            border:1px solid #bfbfbf;
+        }
+        .all-sum{
+            position: relative;
+            height:400px;
+            width:600px;
+        }
+        .all-img{
+            /*display: none;*/
+            height:340px;
+            width:500px;
+            position:absolute;
+            top:35px;
+            left:50px;
+            margin:0 auto;
+        }
+        .all-img img{
+            height:340px;
+            width:500px;
+            text-align: center;
+        }
+        .img-special{
+            /*display:block;*/
+            z-index: 1;
+        }
+        .list{
+            position:absolute;
+            top:400px;
+            list-style: none;
+            padding:0;
+            overflow: hidden;
+            border-top: 1px solid #bfbfbf;
+            width:600px;
+        }
+        .list li{
+            float:left;
+            width:149.25px;
+            height:102px;
+            border-right:1px solid #bfbfbf;
+            margin:0;
+        }
+        .list li:last-child{
+            border-right:0;
+        }
+        .list li img{
+            margin-left:10px;
+            margin-top:14px;
+            width:129.25px;
+            height:75px;
+        }
+        .li-special{
+            border-left:0;
+        }
+        .dir{
+            height:18px;
+            line-height: 18px;
+            border-radius: 100%;
+            text-align: center;
+            font-weight: 600;
+            font-size:40px;
+        }
+        .dir:hover{
+            color:burlywood;
+        }
+        .left{
+            position:absolute;
+            top:200px;
+            left:5px;
+        }
+        .right{
+            position:absolute;
+            top:200px;
+            right:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="all-sum">
+            <div class="all-img img-special">
+                <img src="../图片/1.jpg" alt="">
+            </div>
+            <div class="all-img">
+                <img src="../图片/2.jpg" alt="">
+            </div>
+            <div class="all-img">
+                <img src="../图片/3.jpg" alt="">
+            </div>
+            <div class="all-img">
+                <img src="../图片/4.jpg" alt="">
+            </div>
+            <div class="dir left">&lt;</div>
+            <div class="dir right">&gt;</div>
+        </div>
+        <ul class="list">
+            <li><img src="../图片/1.jpg" alt=""></li>
+            <li><img src="../图片/2.jpg" alt=""></li>
+            <li><img src="../图片/3.jpg" alt=""></li>
+            <li class="li-special"><img src="../图片/4.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        var list = document.getElementsByTagName("li");
+        var img = document.getElementsByClassName("all-img");
+        var dir = document.getElementsByClassName("dir");
+        var y = 0;
+        for(i = 0 ; i < dir.length; i++){
+            dir[i].index=i;
+            dir[i].onclick = function () {
+                if(this.index == 0){
+                    y--;
+                }
+                else if(this.index == 1){
+                    y++;
+                }
+                this.style.Color = "pink";
+                change(y);
+            }
+        }
+        for(i = 0 ; i <list.length ; i++){
+            list[i].index = i;
+            list[i].onmouseover = function () {
+                y = this.index;
+                change(y);
+            }
+        }
+        function change(y) {
+            for(j = 0 ; j <img.length ; j++){
+                img[j].classList.remove("img-special");
+                // img[j].style.display = "none";
+            }
+            if(y < 0){
+                y = 3;
+            }
+            else if(y > 3 ){
+                y = 0;
+            }
+            img[y].classList.add("img-special");
+        }
+    </script>
+</body>
+</html>
