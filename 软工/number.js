@@ -44,6 +44,60 @@ var Drugs = [
         profac:"吉林有限公司",
         unitprice:10,
         num:60
+    },
+    {
+        name:"人工牛黄甲硝唑胶囊",
+        efficacy:"人工牛黄甲硝唑胶囊",
+        usedate:2,
+        prodate:"2018-3-30",
+        profac:"吉林有限公司",
+        unitprice:10,
+        num:60
+    },
+    {
+        name:"人工牛黄甲硝唑胶囊",
+        efficacy:"人工牛黄甲硝唑胶囊",
+        usedate:2,
+        prodate:"2018-3-30",
+        profac:"吉林有限公司",
+        unitprice:10,
+        num:60
+    },
+    {
+        name:"人工牛黄甲硝唑胶囊",
+        efficacy:"人工牛黄甲硝唑胶囊",
+        usedate:2,
+        prodate:"2018-3-30",
+        profac:"吉林有限公司",
+        unitprice:10,
+        num:60
+    },
+    {
+        name:"人工牛黄甲硝唑胶囊",
+        efficacy:"人工牛黄甲硝唑胶囊",
+        usedate:2,
+        prodate:"2018-3-30",
+        profac:"吉林有限公司",
+        unitprice:10,
+        num:60
+    },
+    {
+        name:"人工牛黄甲硝唑胶囊",
+        efficacy:"人工牛黄甲硝唑胶囊",
+        usedate:2,
+        prodate:"2018-3-30",
+        profac:"吉林有限公司",
+        unitprice:10,
+        num:60
+    },
+    {
+        name:"人工牛黄甲硝唑胶囊",
+        efficacy:"人工牛黄甲硝唑胶囊",
+        usedate:2,
+        prodate:"2018-3-30",
+        profac:"吉林有限公司",
+        unitprice:10,
+        num:60
     }
 ];
 var information =[

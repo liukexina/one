@@ -58,6 +58,11 @@ for(i = 0 ; i < information.length; i++){
 }
 console.log(username.innerHTML);
 console.log(userID.innerHTML);
+
+var tuichu = document.getElementsByClassName("tuichu")[0];
+tuichu.onclick = function () {
+    window.location.href="首页.html";
+};
 var Dname = document.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0];
 var Deff = document.getElementsByClassName("Deff")[0].getElementsByTagName("span")[0];
 var Price = document.getElementsByClassName("price")[0].getElementsByTagName("span")[0];
@@ -261,3 +266,10 @@ if(sign == false){
         alert("无药品加入购物车");
     }
 }
+
+
+var zhifu = document.getElementsByClassName("allprice")[0].getElementsByTagName("button")[0];
+console.log(zhifu);
+zhifu.onclick = function () {
+
+};

@@ -9,55 +9,60 @@ var seeinfo = document.getElementsByClassName("seeinfo")[0];
 var que = document.getElementsByClassName("que")[0];
 var shouye = document.getElementsByClassName("shouye")[0];
 
+var tuichu = document.getElementsByClassName("tuichu")[0];
+tuichu.onclick = function () {
+    window.location.href="首页.html";
+};
+
 shouye.onclick = function () {
-    shouye.style.backgroundColor = "#f2f2f2";
+    shouye.classList.add("spe");
     tupian.style.display = "block";
-    fan.style.backgroundColor = "";
+    fan.classList.remove("spe");
     look3.style.display = "none";
-    see.style.backgroundColor = "";
+    see.classList.remove("spe");
     look.style.display = "none";
-    seeinfo.style.backgroundColor = "";
+    seeinfo.classList.remove("spe");
     look1.style.display = "none";
-    que.style.backgroundColor = "";
+    que.classList.remove("spe");
     look2.style.display = "none";
 };
 see.onclick = function () {
-    fan.style.backgroundColor = "";
+    see.classList.add("spe");
+    fan.classList.remove("spe");
+    seeinfo.classList.remove("spe");
+    shouye.classList.remove("spe");
+    que.classList.remove("spe");
     look3.style.display = "none";
-    see.style.backgroundColor = "#f2f2f2";
     look.style.display = "block";
-    seeinfo.style.backgroundColor = "";
     look1.style.display = "none";
-    que.style.backgroundColor = "";
     look2.style.display = "none";
-    shouye.style.backgroundColor = "";
     tupian.style.display = "none";
 };
 seeinfo.onclick = function () {
-    seeinfo.style.backgroundColor = "#f2f2f2";
-    look1.style.display = "block";
-    see.style.backgroundColor = "";
-    look.style.display = "none";
-    fan.style.backgroundColor = "";
+    seeinfo.classList.add("spe");
+    fan.classList.remove("spe");
+    see.classList.remove("spe");
+    shouye.classList.remove("spe");
+    que.classList.remove("spe");
     look3.style.display = "none";
-    que.style.backgroundColor = "";
+    look.style.display = "none";
+    look1.style.display = "block";
     look2.style.display = "none";
-    shouye.style.backgroundColor = "";
     tupian.style.display = "none";
     if(infonum == 0){
         look1.innerHTML = "无";
     }
 };
 que.onclick = function () {
-    que.style.backgroundColor = "#f2f2f2";
-    look2.style.display = "block";
-    see.style.backgroundColor = "";
-    look.style.display = "none";
-    seeinfo.style.backgroundColor = "";
-    look1.style.display = "none";
-    fan.style.backgroundColor = "";
+    que.classList.add("spe");
+    fan.classList.remove("spe");
+    see.classList.remove("spe");
+    shouye.classList.remove("spe");
+    seeinfo.classList.remove("spe");
     look3.style.display = "none";
-    shouye.style.backgroundColor = "";
+    look.style.display = "none";
+    look1.style.display = "none";
+    look2.style.display = "block";
     tupian.style.display = "none";
     var html = '';
     for(i = 0;i<Drugs.length;i++){
@@ -68,15 +73,15 @@ que.onclick = function () {
     look2.innerHTML = html;
 };
 fan.onclick = function () {
-    fan.style.backgroundColor = "#f2f2f2";
+    fan.classList.add("spe");
+    seeinfo.classList.remove("spe");
+    see.classList.remove("spe");
+    shouye.classList.remove("spe");
+    que.classList.remove("spe");
     look3.style.display = "block";
-    see.style.backgroundColor = "";
-    look2.style.display = "none";
-    seeinfo.style.backgroundColor = "";
-    look1.style.display = "none";
-    que.style.backgroundColor = "";
     look.style.display = "none";
-    shouye.style.backgroundColor = "";
+    look1.style.display = "none";
+    look2.style.display = "none";
     tupian.style.display = "none";
     var html = '';
     for(i = 0;i<Drugs.length;i++){

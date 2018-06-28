@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/iconfont.css">
     <style>
         body{
             color: #555;
@@ -13,21 +14,22 @@
             list-style: none;
         }
         .warpper{
-            height: 800px;
+            /*height: 800px;*/
             width: 996px;
             margin: 0 auto;
-            background: pink;
-            border: 1px solid #888;
+            border-top: 1px solid #888;
         }
         .adm{
             border-bottom: 1px solid #888;
             overflow: hidden;
+            position:relative;
         }
         .adm img{
             margin: 10px 20px;
             width: 100px;
             height: 100px;
             float: left;
+
         }
         .adm p{
             font-size:20px;
@@ -38,9 +40,7 @@
         }
         .choose ul{
             width: 100px;
-            height: 650px;
             padding-right:10px;
-            border-right: 1px solid #888;
         }
         .choose ul li{
             margin-top:5px;
@@ -49,27 +49,32 @@
             width: 100px;
         }
         .look,.look1,.look2,.look3,.tupian{
+            background: #f2f2f2;
             width: 885px;
-            position: absolute;
-            left:110px;
-            top:0;
-            border-left:1px solid #888;
+            position: relative;
+            left:111px;
+            top:-150px;
             display: none;
         }
         .que:hover{
             background: #f2f2f2;
+            color:firebrick;
         }
         .see:hover{
             background: #f2f2f2;
+            color:firebrick;
         }
         .seeinfo:hover{
             background: #f2f2f2;
+            color:firebrick;
         }
         .fan:hover{
             background: #f2f2f2;
+            color:firebrick;
         }
         .shouye:hover{
             background: #f2f2f2;
+            color:firebrick;
         }
         .bianxian{
              width: 886px;
@@ -110,6 +115,22 @@
         .tupian img{
             width: 880px;
         }
+        .tuichu{
+            position: absolute;
+            right:10px;
+            top:10px;
+        }
+        .tuichu span{
+            color:red;
+        }
+        .icon-zhuxiaologout11{
+            color:red;
+            font-size:22px;
+        }
+        .spe{
+            background: #f2f2f2;
+            color:firebrick;
+        }
     </style>
 </head>
 <body>
@@ -117,6 +138,10 @@
     <div class="adm">
         <img src="image/个人中心.png" alt="">
         <p>管理员</p>
+        <div class="tuichu">
+            <i class="iconfont icon-zhuxiaologout11"></i>
+            <span>退出</span>
+        </div>
     </div>
     <div class="choose">
         <ul>
