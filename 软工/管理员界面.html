@@ -48,12 +48,12 @@
             font-size:20px;
             width: 100px;
         }
-        .look,.look1,.look2,.look3,.tupian{
+        .look,.look1,.look2,.look3,.tupian,.look4{
             background: #f2f2f2;
             width: 885px;
             position: relative;
             left:111px;
-            top:-150px;
+            top:-180px;
             display: none;
         }
         .que:hover{
@@ -73,6 +73,10 @@
             color:firebrick;
         }
         .shouye:hover{
+            background: #f2f2f2;
+            color:firebrick;
+        }
+        .change:hover{
             background: #f2f2f2;
             color:firebrick;
         }
@@ -131,6 +135,55 @@
             background: #f2f2f2;
             color:firebrick;
         }
+        .look4 ul{
+
+        }
+        .look4 ul li{
+            font-size:14px;
+            display:inline;
+            float:left;
+        }
+        .dan{
+            position:relative;
+            left:5px;
+            top:5px;
+            overflow: hidden;
+            background: white;
+            width: 880px;
+            border: 1px solid #888;
+        }
+        .bianxian1{
+            width: 870px;
+            font-size: 14px;
+            position:relative;
+            padding-top:10px;
+            overflow: hidden;
+        }
+        .bianxian1 div {
+            line-height:20px;
+        }
+        .Dname1,.price1,.buynum1{
+            margin-left:20px;
+            float:left;
+        }
+        .allmoney{
+            padding-top:10px;
+            margin-left:20px;
+        }
+        .dan-date{
+            padding-top:10px;
+            float:left;
+            margin-left:20px;
+        }
+        .allmoney span,.dan-date span{
+            font-size:14px;
+        }
+        .decision{
+            padding-top:10px;
+            float:right;
+            margin-right:10px;
+            margin-bottom:5px;
+        }
     </style>
 </head>
 <body>
@@ -150,6 +203,7 @@
             <li class="seeinfo">查看订单</li>
             <li class="que">缺货药品</li>
             <li class="fan">返厂药品</li>
+            <li class="change">更改信息</li>
         </ul>
         <div class="tupian">
             <img src="image/首页.jpg" alt="">
@@ -179,9 +233,51 @@
                 </div>
             </div>
         </div>
-        <div class="look1"></div>
+        <div class="look1">
+            <div class="dan">
+                <div class="bianxian1" >
+                    <div class="Dname1">
+                        药品名：<span>哈哈哈123</span>
+                    </div>
+                    <div class="price1">
+                        单价：<span>lililil</span>元
+                    </div>
+                    <div class="buynum1">
+                        购买数量：<span>0</span>盒
+                    </div>
+                </div>
+                <div class="bianxian1" >
+                    <div class="Dname1">
+                        药品名：<span>哈哈哈123</span>
+                    </div>
+                    <div class="price1">
+                        单价：<span>lililil</span>元
+                    </div>
+                    <div class="buynum1">
+                        购买数量：<span>0</span>盒
+                    </div>
+                </div>
+                <div class="allmoney">
+                    总价格: <span>123456</span>
+                </div>
+                <div class="dan-date">
+                    支付时间: <span>123456489</span>
+                </div>
+                <div class="decision">
+                    <button>完成订单</button>
+                    <button>退回订单</button>
+                </div>
+            </div>
+        </div>
         <div class="look2"></div>
         <div class="look3"></div>
+        <div class="look4">
+            <ul>
+                <li>增加</li>
+                <li>删除</li>
+                <li>更改</li>
+            </ul>
+        </div>
     </div>
 </div>
 <script src="number.js"></script>

@@ -35,22 +35,20 @@ loginBtn.onclick = function () {
     }
     else{
         for (i = 0; i < information.length; i++) {
-            console.log(username.value);
-            console.log(password.value);
             if (username.value == information[i].name && password.value == information[i].password) {
                 state = true;
                 information[i].index = 1;
-                console.log(state);
+                var d = JSON.stringify(information);
+                localStorage.setItem("information",d);
+                console.log(information);
             }
         }
 
         if (state) {
-            console.log(state);
             form.action = "用户界面.html";
             form.submit();
         }
         else {
-            console.log(state);
             form.action = "";
             form.submit();
             alert("用户名或密码错误！");

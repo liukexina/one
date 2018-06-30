@@ -4,100 +4,122 @@ var Drugs = [
         name:"通宣理肺片",
         efficacy:"解表散寒，宣肺止咳",
         usedate:3,
-        prodate:"2017-3-9",
         profac:"北京有限公司",
         unitprice:25,
-        num:20
+        num:20,
+        yea:2015,
+        mouth:3,
+        date:15
     },
     {
         name:"氯雷他定片",
         efficacy:"用于缓解过敏性鼻炎有关的症状",
         usedate:5,
-        prodate:"2018-4-10",
         profac:"哈尔滨有限公司",
         unitprice:30,
-        num:30
+        num:30,
+        yea:2017,
+        mouth:3,
+        date:9
     },
     {
         name:"新雪片",
         efficacy:"清热解毒,用于各种热性病之发热",
         usedate:1,
-        prodate:"2018-7-9",
         profac:"广州有限公司",
         unitprice:15,
-        num:10
+        num:10,
+        yea:2013,
+        mouth:4,
+        date:8
     },
     {
         name:"一清颗粒",
         efficacy:"清热泻火解毒",
         usedate:6,
-        prodate:"2017-10-9",
         profac:"深圳有限公司",
         unitprice:20,
-        num:40
+        num:40,
+        yea:2014,
+        mouth:11,
+        date:20
     },
     {
         name:"人工牛黄甲硝唑胶囊",
         efficacy:"人工牛黄甲硝唑胶囊",
         usedate:2,
-        prodate:"2018-3-30",
         profac:"吉林有限公司",
         unitprice:10,
-        num:60
+        num:60,
+        yea:2018,
+        mouth:3,
+        date:9
     },
     {
         name:"人工牛黄甲硝唑胶囊",
         efficacy:"人工牛黄甲硝唑胶囊",
         usedate:2,
-        prodate:"2018-3-30",
         profac:"吉林有限公司",
         unitprice:10,
-        num:60
+        num:60,
+        yea:2018,
+        mouth:6,
+        date:9
     },
     {
         name:"人工牛黄甲硝唑胶囊",
         efficacy:"人工牛黄甲硝唑胶囊",
         usedate:2,
-        prodate:"2018-3-30",
         profac:"吉林有限公司",
         unitprice:10,
-        num:60
+        num:60,
+        yea:2018,
+        mouth:4,
+        date:15
     },
     {
         name:"人工牛黄甲硝唑胶囊",
         efficacy:"人工牛黄甲硝唑胶囊",
         usedate:2,
-        prodate:"2018-3-30",
         profac:"吉林有限公司",
         unitprice:10,
-        num:60
+        num:60,
+        yea:2015,
+        mouth:6,
+        date:7
     },
     {
         name:"人工牛黄甲硝唑胶囊",
         efficacy:"人工牛黄甲硝唑胶囊",
         usedate:2,
-        prodate:"2018-3-30",
         profac:"吉林有限公司",
         unitprice:10,
-        num:60
+        num:60,
+        yea:2018,
+        mouth:1,
+        date:9
     },
     {
         name:"人工牛黄甲硝唑胶囊",
         efficacy:"人工牛黄甲硝唑胶囊",
         usedate:2,
-        prodate:"2018-3-30",
         profac:"吉林有限公司",
         unitprice:10,
-        num:60
+        num:60,
+        yea:2013,
+        mouth:3,
+        date:15
     },
     {
         name:"人工牛黄甲硝唑胶囊",
         efficacy:"人工牛黄甲硝唑胶囊",
         usedate:2,
-        prodate:"2018-3-30",
         profac:"吉林有限公司",
         unitprice:10,
-        num:60
+        num:60,
+        yea:2017,
+        mouth:12,
+        date:9
     }
 ];
 var information =[
@@ -119,3 +141,4 @@ var information =[
     }
 ];
 var infonum = 0;
+var info = new Array();

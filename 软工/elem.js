@@ -1,63 +1,16 @@
-// document.write("<script language=javascript src='number.js'></script>");
-//查找购买药品
-/*
-var Drugs = [
-    {
-        name:"通宣理肺片",
-        efficacy:"解表散寒，宣肺止咳",
-        usedate:3,
-        prodate:"2017-3-9",
-        profac:"北京有限公司",
-        unitprice:25
-    },
-    {
-        name:"氯雷他定片",
-        efficacy:"用于缓解过敏性鼻炎有关的症状",
-        usedate:5,
-        prodate:"2018-4-10",
-        profac:"哈尔滨有限公司",
-        unitprice:30
-    },
-    {
-        name:"新雪片",
-        efficacy:"清热解毒,用于各种热性病之发热",
-        usedate:1,
-        prodate:"2018-7-9",
-        profac:"广州有限公司",
-        unitprice:15
-    },
-    {
-        name:"一清颗粒",
-        efficacy:"清热泻火解毒",
-        usedate:6,
-        prodate:"2017-10-9",
-        profac:"深圳有限公司",
-        unitprice:20
-    },
-    {
-        name:"人工牛黄甲硝唑胶囊",
-        efficacy:"人工牛黄甲硝唑胶囊",
-        usedate:2,
-        prodate:"2018-3-30",
-        profac:"吉林有限公司",
-        unitprice:10
-    }
-];
-*/
 
-console.log(information);
+//查找购买药品
+
+var d = localStorage.getItem("information");
+information = JSON.parse(d);
 var username = document.getElementById("usern");
 var userID = document.getElementById("userid");
-console.log(username);
-console.log(userID);
 for(i = 0 ; i < information.length; i++){
     if(information[i].index == 1){
         username.innerHTML = information[i].name;
         userID.innerHTML = information[i].password;
     }
 }
-console.log(username.innerHTML);
-console.log(userID.innerHTML);
 
 var tuichu = document.getElementsByClassName("tuichu")[0];
 tuichu.onclick = function () {
@@ -102,7 +55,11 @@ function setDiv(item) {
         "                        生产厂家：<span>" + item.profac + "</span>\n" +
         "                    </div>\n" +
         "                    <div class=\"prodate\">\n" +
-        "                        生产日期：<span>" + item.prodate + "</span>\n" +
+        "                        生产日期：<span>" + item.yea + "</span>\n" +
+        "                                -\n" +
+        "                                <span>" + item.mouth + "</span>\n" +
+        "                                -\n" +
+        "                                <span>" + item.date +"</span>" +
         "                    </div>\n" +
         "                    <div class=\"userdate\">\n" +
         "                        使用期限：<span>" + item.usedate + "</span>年\n" +
@@ -111,8 +68,10 @@ function setDiv(item) {
         "                                <i class=\"iconfont icon-htmal5icon29\"></i>\n" +
         "                                <span>加入购物车</span>\n" +
         "                            </div>\n" +
+        "                    <div class=\"buynum\">\n" +
+        "                         购买数量：<input type=\"text\" id =\"buy\">\n" +
+        "                    </div>" +
         "                </div>";
-
     return tutu;
 }
 function setDiv1(item) {
@@ -130,7 +89,11 @@ function setDiv1(item) {
         "                        生产厂家：<span>" + item.profac + "</span>\n" +
         "                    </div>\n" +
         "                    <div class=\"prodate\">\n" +
-        "                        生产日期：<span>" + item.prodate + "</span>\n" +
+        "                        生产日期：<span>" + item.yea + "</span>\n" +
+        "                                -\n" +
+        "                                <span>" + item.mouth + "</span>\n" +
+        "                                -\n" +
+        "                                <span>" + item.date +"</span>" +
         "                    </div>\n" +
         "                    <div class=\"userdate\">\n" +
         "                        使用期限：<span>" + item.usedate + "</span>年\n" +
@@ -153,13 +116,24 @@ function setDiv2(item) {
         "                        生产厂家：<span>" + item.profac + "</span>\n" +
         "                    </div>\n" +
         "                    <div class=\"prodate\">\n" +
-        "                        生产日期：<span>" + item.prodate + "</span>\n" +
+        "                        生产日期：<span>" + item.yea + "</span>\n" +
+        "                                -\n" +
+        "                                <span>" + item.mouth + "</span>\n" +
+        "                                -\n" +
+        "                                <span>" + item.date +"</span>" +
         "                    </div>\n" +
         "                    <div class=\"userdate\">\n" +
         "                        使用期限：<span>" + item.usedate + "</span>年\n" +
         "                    </div>\n" +
+        "                    <div class=\"buynum\">\n" +
+        "                         购买数量：<span>" + item.buy + "</span>盒\n" +
+        "                         <i class=\"iconfont icon-iconfontadd\"></i>\n" +
+        "                         <i class=\"iconfont icon-iconfontmove\"></i>" +
+        "                    </div>" +
+        "                    <div class=\"shanchu\">\n" +
+        "                         <i class=\"iconfont icon-guanbi\"></i>\n" +
+        "                    </div>" +
         "                </div>";
-
     return tutu;
 }
 function get() {
@@ -192,14 +166,29 @@ kan.onclick = function () {
     var action = document.getElementsByClassName("action");
     for(i = 0 ; i < action.length ; i++){
         action[i].onclick = function () {
-            alert("加入成功!");
             var div = this.parentNode;
             console.log(div);
             var name = div.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0].innerHTML;
+            var buynum = div.getElementsByClassName("buynum")[0].getElementsByTagName("input")[0].value;
+            if(buynum == ""){
+                buynum = 1;
+            }
+            console.log(buynum);
             console.log(name);
             for(i = 0 ; i < Drugs.length ; i++){
                 if(name == Drugs[i].name){
-                    Drugs[i].sym = 1;
+                    if(Drugs[i].num < buynum){
+                        alert("数量不足，加入购物车失败！")
+                    }
+                    else{
+                        Drugs[i].sym = 1;
+                        Drugs[i].buy = buynum;
+                        alert("加入成功!");
+                        div.getElementsByClassName("buynum")[0].getElementsByTagName("input")[0].value = "";
+                        var d = JSON.stringify(Drugs);
+                        localStorage.setItem("Drugs",d);
+                        console.log(Drugs);
+                    }
                 }
             }
         };
@@ -235,6 +224,77 @@ gouwu.onclick = function () {
     gouwu.style.background = "#f2f2f2";
     gou.style.display = "block";
     get2();
+    var allmoney = 0 ;
+    var del = document.getElementsByClassName("shanchu");
+    var allprice = document.getElementsByClassName("allprice")[0].getElementsByTagName("span")[0];
+    var add = document.getElementsByClassName("icon-iconfontadd");
+    var delet = document.getElementsByClassName("icon-iconfontmove");
+    for(i = 0 ; i < add.length ; i++){
+        add[i].onclick = function () {
+            var div = this.parentNode.parentNode;
+            var name = div.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0].innerHTML;
+            for(j = 0 ; j < Drugs.length; j++){
+                if(name == Drugs[j].name){
+                    if(Drugs[j].buy == Drugs[j].num){
+                        alert("已达到最大数目!");
+                    }
+                    else{
+                        Drugs[j].buy = Drugs[j].buy - 0;
+                        Drugs[j].buy = Drugs[j].buy + 1;
+                    }
+                }
+                var d = JSON.stringify(Drugs);
+                localStorage.setItem("Drugs",d);
+                console.log(Drugs);
+            }
+        }
+    }
+    for(i = 0 ; i < delet.length ; i++){
+        delet[i].onclick = function () {
+            var div = this.parentNode.parentNode;
+            var name = div.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0].innerHTML;
+            for(j = 0 ; j < Drugs.length ; j++){
+                if(name == Drugs[j].name){
+                    if(Drugs[j].buy == 1){
+                        alert("已达到最小数目!");
+                    }
+                    else{
+                        Drugs[j].buy = Drugs[j].buy - 1;
+                    }
+                }
+            }
+            var d = JSON.stringify(Drugs);
+            localStorage.setItem("Drugs",d);
+            console.log(Drugs);
+        };
+    }
+    for(i = 0 ; i < del.length ; i++){
+        del[i].index = i;
+        del[i].onclick = function () {
+            var div = this.parentNode;
+            console.log(div);
+            var name = div.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0].innerHTML;
+            console.log(name);
+            for(j = 0 ; j < Drugs.length ; j++){
+                if(name == Drugs[j].name){
+                    var xuan = confirm("是否删除?");
+                    if(xuan){
+                        Drugs[j].sym = 0;
+                    }
+                }
+            }
+        };
+        var div = del[i].parentNode;
+        var name = div.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0].innerHTML;
+        for(j = 0 ; j < Drugs.length ; j++){
+            if(name == Drugs[j].name){
+                allmoney = allmoney + Drugs[j].buy * Drugs[j].unitprice;
+            }
+        }
+
+    }
+    allprice.innerHTML = allmoney;
+
 };
 btn.onclick = function () {
     var html1 = '';
@@ -246,9 +306,23 @@ btn.onclick = function () {
             sign = true;
             that = Drugs[i];
             join.onclick = function () {
-                alert("加入成功!");
-                that.sym = 1;
-                console.log(that.sym);
+                var buynum = document.getElementsByClassName("buybuy")[0].getElementsByTagName("input")[0].value;
+                if(buynum == ""){
+                    buynum = 1;
+                }
+                if(that.num < buynum){
+                    alert("数量不足，加入购物车失败！");
+                }
+                else{
+                    that.buy = buynum;
+                    that.sym = 1;
+                    alert("加入成功!");
+                    document.getElementsByClassName("buybuy")[0].getElementsByTagName("input")[0].value = "";
+                    var d = JSON.stringify(Drugs);
+                    localStorage.setItem("Drugs",d);
+                    console.log(Drugs);
+                }
+                console.log(that);
             };
         }
     }
@@ -269,7 +343,44 @@ if(sign == false){
 
 
 var zhifu = document.getElementsByClassName("allprice")[0].getElementsByTagName("button")[0];
-console.log(zhifu);
 zhifu.onclick = function () {
+    var allprice = document.getElementsByClassName("allprice")[0].getElementsByTagName("span")[0];
+    if(allprice.innerHTML == 0){
+        alert("购物车中无商品!");
+    }
+    else{
+        if(confirm("是否支付?")){
+            confirm("选择支付方式:微信支付点击（确定）,支付宝支付点击（取消）");
+            var myDate = new Date();
+            var dui = {
+                shu : new Array(),
+                time: 0
+            };
+            var t = 0 ;
+            var del = document.getElementsByClassName("shanchu");
+            for(i = 0 ; i < del.length ; i++){
+                var div = del[i].parentNode;
+                var name = div.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0].innerHTML;
+                for(j = 0 ; j < Drugs.length ; j++){
+                    if(name == Drugs[j].name){
+                        dui.shu[t] = j;
+                        t++;
+                    }
+                }
+            }
+            dui.time = myDate.toLocaleString();
+            dui.allmoney = allprice.innerHTML;
+            console.log(dui);
+            infonum++;
+            var d = JSON.stringify(infonum);
+            localStorage.setItem("infonum",d);
+            console.log(infonum);
+            d = d - 1;
+            info[d] = dui;
+            console.log(info);
+            var dd = JSON.stringify(info);
+            localStorage.setItem("info",dd);
+        }
 
+    }
 };
