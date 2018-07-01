@@ -48,12 +48,12 @@
             font-size:20px;
             width: 100px;
         }
-        .look,.look1,.look2,.look3,.tupian,.look4{
+        .look,.look1,.look2,.look3,.tupian,.look4,.look5,.look6{
             background: #f2f2f2;
             width: 885px;
             position: relative;
             left:111px;
-            top:-180px;
+            top:-240px;
             display: none;
         }
         .que:hover{
@@ -79,6 +79,14 @@
         .change:hover{
             background: #f2f2f2;
             color:firebrick;
+        }
+        .shouye{
+            background: #f2f2f2;
+            color:firebrick;
+        }
+        .spe1{
+            background: white;
+            color:black;
         }
         .bianxian{
              width: 886px;
@@ -135,13 +143,16 @@
             background: #f2f2f2;
             color:firebrick;
         }
-        .look4 ul{
-
+        .look4-change{
+            border-bottom: 2px solid white;
         }
-        .look4 ul li{
-            font-size:14px;
-            display:inline;
-            float:left;
+        .look4-change div{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size:18px;
+            display: inline;
+            margin-left:20px;
         }
         .dan{
             position:relative;
@@ -166,7 +177,7 @@
             margin-left:20px;
             float:left;
         }
-        .allmoney{
+        .allmoney,.paypeople{
             padding-top:10px;
             margin-left:20px;
         }
@@ -174,8 +185,9 @@
             padding-top:10px;
             float:left;
             margin-left:20px;
+            margin-bottom:10px;
         }
-        .allmoney span,.dan-date span{
+        .allmoney span,.dan-date span,.paypeople span{
             font-size:14px;
         }
         .decision{
@@ -183,6 +195,51 @@
             float:right;
             margin-right:10px;
             margin-bottom:5px;
+        }
+        .change-1{
+            margin-top:5px;
+            margin-left:20px;
+            padding-bottom:5px;
+            overflow: hidden;
+        }
+        .change-2{
+            margin-top:5px;
+            margin-left:20px;
+            padding-bottom:5px;
+            overflow: hidden;
+        }
+        .change-1 button{
+            float:right;
+            margin-right:10px;
+            width: 100px;
+        }
+        .change-2 button{
+            margin-left:10px;
+            width: 50px;
+        }
+        .change-1{
+            display: block;
+        }
+        .change-2{
+            display: none;
+        }
+        .yao{
+            margin-left:-10px;
+        }
+        .gai{
+            margin-top:10px;
+            margin-left:10px;
+        }
+        .gai button{
+            float:right;
+            margin-right:10px;
+            width: 100px;
+        }
+        .look4-1{
+            color:firebrick;
+        }
+        .look4-2{
+            color:black;
         }
     </style>
 </head>
@@ -204,6 +261,8 @@
             <li class="que">缺货药品</li>
             <li class="fan">返厂药品</li>
             <li class="change">更改信息</li>
+            <li class="seeinfo1">完成订单</li>
+            <li class="seeinfo2">退回订单</li>
         </ul>
         <div class="tupian">
             <img src="image/首页.jpg" alt="">
@@ -246,6 +305,49 @@
                         购买数量：<span>0</span>盒
                     </div>
                 </div>
+                <div class="allmoney">
+                    总价格: <span>123456</span>
+                </div>
+                <div class="paypeople">
+                    购买人: <span>123456</span>
+                </div>
+                <div class="dan-date">
+                    支付时间: <span>123456489</span>
+                </div>
+                <div class="decision">
+                    <button>完成订单</button>
+                    <button>退回订单</button>
+                </div>
+            </div>
+        </div>
+        <div class="look2"></div>
+        <div class="look3"></div>
+        <div class="look4">
+            <div class="look4-change">
+                <div class="look4-1">增加药品信息</div>
+                <div class="look4-2">更改药品信息</div>
+            </div>
+            <div class="change-1">
+                药品名称：<input type="text" id="Dname"><br>
+                药品单价：<input type="text" id="Dprice"><br>
+                药品数量：<input type="text" id="Dnum"><br>
+                药品功效：<input type="text" id="Deff"><br>
+                生产厂家：<input type="text" id="Dsite"><br>
+                使用期限：<input type="text" id="Dusedate"><br>
+                生产年份：<input type="text" id="Dyear"><br>
+                生产月份：<input type="text" id="Dmouth"><br>
+                生产日份：<input type="text" id="Ddate"><br>
+                <button>提交</button>
+            </div>
+            <div class="change-2">
+                输入要更改的药品名称：<input type="text">
+                <button>搜索</button>
+                <div class="yao"></div>
+                <div class="gai"></div>
+            </div>
+        </div>
+        <div class="look5">
+            <div class="dan">
                 <div class="bianxian1" >
                     <div class="Dname1">
                         药品名：<span>哈哈哈123</span>
@@ -269,14 +371,30 @@
                 </div>
             </div>
         </div>
-        <div class="look2"></div>
-        <div class="look3"></div>
-        <div class="look4">
-            <ul>
-                <li>增加</li>
-                <li>删除</li>
-                <li>更改</li>
-            </ul>
+        <div class="look6">
+            <div class="dan">
+                <div class="bianxian1" >
+                    <div class="Dname1">
+                        药品名：<span>哈哈哈123</span>
+                    </div>
+                    <div class="price1">
+                        单价：<span>lililil</span>元
+                    </div>
+                    <div class="buynum1">
+                        购买数量：<span>0</span>盒
+                    </div>
+                </div>
+                <div class="allmoney">
+                    总价格: <span>123456</span>
+                </div>
+                <div class="dan-date">
+                    支付时间: <span>123456489</span>
+                </div>
+                <div class="decision">
+                    <button>完成订单</button>
+                    <button>退回订单</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -45,10 +45,10 @@ var Drugs = [
         date:20
     },
     {
-        name:"人工牛黄甲硝唑胶囊",
-        efficacy:"人工牛黄甲硝唑胶囊",
+        name:"甲钴胺注射液",
+        efficacy:"因缺乏维生素B12引起的巨幼红细胞性贫血的治疗",
         usedate:2,
-        profac:"吉林有限公司",
+        profac:"福建金山生物制药股份有限公司",
         unitprice:10,
         num:60,
         yea:2018,
@@ -67,10 +67,10 @@ var Drugs = [
         date:9
     },
     {
-        name:"人工牛黄甲硝唑胶囊",
-        efficacy:"人工牛黄甲硝唑胶囊",
-        usedate:2,
-        profac:"吉林有限公司",
+        name:"六味地黄丸",
+        efficacy:"头晕耳鸣，腰膝酸软",
+        usedate:5,
+        profac:"北京同仁堂科技发展股份有限公司制药厂",
         unitprice:10,
         num:60,
         yea:2018,
@@ -78,10 +78,10 @@ var Drugs = [
         date:15
     },
     {
-        name:"人工牛黄甲硝唑胶囊",
-        efficacy:"人工牛黄甲硝唑胶囊",
-        usedate:2,
-        profac:"吉林有限公司",
+        name:"乳果糖口服溶液",
+        efficacy:"用于治疗高血氨症及由血氨升高引起的疾病；用于治疗慢性功能性便秘",
+        usedate:1,
+        profac:"丹东康复制药有限公司",
         unitprice:10,
         num:60,
         yea:2015,
@@ -89,10 +89,10 @@ var Drugs = [
         date:7
     },
     {
-        name:"人工牛黄甲硝唑胶囊",
-        efficacy:"人工牛黄甲硝唑胶囊",
-        usedate:2,
-        profac:"吉林有限公司",
+        name:"维生素E软胶囊",
+        efficacy:"用于未进食强化奶粉或有严重脂肪吸收不良母亲所生的新生儿、早产儿、低出生体重儿",
+        usedate:1,
+        profac:"浙江医药股份有限公司新昌制药厂",
         unitprice:10,
         num:60,
         yea:2018,
@@ -100,23 +100,23 @@ var Drugs = [
         date:9
     },
     {
-        name:"人工牛黄甲硝唑胶囊",
-        efficacy:"人工牛黄甲硝唑胶囊",
+        name:"迪巧儿童维D钙咀嚼片",
+        efficacy:"高钙血症、高尿酸血症、含钙肾结石或有肾结石病史者禁用",
         usedate:2,
-        profac:"吉林有限公司",
-        unitprice:10,
-        num:60,
+        profac:"安士制药(中山)有限公司",
+        unitprice:15,
+        num:30,
         yea:2013,
         mouth:3,
         date:15
     },
     {
-        name:"人工牛黄甲硝唑胶囊",
-        efficacy:"人工牛黄甲硝唑胶囊",
-        usedate:2,
+        name:"双黄连口服液",
+        efficacy:"疏风解表，清热解毒、用于外感风热所致的感冒，症见发热、咳嗽、咽痛",
+        usedate:1,
         profac:"吉林有限公司",
         unitprice:10,
-        num:60,
+        num:20,
         yea:2017,
         mouth:12,
         date:9

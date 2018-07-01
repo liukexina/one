@@ -1,24 +1,16 @@
 //验证身份
-/*var information =[
-    {
-        name:"刘可新",
-        password:230621199808245165
-    },
-    {
-        name:"王文竹",
-        password:230621199808245166
-    },
-    {
-        name:"王习文",
-        password:230621199808245167
-    }
-];*/
+
 var username = document.getElementById("username");
 var password = document.getElementById("password");
 var loginBtn = document.getElementById("loginA");
+var loginBtn0 = document.getElementById("loginB");
 var form = document.getElementsByClassName("formhead")[0];
 var time = 0;
 var state = false;
+loginBtn0.onclick = function () {
+    username.value = "";
+    password.value = "";
+};
 loginBtn.onclick = function () {
     if(time == 3){
         alert("登录次数太多，登录失效！")

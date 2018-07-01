@@ -3,6 +3,10 @@
 
 var d = localStorage.getItem("information");
 information = JSON.parse(d);
+
+var dd = localStorage.getItem("Drugs");
+Drugs = JSON.parse(dd);
+
 var username = document.getElementById("usern");
 var userID = document.getElementById("userid");
 for(i = 0 ; i < information.length; i++){
@@ -11,9 +15,14 @@ for(i = 0 ; i < information.length; i++){
         userID.innerHTML = information[i].password;
     }
 }
+console.log(information);
 
 var tuichu = document.getElementsByClassName("tuichu")[0];
 tuichu.onclick = function () {
+    for(i = 0 ; i < information.length; i++){
+        information[i].index=0;
+    }
+    console.log(information);
     window.location.href="首页.html";
 };
 var Dname = document.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0];
@@ -156,7 +165,7 @@ function get2() {
 get();
 kan.onclick = function () {
     main.style.display = "none";
-    shouye.style.background = "";
+    shouye.style.backgroundColor = "white";
     zhao.style.background = "";
     sou.style.display = "";
     gouwu.style.background = "";
@@ -178,16 +187,14 @@ kan.onclick = function () {
             for(i = 0 ; i < Drugs.length ; i++){
                 if(name == Drugs[i].name){
                     if(Drugs[i].num < buynum){
-                        alert("数量不足，加入购物车失败！")
+                        div.getElementsByClassName("buynum")[0].getElementsByTagName("input")[0].value = "";
+                        alert("数量不足，加入购物车失败！");
                     }
                     else{
                         Drugs[i].sym = 1;
                         Drugs[i].buy = buynum;
                         alert("加入成功!");
                         div.getElementsByClassName("buynum")[0].getElementsByTagName("input")[0].value = "";
-                        var d = JSON.stringify(Drugs);
-                        localStorage.setItem("Drugs",d);
-                        console.log(Drugs);
                     }
                 }
             }
@@ -206,7 +213,7 @@ shouye.onclick = function () {
 };
 zhao.onclick = function () {
     main.style.display = "none";
-    shouye.style.background = "";
+    shouye.style.backgroundColor = "white";
     kan.style.background = "";
     look.style.display = "none";
     gouwu.style.background = "";
@@ -216,7 +223,7 @@ zhao.onclick = function () {
 };
 gouwu.onclick = function () {
     main.style.display = "none";
-    shouye.style.background = "";
+    shouye.style.backgroundColor = "white";
     kan.style.background = "";
     look.style.display = "none";
     zhao.style.background = "";
@@ -243,9 +250,6 @@ gouwu.onclick = function () {
                         Drugs[j].buy = Drugs[j].buy + 1;
                     }
                 }
-                var d = JSON.stringify(Drugs);
-                localStorage.setItem("Drugs",d);
-                console.log(Drugs);
             }
         }
     }
@@ -263,9 +267,6 @@ gouwu.onclick = function () {
                     }
                 }
             }
-            var d = JSON.stringify(Drugs);
-            localStorage.setItem("Drugs",d);
-            console.log(Drugs);
         };
     }
     for(i = 0 ; i < del.length ; i++){
@@ -312,6 +313,7 @@ btn.onclick = function () {
                 }
                 if(that.num < buynum){
                     alert("数量不足，加入购物车失败！");
+                    document.getElementsByClassName("buybuy")[0].getElementsByTagName("input")[0].value = "";
                 }
                 else{
                     that.buy = buynum;
@@ -354,6 +356,7 @@ zhifu.onclick = function () {
             var myDate = new Date();
             var dui = {
                 shu : new Array(),
+                shu1:new Array(),
                 time: 0
             };
             var t = 0 ;
@@ -363,13 +366,20 @@ zhifu.onclick = function () {
                 var name = div.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0].innerHTML;
                 for(j = 0 ; j < Drugs.length ; j++){
                     if(name == Drugs[j].name){
+                        dui.shu1[t] = Drugs[j].buy;
                         dui.shu[t] = j;
                         t++;
                     }
                 }
             }
+            for(i = 0 ; i < information.length ; i ++){
+                if(information[i].index == 1){
+                    dui.people = information[i].name;
+                }
+            }
             dui.time = myDate.toLocaleString();
             dui.allmoney = allprice.innerHTML;
+            dui.sign = 1;
             console.log(dui);
             infonum++;
             var d = JSON.stringify(infonum);
