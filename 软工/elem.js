@@ -43,7 +43,6 @@ var zhao = document.getElementsByClassName("zhao")[0];
 var sou = document.getElementsByClassName("sou")[0];
 var gouwu = document.getElementsByClassName("gouwuche")[0];
 
-
 var join = document.getElementsByClassName("join")[0];
 var btn = document.getElementById("btn");
 var intname = document.getElementById("intname");
