@@ -1,5 +1,7 @@
 //验证身份
 
+
+
 var username = document.getElementById("username");
 var password = document.getElementById("password");
 var loginBtn = document.getElementById("loginA");

@@ -101,6 +101,8 @@ seeinfo.onclick = function () {
             for(j = 0 ; j < info.length ; j++){
                 if(time == info[j].time){
                     info[j].sign = 0;
+                    var d = JSON.stringify(info);
+                    localStorage.setItem("info",d);
                     console.log(info[j].sign);
                     for(t = 0 ; t < info[j].shu.length ; t++){
                         Drugs[info[j].shu[t]].num = Drugs[info[j].shu[t]].num - info[j].shu1[t];
@@ -122,12 +124,17 @@ seeinfo.onclick = function () {
             for(j = 0 ; j < info.length ; j++){
                 if(time == info[j].time){
                     info[j].sign = -1;
+                    var d = JSON.stringify(info);
+                    localStorage.setItem("info",d);
                     console.log(info[j].sign);
                     get2();
                 }
             }
         }
     }
+
+    var d = JSON.stringify(info);
+    localStorage.setItem("info",d);
 
     var add = document.getElementsByClassName("look4-1")[0];
     var del = document.getElementsByClassName("look4-2")[0];

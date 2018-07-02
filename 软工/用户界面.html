@@ -42,7 +42,7 @@
         .select{
             height:50px;
         }
-        .kan,.zhao,.shouye,.gouwuche{
+        .kan,.zhao,.shouye,.gouwuche,.seeinfo{
             height: 50px;
             line-height: 50px;
             float:left;
@@ -60,6 +60,42 @@
         }
         .look2{
             width: 996px;
+        }
+        .seelook{
+            width: 996px;
+            height: 500px;
+            position: absolute;
+            display: none;
+            left:-1px;
+            border: 1px solid #888;
+            background: white;
+        }
+        .seelook ul{
+            list-style: none;
+            padding-left:20px;
+            margin:10px 0;
+        }
+        .seelook ul li{
+            font-size:14px;
+            padding-left:5px;
+            height: 40px;
+            line-height: 40px;
+            width: 80px;
+            background: #f2f2f2;
+            margin:0;
+        }
+        .info-one,.info-two,.info-three{
+            width: 880px;
+            background: #f2f2f2;
+            position: absolute;
+            top:10px;
+            left:110px;
+        }
+        .info-one{
+            display: block;
+        }
+        .info-two,.info-three{
+            display: none;
         }
         .sou{
             width: 996px;
@@ -83,6 +119,9 @@
         .shouye:hover{
             background: #f2f2f2;
         }
+        .seeinfo:hover{
+            background: #f2f2f2;
+        }
         .zhao:hover{
             background: #f2f2f2;
         }
@@ -93,6 +132,9 @@
             color:firebrick;
         }
         .shouye span:hover{
+            color:firebrick;
+        }
+        .seeinfo span:hover{
             color:firebrick;
         }
         .spe span:hover{
@@ -241,6 +283,46 @@
             border-radius:50px;
             color:white;
         }
+        .dan{
+            position:relative;
+            left:5px;
+            top:5px;
+            overflow: hidden;
+            background: white;
+            width: 870px;
+            border: 1px solid #888;
+        }
+        .bianxian1{
+            width: 870px;
+            font-size: 14px;
+            position:relative;
+            padding-top:10px;
+            overflow: hidden;
+        }
+        .bianxian1 div {
+            line-height:20px;
+        }
+        .Dname1,.price1,.buynum1{
+            margin-left:20px;
+            float:left;
+        }
+        .allmoney,.paypeople{
+            height: 20px;
+            line-height:20px;
+            padding-top:10px;
+            margin-left:20px;
+        }
+        .dan-date{
+            height: 20px;
+            line-height:20px;
+            padding-top:10px;
+            float:left;
+            margin-left:20px;
+            margin-bottom:10px;
+        }
+        .allmoney span,.dan-date span,.paypeople span{
+            font-size:14px;
+        }
     </style>
 </head>
 <body>
@@ -345,10 +427,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="seeinfo">
+                    <div class="spe">
+                        <span>查看订单</span>
+                    </div>
+                    <div class="seelook">
+                        <ul>
+                            <li class="one" style="background:palevioletred;">未处理订单</li>
+                            <li class="two">被退回订单</li>
+                            <li class="three">已审核订单</li>
+                        </ul>
+                        <div class="info-one"></div>
+                        <div class="info-two"></div>
+                        <div class="info-three"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script src="number.js"></script>
+    <script src="num.js"></script>
     <script src="elem.js"></script>
 
 </body>
