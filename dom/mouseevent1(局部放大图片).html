@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #div1{
+            position: relative;
+            height: 400px;
+            width: 400px;
+        }
+        .tu{
+            height: 400px;
+            width: 400px;
+        }
+        #box{
+            height:100px;
+            width: 100px;
+            background: whitesmoke;
+            position:absolute;
+            opacity: 0.6;
+            top:0;
+            left:0
+        }
+        #div2{
+            height: 400px;
+            width: 400px;
+            overflow: hidden;
+            position:relative;
+            top:-405px;
+            left:450px;
+        }
+       #div2 img{
+           height: 1600px;
+           width: 1600px;
+           position: absolute;
+           top:0;
+           left:0;
+       }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <img src="../图片/123.jpg" alt="" class="tu">
+        <div id="box">
+
+        </div>
+    </div>
+
+    <div id="div2">
+        <img src="../图片/123.jpg" alt="">
+    </div>
+    <script>
+        var oBox = document.getElementById("box");
+        var div1 = document.getElementById("div1");
+        var img0 = document.getElementById("div2").getElementsByTagName("img")[0];
+
+        div1.onmouseover = function (e) {
+            console.log("按下");
+            document.onmousemove = function (e) {
+                oBox.style.top = e.clientY  - 50 + "px";
+                oBox.style.left = e.clientX - 50 + "px";
+                img0.style.top =  - oBox.offsetTop * 4 + "px";
+                img0.style.left = - oBox.offsetLeft * 4 + "px";
+                console.log(img0.offsetLeft);
+                if(oBox.offsetTop < 0){
+                    oBox.style.top = 0;
+                    img0.style.top = 0;
+                }
+                else if(oBox.offsetTop > 300){
+                    oBox.style.top = 300 + "px";
+                    img0.style.top = - 1200 + "px";
+                }
+                if(oBox.offsetLeft < 0 ){
+                    oBox.style.left = 0;
+                    img0.style.left = 0;
+                }
+                else if(oBox.offsetLeft > 300){
+                    oBox.style.left = 300 + "px";
+                    img0.style.left = - 1200 + "px"
+                }
+            }
+        };
+        div1.onmouseout = function () {
+            document.onmousemove = null;
+            console.log("松开");
+        }
+
+
+    </script>
+</body>
+</html>

@@ -113,13 +113,20 @@
 /*轮播图*/
 .slide-box{
     position:relative;
+    height: 500px;
 }
 .slide-item{
     position:absolute;
     left:0;
     top:0;
     width:100%;
-    z-index:-1;
+    z-index:-2;
+    transition: all 1s ease;
+    opacity: 0;
+}
+.active{
+    z-index: -1;
+    opacity: 1;
 }
 .slide-item1{
     background:#1da3ec;
@@ -141,7 +148,7 @@
 }
 .img-ul{
     position:absolute;
-    bottom:-480px;
+    bottom:20px;
     right:600px;
     overflow: hidden;
 }
@@ -171,6 +178,14 @@
 }
 
 /*category*/
+.category-type{
+    position: absolute;
+    top:200px;
+    left:150px;
+    width: 200px;
+    z-index: 2;
+    /*pointer-events:none;    !*当前层所有点击都失效*!*/
+}
 .category-title{
     height:36px;
     line-height: 36px;
@@ -602,8 +617,8 @@
     display:block;
 }
 .mart-concent-item a{
-    height: 225px;
-    width: 462px;
+    /*height: 225px;
+    width: 462px;*/
     display: block;
 }
 .mart-concent-item-a img{

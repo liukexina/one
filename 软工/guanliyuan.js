@@ -362,6 +362,148 @@ change.onclick = function () {
     look2.style.display = "none";
     tupian.style.display = "none";
 
+    var add = document.getElementsByClassName("look4-1")[0];
+    var del = document.getElementsByClassName("look4-2")[0];
+    var change1 = document.getElementsByClassName("change-1")[0];
+    var change2 = document.getElementsByClassName("change-2")[0];
+    var btn = change1.getElementsByTagName("button")[0];
+    btn.onclick = function () {
+        if(document.getElementById("Dname").value && document.getElementById("Deff").value && document.getElementById("Dusedate").value && document.getElementById("Dsite").value &&
+            document.getElementById("Dprice").value && document.getElementById("Dyear").value && document.getElementById("Dmouth").value && document.getElementById("Ddate").value &&
+            document.getElementById("Dnum").value){
+            console.log("haha");
+            if(confirm("是否提交?")){
+                var le = Drugs.length;
+                var yao = {
+                    name:document.getElementById("Dname").value,
+                    efficacy:document.getElementById("Deff").value,
+                    usedate:document.getElementById("Dusedate").value,
+                    profac:document.getElementById("Dsite").value,
+                    unitprice:document.getElementById("Dprice").value,
+                    yea:document.getElementById("Dyear").value,
+                    mouth:document.getElementById("Dmouth").value,
+                    date:document.getElementById("Ddate").value,
+                    num:document.getElementById("Dnum").value
+                };
+                Drugs[le] = yao;
+                var input = change1.getElementsByTagName("input");
+                for(i = 0 ; i < input.length ; i++){
+                    input[i].value = "";
+                }
+                var d = JSON.stringify(Drugs);
+                localStorage.setItem("Drugs",d);
+            }
+        }
+        else{
+            alert("填写不完整！");
+        }
+    };
+    add.onclick = function () {
+        add.style.color = "firebrick";
+        del.style.color = "black";
+        change1.style.display = "block";
+        change2.style.display = "none";
+        var btn = change1.getElementsByTagName("button")[0];
+        console.log(btn);
+        btn.onclick = function () {
+            if(document.getElementById("Dname").value && document.getElementById("Deff").value && document.getElementById("Dusedate").value && document.getElementById("Dsite").value &&
+                document.getElementById("Dprice").value && document.getElementById("Dyear").value && document.getElementById("Dmouth").value && document.getElementById("Ddate").value &&
+                document.getElementById("Dnum").value){
+                console.log("haha");
+                if(confirm("是否提交?")){
+                    var le = Drugs.length;
+                    var yao = {
+                        name:document.getElementById("Dname").value,
+                        efficacy:document.getElementById("Deff").value,
+                        usedate:document.getElementById("Dusedate").value,
+                        profac:document.getElementById("Dsite").value,
+                        unitprice:document.getElementById("Dprice").value,
+                        yea:document.getElementById("Dyear").value,
+                        mouth:document.getElementById("Dmouth").value,
+                        date:document.getElementById("Ddate").value,
+                        num:document.getElementById("Dnum").value
+                    };
+                    Drugs[le] = yao;
+                    var input = change1.getElementsByTagName("input");
+                    for(i = 0 ; i < input.length ; i++){
+                        input[i].value = "";
+                    }
+                    var d = JSON.stringify(Drugs);
+                    localStorage.setItem("Drugs",d);
+                }
+            }
+            else{
+                alert("填写不完整！");
+            }
+        };
+    };
+    del.onclick = function () {
+        del.style.color = "firebrick";
+        add.style.color ="black";
+        change2.style.display = "block";
+        change1.style.display = "none";
+        var btn = change2.getElementsByTagName("button")[0];
+        btn.onclick = function () {
+            var sign = 0;
+            var name = change2.getElementsByTagName("input")[0].value;
+            var yao = document.getElementsByClassName("yao")[0];
+            var gai = document.getElementsByClassName("gai")[0];
+            console.log(name);
+            for(i = 0 ; i < Drugs.length ; i++){
+                if(name == Drugs[i].name){
+                    h = setDiv(Drugs[i]);
+                    yao.innerHTML = h;
+                    gai.innerHTML = set();
+                    sign = 1;
+                    change2.getElementsByTagName("input")[0].value = "";
+                    var btn = gai.getElementsByTagName("button")[0];
+                    that = Drugs[i];
+                    btn.onclick = function () {
+                        if(confirm("是否提交?")){
+                            if(document.getElementById("Dname1").value){
+                                that.name = document.getElementById("Dname1").value;
+                            }
+                            if(document.getElementById("Deff1").value){
+                                that.efficacy = document.getElementById("Deff1").value;
+                            }
+                            if(document.getElementById("Dusedate1").value){
+                                that.usedate = document.getElementById("Dusedate1").value;
+                            }
+                            if(document.getElementById("Dsite1").value){
+                                that.profac = document.getElementById("Dsite1").value;
+                            }
+                            if(document.getElementById("Dprice1").value){
+                                that.unitprice = document.getElementById("Dprice1").value;
+                            }
+                            if(document.getElementById("Dyear1").value){
+                                that.yea = document.getElementById("Dyear1").value;
+                            }
+                            if(document.getElementById("Dmouth1").value){
+                                that.mouth = document.getElementById("Dmouth1").value;
+                            }
+                            if(document.getElementById("Ddate1").value){
+                                that.date = document.getElementById("Ddate1").value;
+                            }
+                            if(document.getElementById("Dnum1").value){
+                                that.num = document.getElementById("Dnum1").value;
+                            }
+                            var input = gai.getElementsByTagName("input");
+                            for(i = 0 ; i < input.length ; i++){
+                                input[i].value = "";
+                            }
+                            var d = JSON.stringify(Drugs);
+                            localStorage.setItem("Drugs",d);
+                        }
+                    };
+                }
+            }
+            if(sign == 0){
+                alert("查询不到该药品!");
+                change2.getElementsByTagName("input")[0].value = "";
+            }
+        }
+    };
+
 };
 
 
@@ -406,12 +548,17 @@ function get() {
 }
 function get2() {
     var html = "";
+    var num = 0;
     for(i = 0;i<info.length;i++){
         if(info[i].sign == 1){
+            num++;
             html += setInfo(info[i])
         }
     }
     look1.innerHTML = html;
+    if(num == 0){
+        look1.innerHTML = "无订单可处理";
+    }
 }
 function setInfo(item){
     var h = "";
@@ -488,103 +635,3 @@ function  set() {
 get();
 
 
-var add = document.getElementsByClassName("look4-1")[0];
-var del = document.getElementsByClassName("look4-2")[0];
-var change1 = document.getElementsByClassName("change-1")[0];
-var change2 = document.getElementsByClassName("change-2")[0];
-del.onclick = function () {
-    del.style.color = "firebrick";
-    add.style.color ="black";
-    change2.style.display = "block";
-    change1.style.display = "none";
-    var btn = change2.getElementsByTagName("button")[0];
-    btn.onclick = function () {
-        var sign = 0;
-        var name = change2.getElementsByTagName("input")[0].value;
-        var yao = document.getElementsByClassName("yao")[0];
-        var gai = document.getElementsByClassName("gai")[0];
-        console.log(name);
-        for(i = 0 ; i < Drugs.length ; i++){
-            if(name == Drugs[i].name){
-                h = setDiv(Drugs[i]);
-                yao.innerHTML = h;
-                gai.innerHTML = set();
-                sign = 1;
-                change2.getElementsByTagName("input")[0].value = "";
-                var btn = gai.getElementsByTagName("button")[0];
-                that = Drugs[i];
-                btn.onclick = function () {
-                    if(confirm("是否提交?")){
-                        if(document.getElementById("Dname1").value){
-                            that.name = document.getElementById("Dname1").value;
-                        }
-                        if(document.getElementById("Deff1").value){
-                            that.efficacy = document.getElementById("Deff1").value;
-                        }
-                        if(document.getElementById("Dusedate1").value){
-                            that.usedate = document.getElementById("Dusedate1").value;
-                        }
-                        if(document.getElementById("Dsite1").value){
-                            that.profac = document.getElementById("Dsite1").value;
-                        }
-                        if(document.getElementById("Dprice1").value){
-                            that.unitprice = document.getElementById("Dprice1").value;
-                        }
-                        if(document.getElementById("Dyear1").value){
-                            that.yea = document.getElementById("Dyear1").value;
-                        }
-                        if(document.getElementById("Dmouth1").value){
-                            that.mouth = document.getElementById("Dmouth1").value;
-                        }
-                        if(document.getElementById("Ddate1").value){
-                            that.date = document.getElementById("Ddate1").value;
-                        }
-                        if(document.getElementById("Dnum1").value){
-                            that.num = document.getElementById("Ddate1").value;
-                        }
-                        var input = gai.getElementsByTagName("input");
-                        for(i = 0 ; i < input.length ; i++){
-                            input[i].value = "";
-                        }
-                        var d = JSON.stringify(Drugs);
-                        localStorage.setItem("Drugs",d);
-                    }
-                };
-            }
-        }
-        if(sign == 0){
-            alert("查询不到该药品!");
-            change2.getElementsByTagName("input")[0].value = "";
-        }
-    }
-};
-add.onclick = function () {
-    add.style.color = "firebrick";
-    del.style.color = "black";
-    change1.style.display = "block";
-    change2.style.display = "none";
-    var btn = change1.getElementsByTagName("button")[0];
-    btn.onclick = function () {
-        if(confirm("是否提交?")){
-            var le = Drugs.length;
-            var yao = {
-                name:document.getElementById("Dname").value,
-                efficacy:document.getElementById("Deff").value,
-                usedate:document.getElementById("Dusedate").value,
-                profac:document.getElementById("Dsite").value,
-                unitprice:document.getElementById("Dprice").value,
-                yea:document.getElementById("Dyear").value,
-                mouth:document.getElementById("Dmouth").value,
-                date:document.getElementById("Ddate").value,
-                num:document.getElementById("Dnum").value
-            };
-            Drugs[le] = yao;
-            var input = change1.getElementsByTagName("input");
-            for(i = 0 ; i < input.length ; i++){
-                input[i].value = "";
-            }
-            var d = JSON.stringify(Drugs);
-            localStorage.setItem("Drugs",d);
-        }
-    };
-};

@@ -1,9 +1,7 @@
 var imgDiv = document.getElementsByClassName("slide-box")[0];
-console.log(imgDiv);
-var imgX= imgDiv.getElementsByTagName("div");
-console.log(imgX);
+// var imgX= imgDiv.getElementsByTagName("div");
 var confin = imgDiv.getElementsByTagName("li");
-console.log(confin);
+/*
 for(i = 0 ; i <confin.length ; i ++){
     confin[i].index = i;
     confin[i].onmouseover = function () {
@@ -13,7 +11,6 @@ for(i = 0 ; i <confin.length ; i ++){
             confin[j].style.opacity = "1";
         }
         imgX[this.index].style.display = "block";
-        // confin[this.index].className = "special-li";
         confin[this.index].style.backgroundColor = "#fff";
         confin[this.index].style.opacity = "0.6";
     }
@@ -36,3 +33,44 @@ function change() {
     },3000);
 }
 change();
+*/
+var aSP = document.querySelectorAll(".slide-item");
+var box = document.getElementsByClassName("slide-box")[0];
+var index = 0;
+var isRun = true;
+for(i = 0 ; i <confin.length ; i++){
+    confin[i].index = i;
+    confin[i].onmouseover = function () {
+        for(j = 0 ; j < confin.length ; j ++){
+            confin[j].className = "ul-li";
+        }
+        aSP[index].classList.remove("active");
+        index = this.index;
+        aSP[index].classList.add("active");
+        confin[index].className = "special-li";
+    }
+}
+function change() {
+    setInterval(function(){
+        if(isRun){
+            for(i = 0 ; i < confin.length ; i ++){
+                confin[i].className = "ul-li";
+            }
+            aSP[index].classList.remove("active");
+            if(index==5){
+                index = -1;
+            }
+            aSP[++index].classList.add("active");
+            confin[index].className = "special-li";
+        }
+    },2000);
+}
+
+change();
+
+box.onmouseover = function () {
+    isRun = false;
+};
+box.onmouseout = function () {
+    isRun = true;
+};

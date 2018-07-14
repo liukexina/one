@@ -8,8 +8,21 @@ Drugs = JSON.parse(dd);
 
 var ddd = localStorage.getItem("info");
 info = JSON.parse(ddd);
+console.log(info);
 
 
+
+for(i = 0 ; i < information.length ; i++){
+    if(information[i].index == 1){
+        for(j = 0 ; j < info.length ; j++){
+            if(info[j].people == information[i].name){
+                if(info[j].sign == 1){
+                    console.log(info[j]);
+                }
+            }
+        }
+    }
+}
 /*
 var Drugs = [
     {
@@ -155,15 +168,6 @@ tuichu.onclick = function () {
     window.location.href="首页.html";
 };
 
-for(i = 0 ; i < information.length ; i++){
-    if(information[i].index == 1){
-        for(j = 0 ; j < info.length ; j++){
-            if(info[j].people == information[i].name){
-                console.log(info[j]);
-            }
-        }
-    }
-}
 
 var Dname = document.getElementsByClassName("Dname")[0].getElementsByTagName("span")[0];
 var Deff = document.getElementsByClassName("Deff")[0].getElementsByTagName("span")[0];
@@ -353,7 +357,7 @@ function get3() {
                 if(info[j].people == information[i].name){
                     if(info[j].sign == 0){
                         num++;
-                        html += setInfo1(info[i]);
+                        html += setInfo1(info[j]);
                     }
                 }
             }
@@ -373,7 +377,7 @@ function get4() {
                 if(info[j].people == information[i].name){
                     if(info[j].sign == -1){
                         num++;
-                        html += setInfo1(info[i]);
+                        html += setInfo1(info[j]);
                     }
                 }
             }
@@ -393,7 +397,7 @@ function get5() {
                 if(info[j].people == information[i].name){
                     if(info[j].sign == 1){
                         num++;
-                        html += setInfo1(info[i]);
+                        html += setInfo1(info[j]);
                     }
                 }
             }
