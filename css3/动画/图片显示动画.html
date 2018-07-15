@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        html{
+            height: 100%;
+            background: #fffff2;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        img{
+            height: 300px;
+            width: 500px;
+        }
+        .box{
+            height: 300px;
+            width: 500px;
+            position: relative;
+        }
+        .box div{
+            position: absolute;
+            top:0;
+            left:0;
+            border: 10px solid #f2f2f2;
+            height: 300px;
+            width: 500px;
+            transition: all 1s ease;
+            box-shadow: 2px 2px 8px 0 rgba(0,0,0,.5);
+        }
+        #box1{
+            transform: rotate(15deg);
+        }
+        #box2{
+            transform: rotate(-35deg);
+        }
+        #box1:hover,#box2:hover{
+            transform: rotate(0deg) scale(1.5);
+            box-shadow: 4px 4px 8px 0 rgba(0,0,0,.5);
+            z-index:1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="box1">
+            <img src="ma1.jpg" alt="">
+        </div>
+        <div id="box2">
+            <img src="ma2.jpg" alt="">
+        </div>
+    </div>
+
+</body>
+</html>

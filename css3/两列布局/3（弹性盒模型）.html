@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            display: flex;    /*弹性盒模型*/
+        }
+        .box1{
+            width:200px;
+            height: 500px;
+            background-color: blue;
+        }
+        .box2{
+            background: red;
+            height: 500px;
+            flex-grow: 1;    /*占父级剩余空间的100%*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <!--使用弹性盒模型布局。要向父级加display:flex 然后将该元素加入flex-grow：1；-->
+</body>
+</html>

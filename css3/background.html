@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 1300px;
+            height: 1300px;
+            border:10px solid rgba(0,0,0,.5);
+
+            background-image:url("../图片/567.jpg"),url("../图片/123.jpg");  /* 从border内边开始放入背景图片*/
+            /*图片位置可以用background-position定位，多个图片也可以*/
+            background-position: 1000px 200px,100px 300px;
+            background-repeat: no-repeat;  /* 是否平铺图片*/
+
+            /*background-size:100px 200px;    !*高度宽度百分比数值都可以  cover完全覆盖  contain等比例放缩图片，有一条边到达页面就停止扩放  auto默认值*!*/
+            /*background-size:cover;    !*图片不平铺时*!*/
+            padding:50px;
+
+           /* background-origin:border-box;
+            background-clip: content-box   !*从content裁剪*!;*/
+/*
+            background-origin的取值：
+            border-box :含border显示图片
+            padding-box:含padding显示图片
+            content-box:从content内容区显示图片
+*/
+
+            /*background-attachment: fixed;   !*固定背景图片不随浏览器移动而移动*!*/
+
+
+        }
+        h1{
+            font-size: 50px;
+            background-image:url("../图片/567.jpg");
+            color:transparent;
+            -webkit-background-clip: text ;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+    <h1>刘可新</h1>
+</body>
+</html>

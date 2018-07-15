@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .heihei h1:nth-child(1){     /*从一开始   父级元素第一个是否为h1 若是颜色变成红色*/
+            color:red;
+        }
+        .heihei div:nth-child(2){           /*从一开始   父级元素第二个是否为div 若是颜色变成蓝色*/
+            color:blue;
+        }
+
+        .heihei span:last-child{    /*父元素的最后一个是否为span 是的话生效*/
+            color:#f2f2f2;
+        }
+
+        .heihei p:last-of-type{    /*p标签的最后一个*/
+            color:gold;
+        }
+
+
+
+        .demo span:nth-of-type(2) { color: #f00; }  /*demo 中的span的第二个生效*/
+
+    </style>
+</head>
+<body>
+    <div class="heihei">
+        <h1>1</h1>
+        <p>hahaah</p>
+        <div>2</div>
+        <p>heiehi</p>
+        <span>3</span>
+    </div>
+
+
+
+
+    <div class="demo">
+        <span>span1</span>
+        <p>
+            <span>span2</span>
+            <span>span3</span>
+        </p>
+        <span>span4</span>
+    </div>
+</body>
+</html>

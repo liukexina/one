@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <span id="span1"></span>
+    </div>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        var oBox2 = document.getElementById("box2");
+
+        console.log(oDiv1.childNodes);   //节点不是元素nodes
+        for(i = 0 ; i < oDiv1.childNodes.length ; i ++){
+            // console.log(oDiv1.childNodes.item(i));
+            // console.log(oDiv1.childNodes.item(i).nodeType)
+            if(oDiv1.childNodes.item(i).nodeType == 1){     //判断节点是否是元素 为1是 否则不是
+                console.log(oDiv1.childNodes.item(i));
+            }
+        }
+
+
+        console.log(oBox2.nextElementSibling);   //获取下一个元素节点
+        console.log(oBox2.nextSibling);     //获取下一个节点          在ie6 7 8 输出的是元素节点
+        console.log(oBox2.previousElementSibling);      //获取上一个元素节点
+        console.log(oBox2.previousSibling)            //获取上一个节点
+
+        console.log(oBox2.parentNode);
+        console.log(oBox2.parentElement);
+
+        console.log(oDiv1.lastChild);
+        console.log(oDiv1.lastElementChild);
+        console.log(oDiv1.firstChild);
+        console.log(oDiv1.firstElementChild);
+    </script>
+
+</body>
+</html>

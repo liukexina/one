@@ -88,7 +88,9 @@
     height:36px;
     line-height:36px;
 }
-
+.main-menu a:hover{
+    color:#FF0036;
+}
 .main-nav-menu{
     width: 1030px;
     margin-left: 200px;

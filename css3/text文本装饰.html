@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .text1{
+            text-shadow:1px 1px 0 rgb(255,255,255) ,1px 1px 1px rgba(230, 86, 70, 1);   /*水平偏移‘+’：右   垂直偏移 ‘+’：下    阴影模糊值*/
+            /*可叠加，用逗号隔开*/
+        }
+        .text{
+            width: 100px;
+            border:1px solid #000000;
+            /*配合使用当文字超出指定长度用...代替*/
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .text2{
+            width: 100px;
+            border:1px solid #000000;
+            overflow-wrap: break-word;   /*到指定宽度拆分*/
+        }
+    </style>
+</head>
+<body>
+    <div class="text1">刘可新</div>
+    <br>
+    <div class="text">狼人琵琶走马讲真的你的秘密北风呼呼呼呼呼呼呼呼</div>
+    <br>
+    <div class="text2">asfdadsfadfasdfawgadfhsfhsghsfrgadfgaergasdga</div>
+</body>
+</html>

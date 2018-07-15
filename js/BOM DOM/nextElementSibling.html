@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        <div id="box1"></div>
+        <!--heihei-->
+        <div id="box2"></div>
+        <span id="span1"></span>
+    </div>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        var oBox1 = document.getElementById("box1");
+
+        /*function  rr() {
+            for(i = 0 ; i < oDiv1.childNodes.length ; i++){
+                if(oDiv1.childNodes.item(i) == oBox1){
+                    for(j = i+1 ; j < oDiv1.childNodes.length ; j ++){
+                        if(oDiv1.childNodes.item(j).nodeType == 1){
+                            return oDiv1.childNodes.item(j);
+                        }
+                    }
+                    return null;
+                }
+            }
+        }
+
+        console.log(rr());*/
+
+
+        function fu(e) {    //也可用while do-while
+            if(e.nextSibling == null){
+                console.log(null);
+            }
+            else{
+                if(e.nextSibling.nodeType == 1){
+                    console.log(e.nextSibling);
+                }
+                else{
+                    e = e.nextSibling;
+                    fu(e);
+                }
+            }
+        }
+
+        fu(oBox1);
+
+    </script>
+
+</body>
+</html>

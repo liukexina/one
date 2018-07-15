@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .container{
+            border:1px dashed #333333;
+            width: 300px;
+        }
+        .content{
+            height: 300px;
+            width: 300px;
+            background: red;
+            /*transform: rotate(45deg);*/
+            transform-origin: center;           /*指定坐标*/
+            /*transform: translateX(-50%);*/   /*指定相对x轴平移*/
+            text-align: center;
+            line-height: 300px;
+            transform: scale(0.5);   /*扩大缩小*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">hah </div>
+    </div>
+
+</body>
+</html>

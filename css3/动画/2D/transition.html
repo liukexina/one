@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .container{
+            border:1px dashed #333333;
+            width: 300px;
+
+        }
+        .content {
+            height: 300px;
+            width: 300px;
+            background: red;
+            transition: all 1s ease 2s;
+            /*all：所有属性  1s:过渡时间  ease：过渡动画类型    2s:延迟时间*/
+        }
+
+        .content:hover{
+            transform: translateX(100px);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content"> </div>
+</div>
+</body>
+</html>

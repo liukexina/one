@@ -30,9 +30,11 @@
 
         }
         #div3{
-            box-sizing:content-box;/*标准盒模型，默认值*/
-            box-sizing:border-box;/*怪异盒模型*/
+            box-sizing:content-box;/*标准盒模型，默认值   content= height / width*/
+            /*box-sizing:border-box;!*怪异盒模型          padding+border+content=height / width*!*/
             padding:20px;
+            height: 100px;
+            width: 200px;
             border:20px solid orangered;
 
         }
@@ -46,7 +48,7 @@
     <div id="div2">heheheheheheh fhewl ahl hwleah lhwlre hlweh lwe</div>
     <hr>
     <p style="color:blueviolet;font-size:15px;">css怪异盒模型 没写doctype  （!DOCTYPE html） ie6以下浏览器，往里缩</p>
-    <div id="div3">heheheheheheh fhewl ahl hwleah lhwlre hlweh lwe</div>
+    <div id="div3"></div>
     <hr>
 
 </body>

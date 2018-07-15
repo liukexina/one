@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .warpper{
+            background: #f2f2f2;
+            width: 500px;
+            margin:10px auto;
+            padding:10px;
+        }
+        .tu{
+            background: #f2f2f2;
+            padding:10px;
+        }
+        table{
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="warpper">
+        内容：<input type="text" id="text"><br><br>
+        时间：<input type="date" id="date"><br><br>
+        <button id="add">添加</button>
+        <br>
+    </div>
+    <div class="tu">
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>序号</th>
+                <th>内容</th>
+                <th>时间</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>上课</td>
+                <td>2017-1-31</td>
+                <td>
+                    <button>删除</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+
+        var add = document.getElementById("add");
+        var table = document.getElementsByTagName("table")[0].firstElementChild;
+        /*add.onclick = function () {
+            var text = document.getElementById("text").value;
+            var date = document.getElementById("date").value;
+            console.log(text,date);
+            var newEle = document.createElement("tr");   /!*创建tr节点*!/
+            var newTd1 = document.createElement("td");
+            var newTd2 = document.createElement("td");
+            var newTd3 = document.createElement("td");
+            var newTd4 = document.createElement("td");
+            var newBtn = document.createElement("button");
+            var num = table.lastElementChild.firstElementChild.innerHTML;
+            if(table.lastElementChild == table.firstElementChild){
+                num = 0;
+            }
+            newTd1.innerHTML = num - 0 + 1 ;
+            newTd2.innerHTML = text;
+            newTd3.innerHTML = date;
+            newTd4.appendChild(newBtn);
+            newBtn.innerHTML = "删除";
+            table.appendChild(newEle);   /!*向对象最后面添加  相当于after  父子关系*!/
+            newEle.appendChild(newTd1);
+            newEle.appendChild(newTd2);
+            newEle.appendChild(newTd3);
+            newEle.appendChild(newTd4);
+        };*/
+        add.onclick = function () {
+            var text = document.getElementById("text").value;
+            var date = document.getElementById("date").value;
+            console.log(text,date);
+
+            var num = table.lastElementChild.firstElementChild.innerHTML;
+            if(table.lastElementChild == table.firstElementChild){
+                num = 0;
+            }
+            num = num - 0 + 1;
+            var ht  =
+                "                <td> "+ num +"</td>\n" +
+                "                <td>" + text +"</td>\n" +
+                "                <td>" + date +"</td>\n" +
+                "                <td>\n" +
+                "                    <button>删除</button>\n" +
+                "                </td>\n" ;
+            var newL = document.createElement("tr");
+            newL.innerHTML = ht;
+            table.appendChild(newL);
+        };
+
+
+        table.onclick = function (e) {
+            if(e.target.innerHTML == "删除"){
+                var tr = e.target.parentNode.parentNode;
+                var heihei = tr;
+                while(heihei.nextElementSibling != null){
+                    heihei.nextElementSibling.firstElementChild.innerHTML --;
+                    console.log( heihei.nextElementSibling.firstElementChild.innerHTML);
+                    heihei = heihei.nextElementSibling;
+                }
+                tr.remove();
+            }
+        };
+    </script>
+
+</body>
+</html>

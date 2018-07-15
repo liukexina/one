@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        html,body,.box{
+            height: 100%;
+        }
+        .box{
+            display: flex;
+            flex-direction: row;   /*竖排排列  默认值row：横排排列   */
+            /*row（默认值）：主轴为水平方向，起点在左端。
+              row-reverse：主轴为水平方向，起点在右端。
+              column：主轴为垂直方向，起点在上沿。
+              column-reverse：主轴为垂直方向，起点在下沿。
+            */
+
+            justify-content: center;   /*水平居中*/
+            /*flex-start（默认值）：左对齐
+              flex-end：右对齐
+              center： 居中
+              space-between：两端对齐，项目之间的间隔都相等。
+              space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+            */
+
+            align-items: center;    /*垂直居中*/
+            /*flex-start：交叉轴的起点对齐。
+              flex-end：交叉轴的终点对齐。
+              center：交叉轴的中点对齐。
+              baseline: 项目的第一行文字的基线对齐。
+              stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+            */
+
+            flex-wrap: wrap;   /*当行充满时换行  第一行在上面  wrap-reverse:换行 第一行在下面  nowrap：不换行*/
+        }
+        .box1{
+            height: 500px;
+            width: 20%;
+            background: blue;
+            /*flex-grow: 1;*/
+        }
+        .box2{
+            background: red;
+            width: 20%;
+            height: 300px;
+            /*flex-grow: 1;    !*占父级剩余空间的100%*!*/
+            /*flex-grow: 2;*/
+            /*order:-1;   !*值越小越往前排列 默认为0*!*/
+        }
+        .box3{
+            background: orange;
+            width: 20%;
+            height:100px;
+            /*flex-grow:1;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

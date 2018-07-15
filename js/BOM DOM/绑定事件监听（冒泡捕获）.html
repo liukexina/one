@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 50%;
+            padding-bottom: 50%;
+            height: 0; /*避免被内容撑开多余的高*/
+        }
+    </style>
+</head>
+<body>
+    <div style="background:red;" id="div1">
+        <div style="background:#ccc;" id =div2>
+            <div style="background:orange;" id="div3"></div>
+        </div>
+    </div>
+    <script>
+        var oBox1 = document.getElementById("div1");
+        var oBox2 = document.getElementById("div2");
+        var oBox3 = document.getElementById("div3");
+        /*oBox1.onclick = function () {     /!*只能绑定一次*!/
+            console.log("oBox");
+        };*/
+
+        // 1    先捕获后冒泡    多层先捕获后冒泡  同一个对象还是要按顺序先执行
+        /*oBox1.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox1-maopao");
+        },false);
+        oBox1.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox1-buhuo");
+        },true);
+
+        oBox2.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox2-maopao");
+        },false);
+        oBox2.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox2-buhuo");
+        },true);
+
+        oBox3.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox3-buhuo");
+        },true);
+        oBox3.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox3-maopao");
+        },false);
+        */
+
+
+
+        // 2
+        /*oBox1.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox1-maopao");
+        },false);
+
+        oBox2.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox2-maopao");
+        },false);
+
+        oBox3.addEventListener("click",function (e) {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox3-maopao");
+            e.stopImmediatePropagation();   //主旨模块
+        },false);*/
+
+        // 3
+        /*oBox1.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox1-maopao");
+        },false);
+
+        oBox2.addEventListener("click",function (e) {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox2-maopao");
+            e.stopImmediatePropagation();   //主旨模块
+        },false);
+
+        oBox3.addEventListener("click",function () {    /!*可重复绑定*!/    /!* false:事件冒泡  从里到外执行  true：事件捕获，从外到里执行*!/
+            console.log("oBox3-maopao");
+
+        },false);*/
+
+        // ie
+       /* oBox1.attachEvent("onclick",function () {    //只有事件冒泡，无事件捕获
+            console.log("oBox1");
+        });
+        oBox2.attachEvent("onclick",function () {    //只有事件冒泡，无事件捕获
+            console.log("oBox2");
+        });
+        oBox3.attachEvent("onclick",function () {    //只有事件冒泡，无事件捕获
+            console.log("oBox3");
+            window.event.cancelBubble = true;   //主旨模块
+        })*/
+
+        //添加监听事件，移除监听事件
+      /* function testa() {
+           console.log("heihei")
+       }
+       oBox1.addEventListener("click",testa,false);
+        oBox1.removeEventListener("click",testa,false);    //写慕名函数 不写匿名函数*/
+    </script>
+</body>
+</html>
