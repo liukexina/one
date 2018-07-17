@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul{
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .box{
+            /*border:1px dashed rgba(153, 153, 153, 0.96);*/
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .yuan{
+            border:1.5px solid rgba(122, 7, 3, 0.95);
+            height: 300px;
+            width: 300px;
+            border-radius:50%;
+            position: relative;
+            background: #fdfdef;
+        }
+        .yuan li{
+            position: absolute;
+            width:1.5px;
+            top:0;
+            left:50%;
+            height: 8px;
+            background: rgba(72, 15, 59, 0.54);
+            transform-origin:0 150px;
+        }
+        .yuan li:nth-child(5n+1){   /*2n:偶数   ,2n+1:奇数*/
+            color:red;
+            height: 15px;
+            transform: rotate(6deg);
+        }
+        .zhen{
+            position:absolute;
+            height: 0;
+            width: 0;
+            top:151px;
+            left:151px;
+            z-index: 1;
+        }
+        .zhen li{
+            position: absolute;
+            left:-1px;
+        }
+        .zhen li:nth-child(3){
+            height: 110px;
+            background: red;
+            width: 1px;
+            transform-origin:0.5px 0.5px;
+        }
+        .zhen li:nth-child(2){
+            height: 90px;
+            background: blue;
+            width: 2px;
+            transform-origin:1px 1px;
+        }
+        .zhen li:nth-child(1){
+            height: 50px;
+            background: #17ecf2;
+            width: 3px;
+            transform-origin:1.5px 1.5px;
+        }
+        .er{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background: rgba(131, 4, 3, 0.83);
+            position: absolute;
+            top:0;
+        }
+        .yan{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: #000;
+            position:absolute;
+            top:110px;
+        }
+        .er1{
+            left:0;
+        }
+        .er2{
+            right:0;
+        }
+        .yan1{
+            left:80px;
+        }
+        .yan2{
+            right:80px;
+        }
+        .zui{
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            bottom:90px;
+            left:135px;
+            display: flex;
+            justify-content: center;
+        }
+        .hei{
+            position: absolute;
+            height:20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #000;
+            top:4px;
+        }
+        .xu{
+            height: 10px;
+            width: 3px;
+            position: absolute;
+            background: #000;
+            top:25px;
+            /*transform-origin:0 0;*/
+        }
+        .xu1{
+            transform: rotate(45deg);
+            transform-origin:0.5px 0.5px;
+        }
+        .xu2{
+            transform: rotate(-45deg);
+            transform-origin:1.5px 1.5px;
+        }
+        .zi{
+            position: absolute;
+            font-size:18px;
+            color:royalblue;
+            top:-40px;
+            border-radius: 60%;
+            background: #f5ffdd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="er er1"></div>
+        <div class="er er2"></div>
+        <ul class="yuan">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="zhen">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="yan yan1"></div>
+        <div class="yan yan2"></div>
+        <div class="zui">
+            <div class="hei"></div>
+            <div class="xu xu1"></div>
+            <div class="xu xu2"></div>
+        </div>
+        <!--<div class="zi">熊二牌闹钟 专叫关宪帅起床</div>-->
+    </div>
+    <script>
+        var yuan = document.getElementsByClassName("yuan")[0];
+        var yuanL = yuan.getElementsByTagName("li");
+        var zhen = document.getElementsByClassName("zhen")[0];
+        var zhenL = zhen.getElementsByTagName("li");
+        for(i = 0 ; i  < yuanL.length ; i ++){
+            var d = 6 * i;
+            yuanL[i].style.transform = "rotate(" + d +"deg)";
+        }
+        function change() {
+            var date = new Date();
+            var h = date.getHours();
+            var s = date.getSeconds();
+            var m = date.getMinutes();
+            var hd = (h - 12) * 30 - 180 + s * 30 / 3600;
+            var md = m * 6 - 180 + s * 0.1;
+            var sd = s * 6 - 180;
+            zhenL[0].style.transform = "rotate(" + hd +"deg)";
+            zhenL[1].style.transform = "rotate(" + md +"deg)";
+            zhenL[2].style.transform = "rotate(" + sd +"deg)";
+        }
+        setInterval(function () {
+            change();
+        },1000);
+        change();
+
+
+    </script>
+</body>
+</html>
