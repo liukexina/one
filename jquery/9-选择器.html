@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .div1{
+            width: 300px;
+            height: 300px;
+            background: blue;
+            margin:10px;
+            position: relative;
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top:10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        var div1 = $(".div1");
+        var div2 = $(".div2");
+        console.log(div1.offset());  /*偏移量   相对于文档初始位置*/
+        console.log(div2.position());   /*相对与离自己最近的祖先元素地偏移量*/
+    </script>
+</body>
+</html>

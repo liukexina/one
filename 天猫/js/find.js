@@ -10,16 +10,6 @@ search.onkeydown = function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
 var select = document.getElementsByClassName("mart-btns")[0].getElementsByTagName("span");
 var xian = document.getElementsByClassName("mart-concent-item");
 
@@ -37,3 +27,26 @@ select[1].onmouseover = function () {
     xian[1].classList.add("mart-active");
     xian[0].classList.remove("mart-active");
 };
+
+
+
+
+setInterval(function () {
+    if($(window).scrollTop() > 200){
+        $(".mui-lift").css("display","block");
+    }
+    else{
+        $(".mui-lift").css("display","none");
+    }
+},10);
+
+var re;
+$(".return").add(".fix-div-v").on("click",function () {
+    re = setInterval(function () {
+        $(window).scrollTop($(window).scrollTop() - 100);
+        if($(window).scrollTop() == 0){
+            clearInterval(re);
+        }
+    },10);
+
+});

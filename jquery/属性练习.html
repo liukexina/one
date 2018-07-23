@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p style="font-size:20px;">你爱好的运动：</p>
+    <br>
+    <form action=""><input type="checkbox" name="test" id="1">足球
+        <input type="checkbox" name="test" id="2">排球
+        <input type="checkbox" name="test" id="3">篮球
+        <input type="checkbox" name="test" id="4">羽毛球
+        <br><br>
+        <button id="btn1" type="button">全选</button>
+        <button id="btn2" type="button">全不选</button>
+        <button id="btn3" type="button">反选</button>    <!--button的默认type是submit 点击提交会刷新页面，所以写成button-->
+    </form>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $("#btn1").on("click",function () {
+            $("input").prop("checked",true);
+        });
+        $("#btn2").on("click",function () {
+            $("input").prop("checked",false);
+        });
+        $("#btn3").on("click",function () {
+            var check = $("input");
+
+            /*jquery循环*/
+            /*for(i = 0 ; i < $("input").length ; i++){
+                if($("input:eq("+ i +")").prop("checked") == false){
+                    console.log("1");
+                    $("input:eq("+ i +")").prop("checked",true);
+                }
+                else if($("input:eq("+ i +")").prop("checked") == true){
+                    console.log("2");
+                    $("input:eq("+ i +")").prop("checked",false);
+                }
+            }*/
+
+            /*jquery循环 + 原生循环*/
+            /*check.each(function (index,ele) {
+                // ele.checked = ! ele.checked ;   /!*原生*!/
+
+                /!*jquery*!/
+                if($(ele).prop("checked")){
+                    $(ele).prop("checked",false);
+                }
+                else{
+                    $(ele).prop("checked",true);
+                }
+            })*/
+
+
+            /*jquery不循环*/
+            var ischeck = $("input:checked");
+            var uncheck = $("input:not(:checked)");
+            ischeck.prop("checked",false);
+            uncheck.prop("checked",true);
+        });
+
+        var arr = ["a","b","c","d"];
+        arr.forEach(function (ele,index,obj) {
+            console.log(index,ele,obj);
+        });
+        $(arr).each(function (index,ele) {
+            console.log(index,ele);
+        })
+    </script>
+</body>
+</html>

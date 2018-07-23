@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+<input type="text">
+<button>dianji</button>
+    <ul>
+        <li>heida</li>
+        <li>linda</li>
+        <li>nongda</li>
+        <li>ligong</li>
+        <li>gongc</li>
+    </ul>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $("input").on("keyup",function () {
+            $("li").css("background","none");
+            if(this.value){
+                $("li:contains('"+ this.value +"')").css("background","blue");
+            }
+        });
+
+    </script>
+</body>
+</html>

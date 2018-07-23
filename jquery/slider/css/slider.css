@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+}
+.slider{
+    height: 500px;
+    position: relative;
+}
+.slider-panner{
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    transition: all 1s ease;
+    opacity: 0;
+}
+img{
+    height: 500px;
+    width: 900px;
+    margin:0 auto;
+    display: block;
+}
+.slider-panner div{
+    width: 1230px;
+    margin: 0 auto;
+}
+.sp-1{
+    background:  rgb(232, 232, 232);
+}
+.sp-2{
+    background: rgb(0,0,0);
+}
+.sp-3{
+    background: rgb(232, 232, 232);
+}
+.active{
+    z-index: 2;
+    opacity: 1;
+}
+.box{
+    display: block;
+    position: absolute;
+    bottom:10px;
+    margin-left:680px;
+    z-index: 3;
+}
+ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+ul li{
+    height: 5px;
+    width: 30px;
+    background: #000;
+    float:left;
+    margin:5px;
+}
+.test{
+    background: white;
+}

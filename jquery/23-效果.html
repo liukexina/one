@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background: red;
+            position: relative;
+        }
+        .red{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<button>start</button>
+    <div></div>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $("button").click(function () {
+        $("div").animate({left:"+=200px"},200);
+        $("div").animate({top:"0px"},600,function () {
+            console.log($("div").queue("fx").length);  /*获取当前的动画队列*/   /*3*/
+        });
+        $("div").animate({left:"10px",top:"30px"},700);
+        $("div").queue(function (next) {
+            $("div").animate({left:"100px",top:"50px"},600);
+            $("div").toggleClass("red");
+            // $("div").dequeue();
+            next();
+        });
+        console.log($("div").queue("fx").length);  /*获取当前的动画队列*/   /*4*/
+    });
+
+    $("div").hover(function () {
+        console.log("in")
+    },function () {
+        console.log("out");
+    })
+</script>
+</body>
+</html>

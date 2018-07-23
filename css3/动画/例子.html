@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d{
+            height: 200px;
+            width: 200px;
+            position: relative;
+        }
+        #div1{
+            height: 30px;
+            width: 30px;
+            background: blue;
+            animation: tese 2s ease 0s infinite;
+            position: absolute;
+        }
+        @keyframes tese {
+            0%{
+                top:0;
+                left:0;
+            }
+            25%{
+                top:0;
+                left:170px;
+            }
+            50%{
+                top:170px;
+                left:170px;
+            }
+            75%{
+                top:170px;
+                left:0;
+            }
+            100%{
+                top:0;
+                left:0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="d">
+        <div id="div1"></div>
+    </div>
+</body>
+</html>

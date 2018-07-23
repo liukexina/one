@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        hello world !!
+    </div>
+    <div id="box2">
+
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        var ht = $("<p>abcd<p/>");
+        // $("#box").append(ht);   /*从底部加*/
+        // ht.appendTo("#box");
+        // $("#box").prepend(ht);  /*从顶部加*/
+
+        $("#box").text("<p>abcd<p/>");
+        $("#box2").html("<p>abcd<p/>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+    </ul>
+    <div class="div1">
+        div1
+        <div class="div2">
+            div2
+            <div class="div3">
+                div3
+            </div>
+        </div>
+    </div>
+    <p>a paragraph</p>
+    <span>
+        <span>
+            1234564648
+        </span>
+        <!--haha-->
+    </span>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // $("li").add("p").add("span").css("background","red");
+        // console.log($("span").contents());
+        $(".div1").find(".div2").css("color","blue").find(".div3").css("color","red");
+        $(".div1").find(".div2").find(".div3").css("color","red").end().css("color","blue");   /*end():返回上一层选择器 */
+    </script>
+</body>
+</html>

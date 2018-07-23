@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            height: 20px;
+            width: 500px;
+            background: #f2f2f2;
+        }
+        #div2{
+            height: 100%;
+            background: royalblue;
+            width:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <br>
+    <button>开始</button>
+    <script>
+        var div2 = document.getElementById("div2");
+        var btn = document.getElementsByTagName("button")[0];
+        console.log(div2.offsetWidth);
+        btn.onclick = function () {
+            div2.style.width = 0;
+            var sit = setInterval(function () {
+                div2.style.width = div2.offsetWidth + 5 + "px";
+                if(div2.offsetWidth == 500){
+                    clearInterval(sit);
+                }
+            },10)
+        };
+
+    </script>
+</body>
+</html>

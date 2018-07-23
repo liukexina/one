@@ -29,7 +29,8 @@
 
        /*能向新添加的li进行事件绑定*/
        oUl.onclick = function (e) {
-           console.log(e.target.innerHTML);
+           console.log(e.target.innerHTML);     /*指li*/
+           console.log(e.currentTarget.innerHTML);   /*指ul*/
        };
 
        oBtn.onclick = function (e) {

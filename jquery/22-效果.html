@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button class="fadein">fadein</button>
+    <button class="fadeout">fadeout</button>
+    <button class="fade">切换</button>
+    <button class="slideup">sildeup</button>
+    <button class="slidedown">sildedown</button>
+    <button class="slidetogg">slidetogg</button>
+    <button class="animate">animate</button>
+    <div class="box"></div>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
+    <script>
+        $(".fadein").on("click",function () {
+            $(".box").fadeIn();    /*显示  更改透明度*/
+        });
+        $(".fadeout").on("click",function () {
+            $(".box").fadeOut();   /*隐藏  更改透明度*/
+        });
+        $(".fade").on("click",function () {
+            $(".box").fadeToggle();   /*切换显示隐藏  更改透明度*/
+        });
+
+        /*卷连门形式显示隐藏*/
+        $(".slideup").on("click",function () {
+            $(".box").slideUp();
+        });
+        $(".slidedown").on("click",function () {
+            $(".box").slideDown();
+        });
+        $(".slidetogg").on("click",function () {
+            $(".box").stop();   /*停止之前动画执行本次动画  有两个参数都是boolean形 默认全为false*/
+            $(".box").slideToggle();
+        });
+
+        $(".animate").on("click",function () {
+            $(".box").delay(1000).animate({
+                width:400,
+                height:400
+            },1000,"easeInBack",function () {
+                console.log("done");
+            });
+        })
+    </script>
+</body>
+</html>

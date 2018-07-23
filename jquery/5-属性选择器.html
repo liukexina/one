@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [name=test][type ="password"]{
+            background: red;
+        }
+        [name ~=tt]{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<input type="password" name="test" id="box">;
+<input type="text" name="bb tt">
+<script src="jquery-3.3.1.js"></script>
+<script>
+    var oBox = document.getElementById("box");
+    console.log(oBox.id);
+    oBox.style.width = oBox.offsetWidth + 100 +"px";
+    oBox.focus();   /*获取焦点*/
+    oBox.blur();   /*释放焦点*/
+    /*自定义属性*/
+    oBox.setAttribute("data-id","abc");
+    console.log(oBox.getAttribute("data-id"));
+    $("#box").attr("data-id","abc");
+    console.log($("#box").attr("data-id"));
+    oBox.removeAttribute("data-id");
+    console.log($("#box").attr("data-id"))
+
+</script>
+</body>
+</html>

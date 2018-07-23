@@ -311,6 +311,8 @@ a{
 }
 /*nav结束*/
 
+
+/*fix-div 开始*/
 .fix-div{
     width: 35px;
     background: #000;
@@ -487,5 +489,42 @@ a{
 .fix-div-v:hover{
     background:#ff000f;
 }
+/*fix-div 结束*/
+
+
+/*mui-lift开始*/
+
+.mui-lift{
+    width: 35px;
+    height: 370px;
+    position: fixed;
+    z-index:2;
+    left:100px;
+    bottom:80px;
+    font-family: "Microsoft YaHei", "SimSun", '\5b8b\4f53', sans-serif;
+    display: none;
+}
+.mui-lift ul li{
+    margin:1px;
+    width: 35px;
+    height: 35px;
+    background: #333;
+    color:white;
+    text-align: center;
+    font-size: 12px;
+}
+.mui-lift ul .mui-lift-head{
+    background: red;
+    line-height: 35px;
+}
+.icon-jiantou-shang{
+    font-size:12px;
+    display: block;
+}
+.mui-lift ul .return{
+    opacity: 0.6;
+}
+/*mui-lift结束*/
+
 
 

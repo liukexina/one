@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">2</div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        var oBox = document.getElementById("box");
+        console.log(oBox);
+        var $box = $("#box");
+
+        //原生对象与jquery对象的转换
+        console.log($box.get(0));
+        console.log($(oBox));
+    </script>
+</body>
+</html>

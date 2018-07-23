@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_759361_bj9nbe9859g.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body,html{
+            height: 100%;
+            background: #343636;
+        }
+        .warpper{
+            margin:160px auto 0 auto;
+            width: 750px;
+            background: #343636;
+            margin-bottom:120px;
+        }
+        .w-head{
+            position: fixed;
+            top:0;
+            width: 750px;
+        }
+        .header{
+            padding-left:20px;
+            height:90px;
+            background: white;
+            line-height:90px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .main{
+            height: 70px;
+            background: #343636;
+            position: relative;
+            border-bottom: 1px solid #555555;
+        }
+        ul{
+            padding:0;
+            list-style: none;
+        }
+        .dis{
+            position: absolute;
+            top:50%;
+            margin:-12px 0;
+            overflow: hidden;
+        }
+        .dis li{
+            height: 30px;
+            width: 40px;
+            float:left;
+            color:white;
+        }
+        .dis li:nth-child(1){
+            background: white;
+        }
+        .dis li:nth-child(3){
+            background: red;
+        }
+        .dis li:nth-child(5){
+            background: blue;
+        }
+        .dis li:nth-child(even){
+            margin-left:10px;
+            height: 30px;
+            width: 40px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .dis li:nth-child(odd){
+            margin-left:25px;
+        }
+
+
+
+
+        .box {
+            border-bottom: 1px solid #555555;
+        }
+        .box-dis{
+            width: 700px;
+            display: block;
+            margin: 0 auto;
+            height: 50px;
+            overflow: hidden;
+        }
+        .box-dis li{
+            height: 30px;
+            width: 40px;
+            background: white;
+            float:left;
+            margin-right:15px;
+            margin-top:20px;
+        }
+        .box-dis li:nth-child(6n){
+            margin-left:150px;
+        }
+
+
+
+        .result{
+            width: 750px;
+        }
+        .res-head{
+            width: 700px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+        .res-main{
+            margin:0 auto;
+            width: 700px;
+            overflow: hidden;
+        }
+        .res-head span{
+            color:white;
+            font-size:20px;
+        }
+        .res-head span:nth-child(2){
+            float:right;
+        }
+        .res-head span:nth-child(1){
+            float:left;
+        }
+        .res-main div{
+            float:left;
+            margin-right:20px;
+            margin-top:20px;
+            font-size:20px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 700;
+            height: 50px;
+            width: 130px;
+            border: 1px solid #b9b085;
+            color:#b9b085;
+        }
+
+
+        .end{
+            position: fixed;
+            bottom:0;
+            height: 100px;
+            background: rgba(38, 32, 38, 0.87);
+            width: 750px;
+        }
+        .btn{
+            background: #b9b085;
+            height: 100%;
+            width: 250px;
+            float:right;
+            font-size: 26px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .end-money{
+            float:left;
+        }
+        .money-1{
+            margin-left:20px;
+            margin-top:35px;
+            float: left;
+            width: 200px;
+            font-size:26px;
+            color:#f2f2f2;
+        }
+        .money-1 span{
+            color:red;
+        }
+        .money-2{
+            margin-top:43px;
+            float: left;
+            color:#f2f2f2;
+        }
+        .box-dis .test{
+            background: blue;
+        }
+        .box-dis .spe{
+            background: red;
+        }
+        .icon-shanchu{
+            font-size:20px;
+            margin-left:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="warpper">
+        <div class="w-head">
+            <div class="header">
+                今天1月6日 13:20
+            </div>
+            <div class="main">
+                <ul class="dis">
+                    <li></li>
+                    <li>可选</li>
+                    <li></li>
+                    <li>已选</li>
+                    <li></li>
+                    <li>已售</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+
+        </div>
+        <div class="result">
+            <div class="res-head">
+                <span>已选座位</span>
+                <span>最多可选择5个座位</span>
+            </div>
+            <div class="res-main">
+                <!--<div>
+                    <span>9</span>排
+                    <span>9</span>座
+                    <i class="iconfont icon-shanchu"></i>
+                </div>-->
+            </div>
+        </div>
+        <div class="end">
+            <div class="end-money">
+                <div class="money-1">
+                    合计：￥<span>0</span>
+                </div>
+                <div class="money-2">
+                    ￥99* <span>0</span>
+                </div>
+            </div>
+            <div class="btn">
+                确认选座
+            </div>
+        </div>
+    </div>
+    <script src="../jquery-3.3.1.js"></script>
+    <script>
+
+        var allnum = 0 ;
+       setInterval(function () {
+           var mydate = new Date();
+           $(".header").html(mydate.toLocaleString());
+       });
+
+       var boxlist = '',boxli = '';
+
+       /*function change() {
+           boxli = '';
+           for(j = 0 ; j < 10 ; j++){
+               var num = Math.random();
+               if(num > 0.8)
+               {
+                   boxli += '<li class="test" "></li>';
+               }
+               else{
+                   boxli += '<li></li>';
+               }
+           }
+           return boxli;
+       }
+       for(i = 0 ; i < 10 ; i ++){
+           boxlist += '<ul class="box-dis">' + change() + '</ul>';
+       }
+*/
+        for(i = 0 ; i < 10 ; i ++){
+            boxlist += "<ul class=box-dis>";
+           for(j = 0 ; j < 10 ; j++){
+               var num = Math.random();
+               if(num > 0.8)
+               {
+                   boxlist += '<li class="test" "></li>';
+               }
+               else{
+                   boxlist += '<li></li>';
+               }
+           }
+            boxlist += "</ul>";
+        }
+
+       $(".box").html(boxlist);
+       $(".box-dis:eq(0)").css("margin-top","50px");
+       $(".box-dis:eq(9)").css("margin-bottom","30px");
+
+
+
+       var shuzu =[];
+       /*$(".box-dis li").not(".test").on("click",function () {
+
+           var num1 = $(this).parent().index() - 0 + 1;
+           var num2 = $(this).index() - 0 + 1;
+           var name = 'div'+ num1 + num2;
+           console.log(name);
+           if(!$(this).hasClass("spe") && allnum < 5){
+               $(this).toggleClass("spe");
+               var boxdiv = '';
+               boxdiv = '<div class="'+ name +'">\n' +
+                   '                    <span>' + num1 +'</span>排\n' +
+                   '                    <span>'+ num2 +  ' </span>座\n' +
+                   '                    <i class="iconfont icon-shanchu"></i>\n' +
+                   '                </div>';
+               $(".res-main").append(boxdiv);
+               allnum ++;
+           }
+           else if($(this).hasClass("spe")){
+               $(this).toggleClass("spe");
+               $("."+name).remove();
+               allnum --;
+           }
+
+           $(".money-2 span").html(allnum);
+           $(".money-1 span").html(allnum * 99);
+
+       });
+
+       $(".res-main").on("click",".icon-shanchu",function () {
+           var hang = $(this).parent().find("span:eq(0)").html();
+           var lie = $(this).parent().find("span:eq(1)").html();
+           var name = 'div'+ hang + lie;
+           console.log(hang , lie);
+           hang--;
+           lie--;
+           $(".box ul:eq(" + hang + ")").find("li:eq(" + lie + ")").toggleClass("spe");
+           $("."+name).remove();
+           allnum--;
+           $(".money-2 span").html(allnum);
+           $(".money-1 span").html(allnum * 99);
+       })*/
+        $(".box-dis li").not(".test").on("click",function () {
+            var num1 = $(this).parent().index() - 0 + 1;
+            var num2 = $(this).index() - 0 + 1;
+            var ishave = true;
+
+            for(i = 0 ; i < shuzu.length ; i++){
+                if(num1 == shuzu[i].hang && num2 == shuzu[i].lie){
+                    $(this).toggleClass("spe");
+                    shuzu.splice(i,1);
+                    ishave = false;
+                }
+            }
+            if(ishave && shuzu.length < 5){
+                $(this).toggleClass("spe");
+                var click = {
+                    hang:num1,
+                    lie:num2
+                };
+                shuzu[shuzu.length] = click;
+            }
+            bian();
+        });
+
+        $(".res-main").on("click",".icon-shanchu",function () {
+            var hang = $(this).parent().find("span:eq(0)").html();
+            var lie = $(this).parent().find("span:eq(1)").html();
+            for(i = 0 ; i < shuzu.length ; i++){
+                if(hang == shuzu[i].hang && lie == shuzu[i].lie){
+                    shuzu.splice(i,1);
+                }
+            }
+            hang--;
+            lie--;
+            $(".box ul:eq(" + hang + ")").find("li:eq(" + lie + ")").toggleClass("spe");
+            bian();
+        });
+
+        function bian(){
+            $(".res-main").find("div").remove();
+            for(i = 0 ; i < shuzu.length ; i++){
+                var boxdiv = '';
+                boxdiv = '<div>\n' +
+                    '                    <span>' + shuzu[i].hang +'</span>排\n' +
+                    '                    <span>'+ shuzu[i].lie +  ' </span>座\n' +
+                    '                    <i class="iconfont icon-shanchu"></i>\n' +
+                    '                </div>';
+                $(".res-main").append(boxdiv);
+            }
+            $(".money-2 span").html(shuzu.length);
+            $(".money-1 span").html(shuzu.length * 99);
+        }
+    </script>
+</body>
+</html>

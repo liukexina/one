@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        123
+    </div>
+    <div class="box1">
+        <div class="box">234</div>
+    </div>
+<!--    <div class="box">
+        456
+    </div>-->
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // $("#box").on("click",test);
+        // $("#box").off("click",test);   /*取消事件*/
+        function test() {
+            console.log("12313");
+        }
+
+        $(".box").on("click",test);
+        $(".box1").on("click",test1);
+
+        function test1() {
+            console.log("box");
+        }
+        /*$("#box").trigger("click");  /!*可以直接触发绑定box的方法*!/*/
+        // $(".box").trigger("click");
+        $(".box").triggerHandler("click");/* 既不触发默认的也不会触发冒泡行为  只匹配到第一个点击的元素*/
+    </script>
+</body>
+</html>

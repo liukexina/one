@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="checkbox">1
+    <input type="checkbox" checked="checked">2
+    <input type="checkbox">3
+    <input type="checkbox">4
+    <input type="checkbox">5
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $("input:checkbox").on("click",function () {
+            console.log($(this).is(":checked"));
+        })
+    </script>
+</body>
+</html>

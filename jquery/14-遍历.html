@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<ul>
+        <li>1</li>
+        <li>2
+            <ul>
+                <li>hah</li>
+                <li>xix</li>
+            </ul>
+        </li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>-->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li><span>123</span></li>
+    </ul>
+    <span>abc</span>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        /*$("li").eq(3).css("color","red");
+        $("li").first().css("color","blue");
+        $("li").last().css("color","green");
+        $("li").has("ul").css("color","yellow");*/
+
+        /*$("li").not(":even").css("color","red");
+        $("li").not(":odd").css("color","blue");*/
+        $("li").filter(":even").css("color","red");   /*过滤*/
+        console.log($("span","li"));  /*在li下找span*/
+    </script>
+</body>
+</html>

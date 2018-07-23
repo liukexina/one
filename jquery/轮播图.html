@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .slider{
+            height: 500px;
+            position: relative;
+        }
+        .slider-panner{
+            height: 500px;
+            width: 100%;
+            position: absolute;
+            transition: all 1s ease;
+            opacity: 0;
+        }
+        img{
+            height: 500px;
+            width: 900px;
+            margin:0 auto;
+            display: block;
+        }
+        .slider-panner div{
+            width: 1230px;
+            margin: 0 auto;
+        }
+        .sp-1{
+            background:  rgb(232, 232, 232);
+        }
+        .sp-2{
+            background: rgb(0,0,0);
+        }
+        .sp-3{
+            background: rgb(232, 232, 232);
+        }
+        .active{
+            z-index: 2;
+            opacity: 1;
+        }
+        .box{
+            display: block;
+            position: absolute;
+            bottom:10px;
+            margin-left:680px;
+            z-index: 3;
+        }
+        ul{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        ul li{
+            height: 5px;
+            width: 30px;
+            background: #000;
+            float:left;
+            margin:5px;
+        }
+        .test{
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div>
+            <div class="slider-panner sp-1 active">
+                <div>
+                    <img src="图片/ma1.jpg" alt="">
+                </div>
+            </div>
+            <div class="slider-panner sp-2" style="background:rgba(223,223,223,223)">
+                <div>
+                    <img src="图片/ma2.jpg" alt="">
+                </div>
+            </div>
+            <div class="slider-panner sp-3">
+                <div>
+                    <img src="图片/ma3.jpg" alt="">
+                </div>
+            </div>
+            <div class="slider-panner sp-4">
+                <div>
+                    <img src="图片/ma4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <ul>
+                <li class="test"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="box"><ul></ul></div>
+    </div>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+        var index = 0;
+        var isRun = true;
+        setInterval(function(){
+            if(isRun){
+                run();
+                index ++;
+            }
+        },1000);
+        function run() {
+            if(index == 4){
+                index =0;
+            }
+            $(".slider-panner:eq("+ index + ")").addClass("active").siblings().removeClass("active");
+            $("li:eq(" + index + ")").addClass("test").siblings().removeClass("test");
+        }
+        $("li").on("mouseover",function () {
+            index = $(this).index();
+            run();
+        });
+
+        $(".slider").hover(function () {
+            isRun = false;
+        },function () {
+            isRun = true;
+        })
+    </script>
+</body>
+</html>

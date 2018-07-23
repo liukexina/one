@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="aa">3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        /*$(".aa + li").css("color","red");      /!*后面相邻*!/
+        $(".aa ~ li").css("color","red");   /!*后面所有*!/
+        $("li:eq(2)").css("color","blue");   /!*eq:从0开始 nth-child：从1开始*!/
+        $("li:even").css("color","blue");  /!*even:基数   odd:偶数 *!/*/
+        $("li:not(.aa)").css("color","blue");  /*选中所有li除了类名为aa的 */
+       // $("li:contains('3')").css("color","blue");  /*内容中包含3则变*/
+    </script>
+</body>
+</html>

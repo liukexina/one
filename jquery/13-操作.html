@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--替带-->
+<!--<div class="container">
+    <div class="inner first">Hello</div>
+    <div class="inner second">And</div>
+    <div class="inner third">Goodbye</div>
+</div>-->
+
+  <!--克隆-->
+<div class="container">
+    <div class="hello">Hello</div>
+    <div class="goodbye">Goodbye</div>
+</div>
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    /*替带*/
+    // $('<h2>New heading</h2>').replaceAll('.inner');
+    // $('div.second').replaceWith('<h2>New heading</h2>');
+
+
+    //克隆
+    // $('.hello').clone().appendTo('.goodbye');   /*第一个复制一份放在后面*/
+    $('.hello').appendTo('.goodbye');   /*把第一个挪到最后一个*/
+    // console.log( $('.hello').clone());  /*第一个对象*/
+
+</script>
+</body>
+</html>

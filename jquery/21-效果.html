@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+        .dn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="btn">隐藏</button>
+    <button id="show">显示</button>
+    <button id="togg">切换</button>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $("#btn").on("click",function () {
+            $(".box").hide();   /*display :none 隐藏*/
+        });
+        $("#show").on("click",function () {
+            $(".box").show();   /*display :block 显示 */
+        });
+        $("#togg").on("click",function () {
+            // $(".box").toggleClass("dn");   /*切换*/
+            $(".box").toggle();  /*控制显示隐藏切换*/
+        })
+    </script>
+</body>
+</html>

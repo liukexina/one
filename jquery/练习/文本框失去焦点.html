@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test{
+            background: orangered;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <fieldset>
+        <legend>学生信息</legend>
+        <label>姓名:</label>
+        <input type="text" class="test"><br />
+        <br />
+        <label>密码:</label>
+        <input type="password"><br />
+        <br />
+        <label>详细信息:</label>
+        <textarea cols="30" rows="5"></textarea>
+    </fieldset>
+</form>
+<script src="../jquery-3.3.1.js"></script>
+<script>
+    $("input").add($("textarea")).focus(function () {
+        $(this).addClass("test");
+    });
+    $("input").add($("textarea")).blur(function () {
+        $(this).removeClass("test");
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test{
+            font-size:30px;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">matianyu</div>
+    <script src="jquery-3.3.1.js"> </script>
+    <script>
+        $("#box").addClass("test");
+        $("#box").removeClass("test");
+        console.log($("#box").hasClass("test"));    /*判断是否有类名test 返回true false*/
+
+        $("#box").on("click",function () {
+            $(this).toggleClass("test");
+        })
+
+
+    </script>
+</body>
+</html>

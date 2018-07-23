@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 500px;
+            /*border:1px solid black;*/
+            /*border-collapse:collapse;*/
+        }
+        table td,th{
+            width:50%;
+            /*border:1px solid #f2f2f2;*/
+        }
+        tr:nth-child(even){
+            background: #f5ffdd;
+        }
+        tr:nth-child(even) input{
+            background: #f5ffdd;
+            border: none;
+        }
+        tr:nth-child(odd){
+            background: #e6b8d0;
+        }
+        tr:nth-child(odd) input{
+            background: #e6b8d0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <table cellpadding="5">
+        <thead>
+            <tr>
+                <th colspan="2">鼠标点击表格就可以编辑</th>
+            </tr>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td><td class="t">张三</td>
+            </tr>
+            <tr>
+                <td>2</td><td class="t">嗯哼</td>
+            </tr>
+            <tr>
+                <td>3</td><td class="t">啊哈</td>
+            </tr>
+            <tr>
+                <td>4</td><td class="t">李四</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <script src="../jquery-3.3.1.js"></script>
+    <script>
+
+        $(".t").on("click",function () {
+            if($(this).children("input").length == 0){
+                var inputObj = $("<input type='text'/>");
+                inputObj.val($(this).text());
+                $(this).empty();
+                $(this).append(inputObj);
+                inputObj.focus();
+            }
+        });
+       /* $(".t").on("click",function () {
+            console.log($(this).children().length);
+            if($(this).children().length == 0){
+                console.log( $(this).html());
+                $(this).html("<input type='text' value='" + this.innerHTML + "'/>");
+                $(this).find("input").focus();
+            }
+            /!*  if(this.innerHTML != "<input type=\"text\" class=\"in\">"){
+                this.innerHTML = "<input type=\"text\" class=\"in\">";
+                $(this).find("input").focus();
+            }*!/
+        });*/
+
+        /* $(".t").on("blur","input",function () {
+             if(this.value){
+                 var w = this.value;
+                 $(this).parent("td").text(this.value);
+                 $(this).remove();
+                 // this.parentNode.innerText = this.value;
+             }
+             else{
+                 $(this).parent().html("空");
+             }
+        });*/
+
+        $(".t").on("focusout",function () {
+            var child = $(this).children("input");
+            if(child.val()){
+                $(this).text(child.val());
+            }
+            else{
+                $(this).text("空");
+            }
+        });
+        $(".t").on("keyup",function (e) {
+            if(e.which == 13){
+                $(this).trigger("focusout");
+            }
+        })
+    </script>
+</body>
+</html>

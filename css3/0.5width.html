@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #div1{
+            height: 200px;
+            width: 200px;
+            border:1px solid #888;
+            transform: scale(0.5);
+            transform-origin: 0 0;
+        }
+
+        #div2{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+        #div2:after{
+            content: "";
+            display: block;
+            height: 200px;
+            width: 200px;
+            border: 1px solid #888;
+            box-sizing:border-box;
+            transform: scale(0.5);
+            transform-origin: 0 0 ;
+        }
+    </style>
+</head>
+<body>
+<!--改变自身进行缩放-->
+    <div id="div1"></div>
+<!--写伪类after 写一个边框盖在div上面-->
+    <div id="div2"></div>
+</body>
+</html>

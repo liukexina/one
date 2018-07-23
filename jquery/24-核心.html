@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    var person = {
+        name:"mingming",
+        age:""
+    };
+    var student = {
+        name:"honghong",
+        school:"heida"
+        // age:""
+    };
+    $.extend(person,student);   /*第二个对象覆盖第一个对象已有的对象，没有的对象保留*/
+    console.log(person);
+    var newObj = $.extend({},person,student);   /*创建新对象，不更改其余对象*/
+    console.log(newObj);
+</script>
+</body>
+</html>

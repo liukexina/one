@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div2{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+        #div2:hover{
+            animation: test 1s ease 0s 2;    /*2:动画次数*/
+            /*infinite：无限次动*/
+            /*animation: test 1s reverse;   !*动画方向：reverse相反 normal正常 alternate：动画先正再反配合次数效果明显 alternate-reverse:先反后正配合次数效果明显*!*/
+            /*
+            none：
+            默认值。不设置对象动画之外的状态
+            forwards：
+            设置对象状态为动画结束时的状态
+            backwards：
+            设置对象状态为动画开始时的状态
+            both：
+            设置对象状态为动画结束或开始的状态
+            */
+        }
+        @keyframes test {
+            from{
+                width: 100px;
+            }
+            to{
+                width: 600px;
+            }
+        }
+        #div1{
+            height: 100px;
+            width: 100px;
+            background: blue;
+        }
+        #div1:hover{
+            animation: test1 1s ease;
+        }
+        @keyframes test1 {
+            0%{
+                width: 100px;
+            }
+            50%{
+                width: 600px;
+            }
+            100%{
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="div2"></div>
+    <br>
+<div id="div1"></div>
+</body>
+</html>

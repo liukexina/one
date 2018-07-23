@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 1000px;
+        }
+        .spe{
+            background: yellow;
+        }
+        .spe1{
+            background: #f5ffdd;
+        }
+        .test{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<table cellpadding="10">
+    <tr>
+        <th></th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    <tr>
+        <td><input type="radio" name="test"></td><td>张珊</td><td>男</td><td>浙江宁波</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="test"><td>李斯</td><td>男</td><td>湖南长沙</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="test"><td>王五</td><td>男</td><td>浙江杭州</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="test"><td>兆欧</td><td>女</td><td>浙江杭州</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="test"><td>安吉</td><td>男</td><td>湖南长沙</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="test"><td>嗯哼</td><td>女</td><td>浙江杭州</td>
+    </tr>
+</table>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $("tr:odd").addClass("spe");
+    $("tr:even").addClass("spe1");
+    $("table tr").not("tr:eq(0)").on("click",function () {
+        $(this).addClass("test").siblings().removeClass("test").end().find("input").prop("checked",true);
+        /*sibling: 找兄弟元素*/
+    });
+</script>
+</body>
+</html>

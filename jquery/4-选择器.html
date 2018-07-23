@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr><td>TD #0</td><td></td></tr>
+        <tr><td>TD #2</td><td></td></tr>
+        <tr><td></td><td>TD #5</td></tr>
+    </table>
+
+    <div><p>hello in a paragraph</p></div>
+    <div>hello again! (with no paragrah)</div>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+        $("td:parent").css("color","pink");  /*与empty相反*/
+        $("td:empty").text("空").addClass("test");
+        $("div:has(p)").addClass("test");
+    </script>
+</body>
+</html>

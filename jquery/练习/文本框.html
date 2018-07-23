@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<head>
+    <title>Title</title>
+    <style>
+        textarea{
+            height: 150px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button>放大</button>
+    <button>减小</button>
+    <br>
+    <textarea>
+        ddffdfdsdsfdasfsdfdsfdasdsfdsdsdfsdfsfsdfsdfdsfsdffddsfdsffdsffdsdfaasfssfffsfds式打法律师代理费就饿哦附件为平均分配王嘉尔富婆点时间分配绝望坡二纺机破缴费喷雾剂聘请为奇偶福建省东风微风式打法无法是范文芳阿额无法
+    </textarea>
+    <script src="../jquery-3.3.1.js"></script>
+    <script>
+        $("button:eq(0)").on("click",function () {
+            var h = $("textarea").height();
+            if(h < 500){
+                $("textarea").height(h + 50);
+            }
+        });
+        $("button:eq(1)").on("click",function () {
+            var h = $("textarea").height();
+            if(h > 150){
+                $("textarea").height(h - 50);
+            }
+        })
+    </script>
+</body>
+</html>
