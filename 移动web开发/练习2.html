@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.header,.end{
+            background: #bfbfbf;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+        .main{
+            height: 150px;
+            width: 100%;
+            display: flex;    !*弹性盒模型*!
+        }
+        .middle{
+            background: blue;
+            flex-grow: 1;    !*占父级剩余空间的100%*!
+            widows: 0;
+            !*width:0;*!
+        }
+        .left{
+            background: red;
+            width: 200px;
+            order:-1;
+        }
+        .right{
+            background: green;
+            width: 200px;
+            order:1;
+        }*/
+
+
+        .header,.end{
+            background: #bfbfbf;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+        .main{
+            height: 150px;
+            width: 100%;
+            position: relative;
+        }
+        .middle{
+            height: 150px;
+            background-color: yellow;
+            position: absolute;
+            left:200px;
+            right:200px;
+            min-width: 500px;
+        }
+        .left{
+            height: 150px;
+            width:200px;
+            background-color: blue;
+            position: absolute;
+            left:0;
+        }
+        .right{
+            height: 150px;
+            width:200px;
+            background-color: red;
+            position: absolute;
+            right:0;
+        }
+        /*.main{
+            height: 150px;
+            width: 100%;
+        }
+        .middle{
+            height: 150px;
+            background-color: yellow;
+            margin-left:200px;
+            margin-right:200px;
+        }
+        .left{
+            height: 150px;
+            width:200px;
+            background-color: blue;
+            margin-top:-150px;
+            float:left;
+        }
+        .right{
+            height: 150px;
+            width:200px;
+            background-color: red;
+            margin-top:-150px;
+            float:right;
+        }
+        .clearfix{
+            content: '';
+            display: block;
+            clear: both;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="header">
+        header
+    </div>
+    <div class="main clearfix">
+        <div class="middle">middle</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="end">
+        footer
+    </div>
+</body>
+</html>

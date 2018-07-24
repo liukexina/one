@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            max-width: 960px;
+            margin: 0 auto;
+            min-width:500px;
+        }
+        .header{
+            width: 100%;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            background: #5d5d5d;
+            margin-bottom:10px;
+            color:white;
+            font-size: 20px;
+        }
+        .tu{
+            width: 100%;
+            background-image: url("图片/3.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;
+            height: 0;/*避免被内容撑开多余的高*/
+            padding-bottom: 80%;/* padding百分比相对父元素body宽度计算 */
+
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+     /*   .tu:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }*/
+
+       /* .tu img{
+            width: 100%;
+        }*/
+        .content{
+            width: 100%;
+            overflow: hidden;
+        }
+        .wai p{
+            text-align: center;
+            /*display: table-cell;          !*以td单元格方式展示*!
+            vertical-align: middle;*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            width: 100%;
+        }
+        .wai{
+            /*display: table;    !*表格*!*/
+            height: 300px;
+            position:relative;
+        }
+        .wai1{
+            float:left;
+            width: 50%;
+            background: cornflowerblue;
+        }
+        .wai2{
+            float:right;
+            width: 40%;
+            background: orangered;
+        }
+        .end{
+            margin-top:10px;
+            margin-bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .wai{
+                width: 100%;
+            }
+            /*.content .content-3{
+                height: 0;
+            }*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            页面
+        </div>
+        <div class="header">
+            标题
+        </div>
+       <!-- <div class="tu">
+            <img src="图片/3.jpg" alt="">
+        </div>-->
+        <div class="tu">
+
+        </div>
+        <div class="content clearfix">
+            <div class="wai wai1">
+                <p class="content-1">
+                    In declaring myself thus I'm awarerelative situation of our families makes any alliance between us a reprehensible connection. As a rational man I cannot but regard it as such myself, but it cannot be helped.  Almost from the earliest moments, I have come to feel for you...  ..a passionate admiration and regard.which despite my struggles, has overcome every rational objection.I beg you, most fervently, to relieve my suffering and consent to be my wife.
+                </p>
+            </div>
+            <div class="wai wai2">
+                <p class="content-2">
+                    A pair of lovers premarital understand each other well or character special similar, this does not mean that after their marriage can be happy. They are often get later distance farther and farther, each other troubles. Since you have with this person for life, to his faults know as little as possible.
+                </p>
+            </div>
+        </div>
+        <div class="header end">
+            结束
+        </div>
+    </div>
+
+</body>
+</html>
