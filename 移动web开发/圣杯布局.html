@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .zong{
+            min-width: 500px;
+        }
+        .header,.end{
+            background: #bfbfbf;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+        .middle,.left,.right{
+            height: 150px;
+            float:left;
+            position: relative;
+        }
+        .main{
+            padding:0 200px;
+            height: 150px;
+            min-width:300px;
+        }
+        .middle{
+            background: yellow;
+            width: 100%;
+        }
+        .left{
+            background: blue;
+            width: 200px;
+            margin-left:-100%;
+            left:-200px;
+        }
+        .right{
+            background: red;
+            width: 200px;
+            margin-left:-200px;
+            right:-200px;
+        }
+        .clearfix{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="zong">
+    <div class="header">
+        header
+    </div>
+    <div class="main clearfix">
+        <div class="middle">middle</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="end">
+        footer
+    </div>
+</div>
+</body>
+</html>

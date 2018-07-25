@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        /*.header,.end{
+        .zong{
+            min-width: 500px;
+        }
+       .header,.end{
             background: #bfbfbf;
             width: 100%;
             text-align: center;
             border: 1px solid #000000;
         }
-        .main{
+       /* .main{
             height: 150px;
             width: 100%;
-            display: flex;    !*弹性盒模型*!
+            display: flex;
         }
         .middle{
             background: blue;
-            flex-grow: 1;    !*占父级剩余空间的100%*!
+            flex-grow: 1;
             widows: 0;
-            !*width:0;*!
         }
         .left{
             background: red;
@@ -30,16 +32,10 @@
             background: green;
             width: 200px;
             order:1;
-        }*/
-
-
-        .header,.end{
-            background: #bfbfbf;
-            width: 100%;
-            text-align: center;
-            border: 1px solid #000000;
         }
-        .main{
+*/
+
+       /* .main{
             height: 150px;
             width: 100%;
             position: relative;
@@ -50,7 +46,6 @@
             position: absolute;
             left:200px;
             right:200px;
-            min-width: 500px;
         }
         .left{
             height: 150px;
@@ -65,8 +60,8 @@
             background-color: red;
             position: absolute;
             right:0;
-        }
-        /*.main{
+        }*/
+          .main{
             height: 150px;
             width: 100%;
         }
@@ -94,20 +89,24 @@
             content: '';
             display: block;
             clear: both;
-        }*/
+        }
+
     </style>
 </head>
 <body>
-    <div class="header">
-        header
+    <div class="zong">
+        <div class="header">
+            header
+        </div>
+        <div class="main clearfix">
+            <div class="middle">middle</div>
+            <div class="left">left</div>
+            <div class="right">right</div>
+        </div>
+        <div class="end">
+            footer
+        </div>
     </div>
-    <div class="main clearfix">
-        <div class="middle">middle</div>
-        <div class="left">left</div>
-        <div class="right">right</div>
-    </div>
-    <div class="end">
-        footer
-    </div>
+
 </body>
 </html>

@@ -85,13 +85,6 @@
             <li ><img src="https://img01.sogoucdn.com/app/a/100520024/a9a72b6522d6cb6a672c6520912d2f98" alt=""></li>
             <li ><img src="https://img01.sogoucdn.com/app/a/100520024/81b9b7bf8a59c1935de8d72833937f2b" alt="" ></li>
         </ul>
-        <ul class="content-num">
-            <li class="two-num">1</li>
-            <li class="one-num">2</li>
-            <li class="one-num">3</li>
-            <li class="one-num">4</li>
-            <li class="one-num">5</li>
-        </ul>
         <ul class="content-char">
             <li>&lt;</li>
             <li>&gt;</li>
@@ -118,15 +111,6 @@
         main.onmouseout = function () {
             isTimer = true;
         };
-        //数字按钮
-       for(i = 0 ; i < numL.length ; i++){
-           numL[i].index = i;
-           numL[i].onclick = function () {
-               if(isRun){
-                   change(this.index);
-               }
-           }
-       }
        //向上按钮
         dirL[0].onclick = function () {
            if(isRun){
