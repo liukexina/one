@@ -28,6 +28,12 @@ body {
 html{
     font-size:62.5%; !important;
 }
+img{
+    max-width: 100%;
+}
+.content{
+    min-width: 180px;
+}
 /*main开始*/
 .main{
     background: #FFF;
@@ -251,7 +257,7 @@ html{
     right: 10px;
     padding: 0 6px;
     color: #fff;
-    font-size: 14px;
+    font-size: 1.3rem;
     border-radius: 2px;
     z-index: 10;
 }
@@ -260,7 +266,7 @@ html{
     overflow: hidden;
 }
 .hero ul{
-    width: 400%;
+    /*width: 400%;*/
     left:0;
     overflow: hidden;
 }
@@ -272,7 +278,7 @@ html{
 }
 .hero li {
     float:left;
-    width: 25%;
+    /*width: 100%;*/
 }
 .hero li img{
     width: 100%;
@@ -387,6 +393,7 @@ html{
     margin-top: -36px;
     right: 0;
     transform: translate3d(0, 0, 0);
+    max-width: 100%;
 }
 /*promotion-msr结束*/
 

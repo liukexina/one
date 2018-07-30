@@ -5,30 +5,33 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="container">
+    <!--<div class="container">
         <div class="inner">hello</div>
         <div class="box">world</div>
         <div class="inner">llala</div>
-    </div>
-    <!--<div class="container">
-        <h2>Greetings</h2>
-        <div class="inner">Hello</div>
-        <div class="inner">Goodbye</div>
     </div>-->
+    <div class="container">
+        <h2>Greetings</h2>
+        <div class="hello">Hello</div>
+        <div class="inner">
+            <div>hah</div>
+            Goodbye
+        </div>
+    </div>
 
     <script src="jquery-3.3.1.js"></script>
     <script>
         /*嵌入包含*/
         // $(".inner").wrap("<div class=\"new\">123</div>");  /*使用.wrap(), 我们可以在inner <div>外层插入一个HTML结构。*/
-        $(".inner").wrapAll("<div class=\"new\">123</div>");/*所有匹配元素将会被当作是一个整体，在这个整体的外部用指定的 HTML 结构进行包裹。*/
+        // $(".inner").wrapAll("<div class=\"new\">123</div>");/*所有匹配元素将会被当作是一个整体，在这个整体的外部用指定的 HTML 结构进行包裹。*/
 
         //插入
         /*$("<p>test<p/>").insertAfter('.inner');
         $(".inner").after("<p>test<p/");*/
 
         //清空移除
-        // $(".inner").empty();   /*包括内容都置空*/
-        // $(".inner").remove();  /*dom都移除*/
+        $(".inner").empty();   /*删除文本 包括内容都置空*/
+        $(".inner").remove();  /*dom都移除*/
     </script>
 </body>
 </html>

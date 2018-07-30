@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .delete { display: none; }
+        li{
+            font-size:60px;
+        }
+    </style>
+</head>
+<body>
+    <ul id=items>
+        <li>List item 1 <span class=delete>DELETE</span></li>
+        <li>List item 2 <span class=delete>DELETE</span></li>
+    </ul>
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script>
+
+        /*swipe, swipeLeft, swipeRight, swipeUp, swipeDown*/
+
+        $('#items li').swipe(function(){        /*上下左右都能获取*/
+            $('.delete').hide();
+            $('.delete', this).show()            /*this下的delete*/
+        });
+        $('.delete').tap(function(){
+            $(this).parent('li').remove()
+        })
+    </script>
+</body>
+</html>
