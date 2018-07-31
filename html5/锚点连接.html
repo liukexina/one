@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 50%;
+            height: 400px;
+        }
+        #box1{
+            background: red;
+        }
+        #box2{
+            background: blue;
+        }
+        #box3{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <a href="#box1">#box1</a>    <!--锚点链接  点击谁谁处于target状态-->
+        <a href="#box2">#box2</a>
+        <a href="#box3">#box3</a>
+    </p>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        var obj = {};
+
+        window.onpopstate = function (e) {
+            var arr = $("div:target").offset().top;
+            history.pushState(arr,"");
+            console.log("top" + e.state);
+        }
+
+
+
+    </script>
+
+</body>
+</html>

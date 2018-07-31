@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*设置方式不同 类型也不同*/
+    // localStorage.setItem("name","xiaohong");
+    // localStorage.age="1";
+    // localStorage.removeItem("name");/*单个删除*/
+    // localStorage.clear();/*全部删除*/
+    console.log(localStorage.getItem("name"));
+    console.log(localStorage.age);
+
+
+    /*区别： 关闭当前窗口sessionStorage删除 而localStorage存在
+    *         sessionStorage只在在当前页面共享而localStorage在同一个域名下可共享使用
+    * */
+
+    /*sessionStorage.setItem("name","haha");  /!*同localStorage*!/*/
+</script>
+</body>
+</html>

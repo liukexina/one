@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #can{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="400" height="400"></canvas>
+    <script>
+        var oCan = document.getElementById("can");
+        var can = oCan.getContext("2d");
+        can.beginPath();        /*开始*/
+        can.moveTo(100,150);
+        can.lineTo(350,50);
+        can.lineWidth = "10";
+        can.strokeStyle = "red";
+        can.stroke();                  /*结束*/
+
+        can.beginPath();
+        can.moveTo(50,50);
+        can.lineTo(150,150);
+        can.lineWidth = "10";
+        can.strokeStyle = "blue";
+        can.stroke();
+    </script>
+</body>
+</html>

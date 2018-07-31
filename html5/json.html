@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var obj = {
+        name :"xioaming"
+    };
+    var j = JSON.stringify(obj);
+    console.log(JSON.stringify(obj));       /!*json对象转换字符串*!/
+    console.log(JSON.parse(j));                /!*字符串转换json*!/
+    var jstr = "｛'name':'xiaoming'｝";
+    console.log(jstr);*/
+
+
+    var obj1 = {
+        name :"xiaoming",
+        age:"20",
+        school:"heida",
+        teacher:{
+            name:"zhagnsan",
+            age:"30"
+        }
+    };
+
+
+ /*对象赋值*/
+ /*   var obj4 = JSON.stringify(obj1);
+    var obj5 = JSON.parse(obj4);
+    obj1.teacher.name = "hah";
+    console.log(obj5);
+*/
+
+    /*function clones(obj) {
+        var obj2 = {};
+        for(key in obj){
+            if(typeof obj[key] == "object"){
+                obj2[key] =  clones(obj[key]);
+            }
+            else{
+                obj2[key] = obj[key];
+            }
+
+        }
+        return obj2;
+    }
+    var obj3 = clones(obj1);
+    obj1.teacher.name = "lis";
+    console.log(obj3);*/
+
+
+</script>
+</body>
+</html>

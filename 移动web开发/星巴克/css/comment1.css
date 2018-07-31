@@ -446,7 +446,6 @@ img{
 
 }
 .tmall ul li a img{
-
     margin-top: -36px;
     height: 72px;
 }
@@ -801,7 +800,7 @@ img{
     }
     .scroll .wrapper{
         display: table;
-        padding-right: 0px;
+        padding-right: 0;
     }
     .scroll-items{
         width: 1073px;
