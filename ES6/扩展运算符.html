@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        /*剩余运算符不能写中间，必须在最后*/
+/*不确定参数*/
+       /* function a(a,...arg) {           /!*将剩余的参数接受 并存到数组里*!/
+            console.log(a,arg)
+        }
+        a("a","b","c","d","e");*/
+
+
+/*作为数组的一部分*/
+      /* let arr = [1,2,3,4];
+       let arr1 = ["a",...arr,"b"];           /!*let arr1 = ["a",1,2,3,4,"b"];*!/
+       console.log(arr1);*/
+
+/* 数组复制*/
+     /* let arr = [1,2,3,4];
+      let arr2 = [...arr];
+      arr[0] = "a";
+      console.log(arr2);*/
+
+/*数组合并*/
+      /*let arr = [1,2,3];
+      let arr2 = [4,5,6];
+      console.log(arr.concat(arr2));
+      let arr3 = [...arr,...arr2];
+      console.log(arr3);*/
+
+
+/*对象合并同extend  半世克隆*/
+      /*let obj1 = {
+          name:"xiaoming",
+          age:"20"
+      };
+      let obj2 = {
+          name:"xiaolan",
+          school:"heida",
+          teacher:{
+              name:"zhangsan"
+          }
+      };
+
+      let obj3 = {...obj1,...obj2};
+      obj2.name = "xiao";         /!*没变*!/
+      obj2.teacher.name = "lisi";     /!*改变*!/
+      console.log(obj3);*/
+
+/*解构*/
+      /*let [a,b,...arg] = [1,2,3,4,5,6,7];
+      console.log(a,b,arg);*/
+    </script>
+</body>
+</html>

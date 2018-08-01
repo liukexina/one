@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+    </ul>
+    <script>
+
+        /*闭包让变量始终保存到内容中，不会释放掉*/
+       /* var ali = document.querySelectorAll("ul li");
+        for(i = 0 ; i < ali.length ;i++){
+            (function (key) {
+                ali[i].onclick = function () {
+                    console.log(key);
+                }
+            })(i)
+        }
+
+        let ali = document.querySelectorAll("ul li");
+        for(let i = 0 ; i < ali.length ;i++){
+            ali[i].onclick = function () {
+                console.log(i);
+            }
+        }*/
+
+/*立即执行函数*/
+      /*  var abc = (function (key) {
+            console.log(key);
+        })(1);
+
+
+
+        function f1() {
+            var n = 999;
+            function f2() {
+                alert(n);
+            }
+            return f2;
+        }
+
+        var result = f1();
+        result();   /!*alert 999*!/*/
+
+
+       /* let a = 12;
+        let a = c;   /!*let不存在变量提升  不能重复定义形同名字 会报错*!/
+        console.log(a);
+        */
+        /*function a() {
+
+            /!*暂时性死区  let a 声明之前引用报错*!/
+            console.log(a);
+            let a = 10;
+        }
+        a();*/
+
+
+
+
+        // const a = "123";
+        // a = "abc";
+        // console.log(a);
+
+
+        /*const obj = {
+            name:"xiaohong"
+        };
+
+        /!*obj = {
+            age:"19"            /!*改变地址  不能改*!/
+        }*!/
+        obj.name = "xiaoming";      /!*改变地址指向变量的值*!/
+        console.log(obj);*/
+
+
+
+        const obj = {
+            name:"xiaoming"
+        };
+        Object.freeze(obj);  /*冻结对象不能修改修改不会报错*/
+        obj.name = "xiaohong";
+        console.log(obj);
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var arr = ["a","b","c"];
+    // var a = arr[0];
+    // var b = arr[1];
+    // var c = arr[2];
+
+    /*var [a,b,c] =["1","2","3"];
+    console.log(a,b,c);*/              /*根据索引赋值*/
+
+    // var obj = {
+    //     name:"xiao",
+    //     age:"20"
+    // };
+    //
+    // var name = obj.name;
+    // var age = obj.age;
+/*
+    var {age,name} = {             /!*根据属性名赋值，不能根据索引赋值*!/
+        name:"xiao",
+        age:"20"
+    };
+    console.log(name,age);
+
+    var {name} = {             /!*根据属性名赋值，不能根据索引赋值*!/
+        name:"xiao",
+        age:"20"
+    };
+    console.log(name);
+
+    var {name:a,age:b} = {             /!*根据属性名赋值，不能根据索引赋值*!/
+        name:"xiao",
+        age:"20"
+    };
+    console.log(a,b);*/
+
+
+    /*var str = "hello";
+    console.log(str.charAt(0));
+    console.log(str[0]);
+    var [a,b,c,d,e] = "hello";
+    console.log(a,b,c,d,e);*/
+
+
+    /*function foo() {
+        console.log(arguments);
+        console.log(arguments[0],arguments[1],arguments[2]);   /!*arguments可以获取参数*!/
+    }
+    foo("a","b","c")*/
+
+    /*function foo([a,b,c]) {
+        console.log(a,b,c);
+    }
+    var arr = ["1","2","3"];
+    foo(arr);*/
+
+    /*function foo({name:a,age:b,school:c = "linda"}) {            /!*linda为默认值。但传值后就不是默认值*!/
+        console.log(a,b,c);
+    }
+    var obj = {
+        name:"xiao",
+        age:"20",
+        school:"heida"
+    };
+    foo(obj);*/
+
+
+
+    /*function foo() {
+        var arr = ["1","2","3"];
+        return arr;
+    }
+    var [a,b,c] = foo();
+    console.log(a,b,c);*/
+
+    /*变量互换*/
+   /* let a = 10;
+    let b = 1;
+    a = a + b ;
+    b = a - b;
+    a = a - b;
+    console.log(a,b);*/
+
+    var a = 10;
+    var b = 1;
+    /*var [a,b] = [b,a];
+    console.log(a,b);*/
+
+    a = [b,b = a][0];
+    console.log(a,b);
+</script>
+</body>
+</html>

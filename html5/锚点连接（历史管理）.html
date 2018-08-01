@@ -30,17 +30,25 @@
     <div id="box3"></div>
     <script src="jquery-3.3.1.js"></script>
     <script>
-        var obj = {};
 
+
+        $("p a").on("click",function () {
+            var id = $(this).attr('href');
+            $('body, html').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+            history.pushState($(id).offset().top,"");
+            return false;            // 阻止默认行为  锚点默认行为会触发onpopstate
+        });
         window.onpopstate = function (e) {
-            var arr = $("div:target").offset().top;
-            history.pushState(arr,"");
-            console.log("top" + e.state);
+            console.log(e.state);
+            $('body, html').animate({
+                scrollTop: e.state
+            }, 500);
         }
 
 
 
     </script>
-
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        var arr = "hello world";
+        function start(a,b) {
+            if(!a.includes(b)){
+                return false;
+            }
+            else{
+                if(a.indexOf(b) == 0){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        function end(a,b) {
+            if(!a.includes(b)){
+                return false;
+            }
+            else{
+                if(a.indexOf(b) + b.length == a.length){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        console.log(arr.startsWith("hello"),start(arr,"hello"));
+        console.log(arr.endsWith("world"),end(arr,"world"));
+    </script>
+</body>
+</html>
