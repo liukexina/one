@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*var a = 8;
+        console.log(a.toString(8));
+
+        var a = 0B101;/!*二进制：0B 八进制：0O *!/
+        console.log(a)*/
+
+
+        console.log(Number.isFinite(3));        /*判断是否为数*/
+        console.log(Number.isNaN(NaN));           /*判断是不是NaN*/
+        console.log(Number.isInteger(3.2));           /*判断是否为整形*/
+        console.log(Number.parseFloat(5));             /*转换为浮点型*/
+        console.log(Number.parseInt(5.5));             /*转换为整型*/
+        console.log(Math.pow(2,53));           /*次幂 2的53次幂为最大数 安全数值*/
+        console.log(Math.pow(2,53) + 1)        /*达到最大不能计算*/
+        console.log(Number.isSafeInteger(Math.pow(2,53)-1));            /*是否为安全数值   最大值减去1以内均为安全数值*/
+
+        console.log(Number.MAX_SAFE_INTEGER);      /*最大值*/
+        console.log(Number.MIN_SAFE_INTEGER);        /*最小值*/
+
+
+        console.log(Math.trunc(4.3));     /*向下取整*/
+        console.log(Math.sign(-1));      /*正数返回1 复数返回-1 0返回0*/
+    </script>
+</body>
+</html>

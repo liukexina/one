@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*function foo(name,age = "20") {
+            console.log(name,age);
+        };
+        foo("name","18");*/
+
+        // function foo(name,age="20",school) {
+        //
+        // }
+        // console.log(foo.length)         /*从第一个参数到有默认值的参数之间的没有默认值的个数*/
+        // console.log(foo.name);          /*返回函数名*/
+
+
+
+        // 'use strict'              /*开启严格模式 */
+
+        /*1.全局变量必须显示声明 */
+        // var a = 123;
+        // console.log(a);
+
+        /*2.禁止this指向全局对象*/
+        // function a() {
+        //     console.log(this);            /*指向window*/
+        // }
+        //
+        // setTimeout(function () {
+        //     console.log(this);            /*指向window*/
+        // },1000);
+        // a();
+
+        // var name = "zhangshan";
+        // var obj = {
+        //     name:"xiaoming",
+        //     showName:function () {
+        //         console.log(this.name);
+        //         var that = this;
+        //         function foo() {
+        //             console.log(this.name);          /*指向window*/
+        //             console.log(that.name);         /*指向obj*/
+        //         }
+        //         foo();
+        //     }
+        // };
+        // obj.showName();
+
+        /*3.函数不能重名*/
+        // function foo(a,a,c) {
+        //     console.log(a,a,c)
+        // }
+        // foo("a","b","c");
+
+        /*4.禁止使用with*/
+        // name = "xioahong";
+        // var obj = {
+        //     name:"xiaoming"
+        // };
+        // with (obj){
+        //     console.log(name);
+        // }
+
+        /*5.禁止使用arguments.callee（）*/
+        // function foo(key) {
+        //     if(key == 1){
+        //         return 1;
+        //     }
+        //     else{
+        //         return key * arguments.callee(key-1);          /*arguments.callee（）调用自己*/
+        //     }
+        // }
+        // console.log(foo(5));
+    </script>
+</body>
+</html>

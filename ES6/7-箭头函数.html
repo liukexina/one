@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+    <script>
+       /* function foo(a,b) {
+            return a+b;
+        }
+        console.log(foo(1,3));*/
+
+        /*箭头函数=>*/
+       /*1.箭头函数不可以当作构造函数*/
+       /*2.箭头函数里没有arguments*/
+       /*3.一条语句自动返回return*/
+
+        /*let fun = (a,b) =>{
+            return a+b;
+        }
+        console.log(fun(1,3));
+
+        let fun1 = (a,b) => a+b;      /!*一条语句自动返回return*!/
+        console.log(fun1(0,3));*/
+        /*var box = document.getElementById("box");
+        box.onclick = function () {
+            console.log(this);         /!*this指向box*!/
+            /!*setTimeout(function () {            /!*指向window*!/
+                console.log(this);
+            },1000)*!/
+            setTimeout( ()=> {            /!*指向box*!/
+                console.log(this);
+            },1000)
+        }*/
+
+        /*box.onclick = () => {
+                console.log(this);         /!*this指向window*!/
+        }*/
+
+
+        /*let foo = () => {
+            console.log(argments);         /!*箭头函数里没有arguments*!/
+        }
+        let foo = (...arg) => {
+            console.log(arg);
+        }
+        foo("a","b","c","d");*/
+
+
+    </script>
+</body>
+</html>

@@ -7,35 +7,22 @@
 <body>
     <script>
 
-        var arr = "hello world";
-        function start(a,b) {
-            if(!a.includes(b)){
-                return false;
+        var arr = "hello world hello world";
+        String.prototype.start = function(b) {
+            if(this.indexOf(b) == 0){
+                return true;
             }
-            else{
-                if(a.indexOf(b) == 0){
-                    return true;
-                }
-                else{
-                    return false;
-                }
+            return false;
+        };
+        console.log(arr.start("hello"));
+        String.prototype.end = function (b) {
+            if(this.indexOf(b) + b.length == this.length){
+                return true;
             }
-        }
-        function end(a,b) {
-            if(!a.includes(b)){
-                return false;
-            }
-            else{
-                if(a.indexOf(b) + b.length == a.length){
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }
-        }
-        console.log(arr.startsWith("hello"),start(arr,"hello"));
-        console.log(arr.endsWith("world"),end(arr,"world"));
+            return false;
+        };
+
+        console.log(arr.end("world"));
     </script>
 </body>
 </html>
