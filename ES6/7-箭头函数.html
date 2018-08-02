@@ -23,14 +23,16 @@
        /*1.箭头函数不可以当作构造函数*/
        /*2.箭头函数里没有arguments*/
        /*3.一条语句自动返回return*/
-
-        /*let fun = (a,b) =>{
+/*
+        let fun = (a,b) =>{
             return a+b;
         }
-        console.log(fun(1,3));
+        console.log(fun(1,3));*/
 
-        let fun1 = (a,b) => a+b;      /!*一条语句自动返回return*!/
+        /*let fun1 = (a,b) => a+b;      /!*一条语句自动返回return*!/
+        let fun1 = (a,b) => void a+b;      /!*一条语句自动返回return 加入void就不会自动返回 返回NaN*!/
         console.log(fun1(0,3));*/
+
         /*var box = document.getElementById("box");
         box.onclick = function () {
             console.log(this);         /!*this指向box*!/
@@ -48,7 +50,7 @@
 
 
         /*let foo = () => {
-            console.log(argments);         /!*箭头函数里没有arguments*!/
+            console.log(arguments);         /!*箭头函数里没有arguments*!/
         }
         let foo = (...arg) => {
             console.log(arg);

@@ -67,7 +67,7 @@
 
         // const a = "123";
         // a = "abc";
-        // console.log(a);
+        // console.log(a);     /*常量不能改变值*/
 
 
         /*const obj = {
@@ -82,12 +82,18 @@
 
 
 
-        const obj = {
+        /*const obj = {
             name:"xiaoming"
         };
-        Object.freeze(obj);  /*冻结对象不能修改修改不会报错*/
+        Object.freeze(obj);  /!*冻结对象不能修改修改不会报错*!/
         obj.name = "xiaohong";
-        console.log(obj);
+        console.log(obj);*/
+
+        // var a  = 10;             /*var 的a顶层是window*/
+        let a = "10";           /* let 的a不在window下，所以this.a为undefined*/
+        setTimeout(function () {
+            console.log(this.a);
+        },1000)
     </script>
 </body>
 </html>

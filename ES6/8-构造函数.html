@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        
+        function Person(name,age) {             /*方法名为大写则为类*/
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.showName = function () {              /*prototype Person的 原型*/
+            console.log(this.name);
+        };
+        var person1 = new Person("xiaoming","20");
+       person1.showName();
+
+    </script>
+</body>
+</html>
