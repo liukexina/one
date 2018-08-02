@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*let arr = new Set([1,2,3,4,5,6,3]);         /!*不能重复，重复的不输出不存在*!/
+        console.log(arr);
+        let arr1 = [1,2,3,4,5,6,5];
+
+        let arr2 = new  Set(arr1);
+        console.log(new Set(arr1));          /!*可以做数组的去重*!/
+        let arr3 = [];
+
+        for(items of arr2){
+            arr3.push(items);
+        }
+        let arr4 = [];
+        for(items of arr1){
+            if(!arr4.includes(items)){
+                arr4.push(items)
+            }
+        }
+        console.log(arr3,arr4);*/
+
+        /*let arr1 = [1,2,3,4,5,6,3];
+        console.log(Array.from(new Set(arr1))); /!*可以做数组的去重*!/
+
+        let arr = new Set([1,2,3,4,5,6]);
+        arr.add(7);     /!*加7*!/
+        arr.delete(7);
+        console.log(arr.has(6));
+        console.log(arr);
+        arr.clear();
+       console.log(arr);*/
+
+
+        let arr = new Set([1,2,3,4,5,6,3,8]);
+        console.log(arr.size);            /*长度*/
+
+        for(let[items,key] of arr.entries()){
+            console.log(items,key);
+        }
+
+        /*let ws = new WeakSet();         /!*通过add方式加入只能接受对象*!/
+        let obj = {
+            name:"xiaoming"
+        };
+        ws.add(obj);
+        let obj2 = obj;
+        ws.add(obj2);      /!*存不进去 与obj相同重复*!/
+        console.log(ws);*/
+</script>
+</body>
+</html>

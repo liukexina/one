@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*function * helloWorldGenerator() {
+            yield 'hello';
+            yield 'world';
+            return 'ending';
+        }
+        var hw = helloWorldGenerator();
+        console.log(hw.next());
+        console.log(hw.next());
+        console.log(hw.next());*/
+
+        function *foo(x) {
+            var y = 2 * (yield(x + 1 ));
+            var z = yield(y/3);
+            return (x+y+z);
+        }
+        var a = foo(5);
+        console.log(a.next());
+        console.log(a.next(12));        /*传给上一次执行的代码段*/
+        console.log(a.next(13));
+    </script>
+
+</body>
+</html>

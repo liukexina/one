@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*let maps = new Map();
+        let obj = {
+            name:"lisi"
+        };
+        let obj2 = {
+            age:"20"
+        };
+        maps.set("name","xiaomign");
+        maps.set("person",obj);
+        maps.set(obj2,"30");
+        maps.set(0,"haha");
+        maps.set(0,"world");/!*覆盖了，不能重复key值*!/
+        maps.set("fellow","30");
+        console.log(maps);*/
+
+        let mo = new WeakMap();
+        let obj = {
+            name:"xiaoming"
+        };
+        mo.set(obj,"fellow");
+        // mo.set(null,"hah");
+        // mo.set("anc","1");  /*key值只能为对象类型的  但null不被允许*/
+        console.log(mo);
+
+    </script>
+</body>
+</html>
