@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var aa = '123';
+        function foo(name,age,school) {
+            console.log(this.aa);
+            console.log(name,age);
+        }
+        foo("lisi","20");
+
+        var obj = {
+            aa:"abcd"
+        };
+
+        foo.call(obj,"zhangsan","30","linda");              /*直接执行*/
+        foo.apply(obj,["zhangsan","20","heida"]);         /*直接执行*/
+
+        var foo2 = foo.bind(obj);         /*调用的时候才执行*/
+        foo2("lisi","10");
+        var foo3 = foo.bind(obj,"lisi");
+        foo3("20");                   /*传剩余的参数*/
+    </script>
+</body>
+</html>

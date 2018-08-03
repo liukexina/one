@@ -49,7 +49,7 @@
         console.log("shibai2")
     })*/
 
-    /*let prom = function (url,callback) {
+  /*  let prom = function (url,callback) {
         return new Promise(function (resolved,rejected) {
             $.get(url,function (res) {
                 if(callback){
@@ -70,40 +70,41 @@
         return prom("c.json");
     }).then(function (res) {
         console.log(res);
-    });*/
-
+    });
+*/
     let prom1 = new Promise(function (resolved,rejected) {
         $.get("a.json",function (res) {
             console.log(res);
-            rejected();
-            // resolved();
+            // rejected();
+            resolved();
         })
-    })
+    });
     let prom2 = new Promise(function (resolved,rejected) {
         $.get("b.json",function (res) {
             console.log(res);
             resolved();
+            // rejected();
         })
     });
     let prom3 = new Promise(function (resolved,rejected) {
         $.get("c.json",function (res) {
             console.log(res);
-            // resolved();
-            rejected();
+            resolved();
+            // rejected();
         })
     });
 
-    /*Promise.all([prom1,prom2,prom3]).then(function () {
+    Promise.all([prom1,prom2,prom3]).then(function () {
+        console.log("done");
+    },function () {
+        console.log("error");
+    });
+
+    /*Promise.race([prom1,prom2,prom3]).then(function () {          /!*只要执行完就进行*!/
         console.log("done");
     },function () {
         console.log("error");
     });*/
-
-    Promise.race([prom1,prom2,prom3]).then(function () {          /*只要执行完就进行*/
-        console.log("done");
-    },function () {
-        console.log("error");
-    });
 </script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/*多行注释*/
+//单行注释
+/*！强制注释*/
+$color:#ff0;
+$name:width;
+/*.div{
+  color: $color;
+}*/
+/*.div .box1{
+  color:#000;
+}*/
+#obox{
+  #{$name}:1px;
+}
+.div{
+  color: $color;
+  .box1{
+    color:#000;
+  }
+  &:hover{
+    font-size:10px;
+  }
+  &-header{
+    font-weight: bold;
+  }
+}
+.div2{
+  background:{
+    color:#fff;
+    repeat: no-repeat;
+    background-image:url(xx.jpg);
+  }
+  border:{
+    left:{
+      color:red;
+      width: 1px;
+    }
+    right:{
+      color:yellow;
+      width: 2px;
+    }
+  }
+}
+.div3{
+  font-size:16px;
+}
+.div4{
+  font-weight: bold;
+}
+
+@mixin mx($w,$h:100px){
+  width:$w;
+  height:$h;
+}
+.div5{
+  @include mx(100px)
+}
+.div6{
+  @include mx(100px,2000px)
+}
+
+//继承
+@import "base.scss";
+
+.div7{
+  @extend .div4;
+}
+.div9{
+  height: 200px - 100;
+}
+.div10{
+  height: 200px + 100px;
+}
+.div11{
+  height: 100px * 10;
+}
+.div12{
+  height: (100px)/10;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       /* function foo() {
+            console.log(Array.from(arguments));
+        }
+        foo("lisi","20","heida");
+        var obj = {
+            name:"lsi"
+        };
+        foo(obj,"20","heida");
+*/
+       function foo(name,age) {
+           console.log(this.school);
+           console.log(name,age);
+       }
+       var obj = {
+           school:"abcd"
+       };
+
+        Function.prototype.binds = function () {
+            let obj = Array.from(arguments)[0];
+            let args = Array.from(arguments).slice(1);
+            let _this = this;
+            return function (){
+                let bindArgs = Array.from(arguments);
+                let allArgs = args.concat(bindArgs);
+                _this.call(obj,...allArgs);
+                _this.apply(obj,allArgs);
+            };
+        };
+        var foo1 = foo.binds(obj,"linda");
+        foo1("liu");
+
+    </script>
+</body>
+</html>
