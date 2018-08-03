@@ -4,6 +4,16 @@
 /*！强制注释*/
 $color:#ff0;
 $name:width;
+
+
+$user:"lisi";
+/*作者：$user*/
+$xzq:div20;
+.#{$xzq}{
+  height: 100px;
+}
+
+
 /*.div{
   color: $color;
 }*/
@@ -54,10 +64,10 @@ $name:width;
   height:$h;
 }
 .div5{
-  @include mx(100px)
+  @include mx(100px);
 }
 .div6{
-  @include mx(100px,2000px)
+  @include mx(100px,2000px);
 }
 
 //继承
@@ -67,14 +77,74 @@ $name:width;
   @extend .div4;
 }
 .div9{
-  height: 200px - 100;
+  height: 200px - 100;           /*可以前后都写px*/
 }
 .div10{
-  height: 200px + 100px;
+  height: 200px + 100px;              /*可以前后都写px*/
 }
 .div11{
-  height: 100px * 10;
+  height: 100px * 10;           /*只能写一个px*/
 }
 .div12{
-  height: (100px)/10;
+  height: (100px)/10;           /*用括号将被除数扩住*/
+}
+
+$num:"a";
+.div13{
+  background-image: url($num + '.jpg');
+}
+
+.div14{
+  color:lighten(rgb(0,0,255),20%);
+}
+.div15{
+  color:darken(rgb(0,0,255),20%);
+}
+.div16{
+  color:opacify(rgb(0,0,0.5),0.3);
+}
+.div17{
+  color:transparentize(rgb(0,0,0.5),0.3);
+}
+
+$m:(light:#000,dark:#fff);
+.div18{
+color:map-get($m,light);
+}
+
+@function foo($key){
+  @if($key == "1"){
+    @return red;
+  }
+  @else{
+    @return blue;
+  }
+}
+.div19{
+  color:foo("1");
+}
+@for $var from 1 to 5 {       /*to不包含5 through包含5*/
+  .div-content-#{$var}{
+    width: $var+"px";
+  }
+}
+@for $var from 1 through 5 {       /*to不包含5 through包含5*/
+  .div-content1-#{$var}{
+    width: $var+"px";
+  }
+}
+
+$lista: a b c d;
+@each $var in $lista{            /*each遍历列表*/
+  .div-#{$var}{
+    background: #000;
+  }
+}
+
+$i:0;
+@while ($i<10){
+  .div-footer-#{$i}{
+    background: #000;
+  }
+  $i:$i + 1;
 }

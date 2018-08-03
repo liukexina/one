@@ -1,5 +1,7 @@
 let a = 10;
 
+let b = "abc";
+
 class Person{
     constructor(name,age){
         this.name = name;

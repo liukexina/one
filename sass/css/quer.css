@@ -1,0 +1,60 @@
+.div {
+  color: red;
+}
+
+.div1 {
+  color: #fff;
+}
+.div1 .box {
+  font-size: 12px;
+}
+.div1 .box .content {
+  font-weight: bold;
+}
+
+.div2 {
+  height: 100px;
+}
+.div2:hover {
+  width: 100px;
+}
+.div2-header {
+  color: blue;
+}
+
+.div3 {
+  height: 300px;
+  width: 50px;
+}
+
+.div4, .div5 {
+  height: 1000px;
+  width: 50px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.div8 {
+  width: 100px;
+}
+
+.div6 {
+  height: 100px;
+  width: 50px;
+}
+
+.div7 {
+  border-left-color: yellow;
+  border-right-width: 2px;
+  background-repeat: no-repeat;
+  background-color: #00b262;
+}
+
+/*# sourceMappingURL=quer.css.map */
