@@ -54,3 +54,62 @@ $color:red;
     color: #00b262;
   }
 }
+
+$num1 : "a";
+.div8{
+  background-image: url($num1 + '.jpg');
+}
+.div9{
+  color:lighten(rgb(0,0,225),20%);
+}
+.div10{
+  color:darken(rgb(0,0,225),20%);
+}
+.div11{
+  color:opacify(rgb(0,0,225),.3);
+}
+.div11{
+  color:transparentize(rgb(0,0,225),.3);
+}
+
+$m:(light:#fff,dark:#000);
+.div12{
+  color:map-get($m,light);
+}
+@function foo($key){
+  @if($key == 1){
+    @return blue;
+  }
+  @else{
+    @return white;
+  }
+}
+.div13{
+  color:foo(1);
+}
+
+@for $var from 1 to 5{
+  .div-content-#{$var}{
+    height: $var + px;
+  }
+}
+@for $var from 1 through 5{
+  .div-content1-#{$var}{
+    height: $var + px;
+  }
+}
+
+$mm : a,b,c,d;
+@each $var in $mm{
+  .div-footer-#{$var}{
+    background: #000;
+  }
+}
+
+$i:0;
+@while ($i < 10){
+  .div-footer1-#{$i}{
+    height: $i + px;
+  }
+  $i:$i+1;
+}
