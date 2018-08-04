@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+}
+#box{
+    height: 200px;
+    width: 200px;
+    background:url(../img/ma1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+#content{
+    border-radius: 50%;
+}
+::placeholder{
+    color:gray;
+}
+
+#div1{
+    color:aqua;
+}
+.div10{
+    font-size:10px;
+}
+.box3{
+    color:red;
+}
