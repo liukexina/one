@@ -41,7 +41,13 @@
         }
         tr button{
             background: #f35c20;
-        }    
+        }
+        table .active{
+            background:red;
+        }
+        table .dis{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -49,15 +55,14 @@
         <h1>todolist</h1>
 
         <div>
-            <input type="text">
-            <button>搜索</button>
+            <input type="text" v-model="find">
+            <button @click="finds">搜索</button>
         </div>
         <div>
-            商品名称：<input type="text">
-            商品价格：<input type="text" value="0">
-            <button>添加</button>
+            商品名称：<input type="text" v-model="addname">
+            商品价格：<input type="text" value="0" v-model.number="addprice">
+            <button @click="adds()">添加</button>
         </div>
-
         <table  cellpadding="15">
             <tr>
                 <th>选择</th>
@@ -65,22 +70,14 @@
                 <th>商品价格</th>
                 <th>删除</th>
             </tr>
-            <tr>
-                <td><input type="checkbox"></td><td>衣服</td><td>123</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
+            <tr v-for = "items in arr" @click="add(items)" v-bind:class="{active:items.index}" v-if="items.sign">
+                <td><input type="checkbox" name="clo" v-bind:value="items.name" v-model="clothes" ></td><td>{{items.name}}</td><td>{{items.price}}</td><td><button @click="del(items)"><i class="iconfont icon-guanbi"></i></button></td>
             </tr>
             <tr>
-                <td><input type="checkbox"></td><td>裤子</td><td>12</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td><td>帽子</td><td>13</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td><td>鞋</td><td>23</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
-            </tr>
-            <tr>
-                <td ><button class="del">删除选中</button></td><td colspan="3">总价：{{allprice}}元</td>
+                <td ><button class="del" @click="delall">删除选中</button></td><td colspan="3">总价：{{sortObj}}元</td>
             </tr>
         </table>
+
     </div>
 
     <script src="vue.js"></script>
@@ -88,7 +85,109 @@
         new Vue({
             el:"#app",
             data:{
-                allprice:0
+                allprice:0,
+                addname:null,
+                addprice:null,
+                clothes:[],
+                isadd:false,
+                find:null,
+                arr:[
+                        {
+                            name:"衣服",
+                            price:123,
+                            index:false,
+                            sign:true
+                        },{
+                            name:"裤子",
+                            price:12,
+                            index:false,
+                            sign:true
+                        },{
+                            name:"鞋",
+                            price:13,
+                            index:false,
+                            sign:true
+                        },{
+                            name:"外套",
+                            price:23,
+                            index:false,
+                            sign:true
+                        }
+                ]
+            },
+            methods:{
+                add(e){
+                    if(e.index){
+                        e.index = false;
+                        var sign;
+                        for(i = 0 ; i < this.clothes.length; i++){
+                            if(this.clothes[i] == e.name){
+                                sign = i;
+                            }
+                        }
+                        this.clothes.splice(sign,1);
+                    }
+                    else{
+                        e.index = true;
+                        this.clothes.push(e.name);
+                    }
+                },
+                delall(){
+                    for(i = 0 ; i < this.arr.length ; i++){
+                        if(this.arr[i].index){
+                            this.arr[i].index = false;
+                        }
+                    }
+                    this.clothes = [];
+                },
+                del(e){
+                    var sign;
+                    for(i = 0 ; i < this.arr.length; i++){
+                        if(this.arr[i] == e){
+                            sign = i;
+                        }
+                    }
+                    this.arr.splice(sign,1);
+                },
+                adds(){
+                    if(this.addname && this.addprice){
+                        console.log(this.addname,this.addprice);
+                        var obj = {
+                            name:this.addname,
+                            price:this.addprice,
+                            index:false,
+                            sign:true
+                        };
+                        this.arr.push(obj);
+                        this.addname = null;
+                        this.addprice = null;
+                    }
+                    console.log(this.arr);
+                },
+                finds(){
+                    for(i = 0 ; i < this.arr.length ; i++){
+                        this.arr[i].sign = true;
+                    }
+                    if(this.find){
+                        for(i = 0 ; i < this.arr.length; i++){
+                            if(this.find != this.arr[i].name && this.find != this.arr[i].price){
+                                this.arr[i].sign =false;
+                            }
+                        }
+                    }
+                }
+
+            },
+            computed:{
+                sortObj(){
+                    this.allprice = 0;
+                    for(i = 0 ; i < this.arr.length ; i++){
+                        if(this.arr[i].index){
+                            this.allprice += this.arr[i].price;
+                        }
+                    }
+                    return this.allprice;
+                }
             }
         })
     </script>
