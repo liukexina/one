@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<div id="box"></div>
+    <script>
+        var box = document.getElementById("box");
+        box.innerHTML = "haloi";
+    </script>-->
+    <div id="app">
+        {{msg}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "hello world"
+            }
+        });
+    </script>
+</body>
+</html>

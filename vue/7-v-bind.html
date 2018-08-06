@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color:red;
+        }
+        img{
+            height: 300px;
+            width: 300px;
+        }
+        .box{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<!--
+v-bind 判断是否加类名属性   更改变量
+键值对方式加大括号
+font-size在js里-会报错 要写成fontSize
+v-bind: 可以缩写成:
+-->
+<div id="app">
+    <div v-bind:class="{active:isadd}">hello</div>
+    <div v-bind:class="[classa,classb]">hello world</div>
+    <img v-bind:src="sr" alt="">
+    <div v-bind:style="{fontSize: fsize + 'px'}">fellow23</div>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            isadd:true,
+            sr:"3.jpg",
+            classa:"active",
+            classb:"box",
+            fsize:30
+        }
+    })
+</script>
+</body>
+</html>

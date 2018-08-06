@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+    判断属性 若为true显示 false不显示
+    v-if
+    v-else-if
+    v-else
+
+    if elseif else
+    -->
+    <!--
+    v-show
+    控制显示隐藏同v-if
+    v-show：通过控制display：none/block控制
+    v-if：通过控制remove控制
+    -->
+    <div id="app">
+        <div v-if = "isIF">
+            isIF
+        </div>
+        <!--<div v-else-if = "elseIF">
+            elseIF
+        </div>
+        <div v-else = "else">
+            else
+        </div>-->
+        <div v-show = "isShow">
+            isShow
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                isIF: false,
+                elseIF: false,
+                else: true,
+                isShow: false
+            }
+        })
+    </script>
+</body>
+</html>
