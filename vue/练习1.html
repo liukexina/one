@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_711463_rj9adbqs9ht.css">
+    <style>
+        h1{
+            text-align: center;
+        }
+        tr:nth-child(1){
+            background: #fdffed;
+        }
+        tr:nth-child(even){
+            background: #ddfffa;
+        }
+        table{
+            width: 100%;
+        }
+        button{
+            background: #349af3;
+            color:white;
+            /*font-weight: bold;*/
+            font-size:14px;
+        }
+        tr{
+            text-align: center;
+        }
+        div{
+            margin:10px 0;
+            text-align: center;
+            font-size:18px;
+        }
+        .del{
+            background: red;
+        }
+        .icon-guanbi{
+            font-weight: bold;
+            font-size:10px;
+            color:white;
+        }
+        tr button{
+            background: #f35c20;
+        }    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>todolist</h1>
+
+        <div>
+            <input type="text">
+            <button>搜索</button>
+        </div>
+        <div>
+            商品名称：<input type="text">
+            商品价格：<input type="text" value="0">
+            <button>添加</button>
+        </div>
+
+        <table  cellpadding="15">
+            <tr>
+                <th>选择</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>删除</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td><td>衣服</td><td>123</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td><td>裤子</td><td>12</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td><td>帽子</td><td>13</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td><td>鞋</td><td>23</td><td><button><i class="iconfont icon-guanbi"></i></button></td>
+            </tr>
+            <tr>
+                <td ><button class="del">删除选中</button></td><td colspan="3">总价：{{allprice}}元</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                allprice:0
+            }
+        })
+    </script>
+</body>
+</html>
