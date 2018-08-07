@@ -7,15 +7,26 @@
     <style>
         h1{
             text-align: center;
+            padding-bottom:20px;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .input{
+            margin:20px;
         }
         tr:nth-child(1){
             background: #fdffed;
         }
         tr:nth-child(even){
-            background: #ddfffa;
+            background: #f2f2f2;
+        }
+        tr:hover{
+            background: #f2f2f2;
         }
         table{
             width: 100%;
+        }
+        table tr{
+            height: 20px;
         }
         button{
             background: #349af3;
@@ -54,13 +65,13 @@
     <div id="app">
         <h1>todolist</h1>
 
-        <div>
-            <input type="text" v-model="find">
-            <button @click="finds">搜索</button>
+        <div class="input">
+            <input type="text" v-model="find" placeholder="请输入关键字">
+            <button @click="finds" >搜索</button>
         </div>
-        <div>
-            商品名称：<input type="text" v-model="addname">
-            商品价格：<input type="text" value="0" v-model.number="addprice">
+        <div class="input">
+            商品名称：<input type="text" v-model="addname" placeholder="请输入名称">
+            商品价格：<input type="text" placeholder="0" v-model.number="addprice">
             <button @click="adds()">添加</button>
         </div>
         <table  cellpadding="15">
@@ -77,7 +88,6 @@
                 <td ><button class="del" @click="delall">删除选中</button></td><td colspan="3">总价：{{sortObj}}元</td>
             </tr>
         </table>
-
     </div>
 
     <script src="vue.js"></script>
@@ -99,7 +109,7 @@
                             sign:true
                         },{
                             name:"裤子",
-                            price:12,
+                            price:13,
                             index:false,
                             sign:true
                         },{
@@ -151,7 +161,6 @@
                 },
                 adds(){
                     if(this.addname && this.addprice){
-                        console.log(this.addname,this.addprice);
                         var obj = {
                             name:this.addname,
                             price:this.addprice,
@@ -170,7 +179,7 @@
                     }
                     if(this.find){
                         for(i = 0 ; i < this.arr.length; i++){
-                            if(this.find != this.arr[i].name && this.find != this.arr[i].price){
+                            if(!this.arr[i].name.includes(this.find) && this.find != this.arr[i].price){
                                 this.arr[i].sign =false;
                             }
                         }

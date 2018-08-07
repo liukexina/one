@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_711463_rj9adbqs9ht.css">
+    <style>
+        h1{
+            text-align: center;
+            padding:20px 0;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        form{
+            font-weight: bold;
+        }
+        table tr{
+            border:1px solid white;
+        }
+        table tr td{
+            border-left:1px solid white;
+        }
+        tr:nth-child(1){
+            background: #fdffed;
+        }
+        tr:nth-child(even){
+            background: #f2f2f2;
+        }
+        tr:hover{
+            background: #f2f2f2;
+        }
+        table{
+            width: 100%;
+        }
+        tr{
+            text-align: center;
+        }
+        .icon-guanbi{
+            font-weight: bold;
+            font-size:10px;
+        }
+        table .active{
+            background: #a8a8ff;
+        }
+        table .dis{
+            display: none;
+        }
+        .form{
+            position: relative;
+            height: 100px;
+        }
+        .form1,.form2{
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .form2{
+            margin-top:50px;
+        }
+        span{
+            margin:0 10px;
+        }
+        .btn-outline-warning{
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>todolist</h1>
+        <div class="form">
+            <form class="form-inline form1">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control"  placeholder="请输入关键字" v-model="find">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" @click="finds">搜索</button>
+            </form>
+            <form class="form-inline form2">
+                <div class="form-group mx-sm-3 mb-2">
+                    <span>商品名称</span><input type="text" class="form-control"  placeholder="请输入名称" v-model="addname">
+                    <span>商品价格</span><input type="text" class="form-control"  placeholder="0" v-model.number="addprice">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" @click="adds()">增加</button>
+            </form>
+        </div>
+        <table  cellpadding="15">
+            <tr>
+                <th>选择</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>删除</th>
+            </tr>
+            <tr v-for = "items in arr" @click="add(items)" v-bind:class="{active:items.index}" v-if="items.sign">
+                <td><input type="checkbox" name="clo" v-bind:value="items.name" v-model="clothes" ></td><td>{{items.name}}</td><td>{{items.price}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-warning" @click="del(items)"><i class="iconfont icon-guanbi"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <button type="button" class="btn btn-outline-danger" @click="delall">删除选中</button>
+                </td>
+                <td colspan="3">总价：{{sortObj}}元</td>
+            </tr>
+        </table>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                allprice:0,
+                addname:null,
+                addprice:null,
+                clothes:[],
+                isadd:false,
+                find:null,
+                arr:[
+                    {
+                        name:"衣服",
+                        price:123,
+                        index:false,
+                        sign:true
+                    },{
+                        name:"裤子",
+                        price:13,
+                        index:false,
+                        sign:true
+                    },{
+                        name:"鞋",
+                        price:13,
+                        index:false,
+                        sign:true
+                    },{
+                        name:"外套",
+                        price:23,
+                        index:false,
+                        sign:true
+                    }
+                ]
+            },
+            methods:{
+                add(e){
+                    // e.index = !e.index;
+                    if(e.index){
+                        e.index = false;
+                        var sign;
+                        for(i = 0 ; i < this.clothes.length; i++){
+                            if(this.clothes[i] == e.name){
+                                sign = i;
+                            }
+                        }
+                        this.clothes.splice(sign,1);
+                    }
+                    else{
+                        e.index = true;
+                        this.clothes.push(e.name);
+                    }
+                },
+                delall(){
+                    /*for(i = 0 ; i < this.arr.length ; i++){
+                        if(this.arr[i].index){
+                            this.arr[i].index = false;
+                        }
+                    }
+                    this.clothes = [];*/
+                    for(i = 0 ; i < this.clothes.length ; i++){
+                        for(j = 0 ; j < this.arr.length ;j++){
+                            if(this.clothes[i] == this.arr[j].name){
+                                this.arr.splice(j,1);
+                            }
+                        }
+                    }
+                },
+                del(e){
+                    var sign;
+                    for(i = 0 ; i < this.arr.length; i++){
+                        if(this.arr[i] == e){
+                            sign = i;
+                        }
+                    }
+                    this.arr.splice(sign,1);
+                },
+                adds(){
+                    if(this.addname && this.addprice){
+                        var obj = {
+                            name:this.addname,
+                            price:this.addprice,
+                            index:false,
+                            sign:true
+                        };
+                        this.arr.push(obj);
+                        this.addname = null;
+                        this.addprice = null;
+                    }
+                },
+                finds(){
+                    let find = this.find;
+                    this.arr.filter(function (val,key,arr) {
+                        val.sign = true;
+                        if(!val.name.includes(find) && find != val.price){
+                            console.log(find,val.name,val.price);
+                            val.sign = false;
+                        }
+                    });
+
+                    /*if(this.find){
+                        for(i = 0 ; i < this.arr.length; i++){
+                            this.arr[i].sign = true;
+                            if(!this.arr[i].name.includes(this.find) && this.find != this.arr[i].price){
+                                this.arr[i].sign =false;
+                            }
+                        }
+                    }*/
+                }
+
+            },
+            computed:{
+                sortObj(){
+                    this.allprice = 0;
+                    this.arr.forEach(value => {
+                        if(value.index){
+                            this.allprice += value.price;
+                        }
+                    });
+                   /* for(i = 0 ; i < this.arr.length ; i++){
+                        if(this.arr[i].index){
+                            this.allprice += this.arr[i].price;
+                        }
+                    }*/
+                    return this.allprice;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
