@@ -93,10 +93,10 @@
                 <th>商品价格</th>
                 <th>删除</th>
             </tr>
-            <tr v-for = "items in arr" @click="add(items)" v-bind:class="{active:items.index}" v-if="items.sign">
-                <td><input type="checkbox" name="clo" v-bind:value="items.name" v-model="clothes" ></td><td>{{items.name}}</td><td>{{items.price}}</td>
+            <tr v-for = "items in arr" @click="add(items)" v-bind:class="{active:items.index}" >
+                <td><input type="checkbox" name="clo" v-bind:value="items.name" v-model="addObj" ></td><td>{{items.name}}</td><td>{{items.price}}</td>
                 <td>
-                    <button type="button" class="btn btn-outline-warning" @click="del(items)"><i class="iconfont icon-guanbi"></i></button>
+                    <button type="button" class="btn btn-outline-warning" @click="del(items.name)"><i class="iconfont icon-guanbi"></i></button>
                 </td>
             </tr>
             <tr>
@@ -115,7 +115,6 @@
                 allprice:0,
                 addname:null,
                 addprice:null,
-                clothes:[],
                 isadd:false,
                 find:null,
                 arr:[
@@ -123,74 +122,45 @@
                         name:"衣服",
                         price:123,
                         index:false,
-                        sign:true
                     },{
                         name:"裤子",
                         price:13,
                         index:false,
-                        sign:true
                     },{
                         name:"鞋",
                         price:13,
                         index:false,
-                        sign:true
                     },{
                         name:"外套",
                         price:23,
                         index:false,
-                        sign:true
                     }
                 ]
             },
             methods:{
                 add(e){
-                    // e.index = !e.index;
-                    if(e.index){
-                        e.index = false;
-                        var sign;
-                        for(i = 0 ; i < this.clothes.length; i++){
-                            if(this.clothes[i] == e.name){
-                                sign = i;
-                            }
-                        }
-                        this.clothes.splice(sign,1);
-                    }
-                    else{
-                        e.index = true;
-                        this.clothes.push(e.name);
-                    }
-                },
-                delall(){
-                    /*for(i = 0 ; i < this.arr.length ; i++){
-                        if(this.arr[i].index){
-                            this.arr[i].index = false;
-                        }
-                    }
-                    this.clothes = [];*/
-                    for(i = 0 ; i < this.clothes.length ; i++){
-                        for(j = 0 ; j < this.arr.length ;j++){
-                            if(this.clothes[i] == this.arr[j].name){
-                                this.arr.splice(j,1);
-                            }
-                        }
-                    }
+                    e.index = !e.index;
                 },
                 del(e){
-                    var sign;
-                    for(i = 0 ; i < this.arr.length; i++){
-                        if(this.arr[i] == e){
-                            sign = i;
+                    let cloarr = this.arr.filter(value =>{
+                        if(value.name != e){
+                            return value;
                         }
-                    }
-                    this.arr.splice(sign,1);
+                    });
+                    this.arr = cloarr;
                 },
+                delall(){
+                    this.clothes.forEach(value =>{
+                        this.del(value);
+                    })
+                },
+
                 adds(){
                     if(this.addname && this.addprice){
                         var obj = {
                             name:this.addname,
                             price:this.addprice,
-                            index:false,
-                            sign:true
+                            index:false
                         };
                         this.arr.push(obj);
                         this.addname = null;
@@ -199,24 +169,12 @@
                 },
                 finds(){
                     let find = this.find;
-                    this.arr.filter(function (val,key,arr) {
-                        val.sign = true;
-                        if(!val.name.includes(find) && find != val.price){
-                            console.log(find,val.name,val.price);
-                            val.sign = false;
+                    this.arr = this.arr.filter(function (val) {
+                        if(val.name.includes(find) || find == val.price){
+                            return val;
                         }
                     });
-
-                    /*if(this.find){
-                        for(i = 0 ; i < this.arr.length; i++){
-                            this.arr[i].sign = true;
-                            if(!this.arr[i].name.includes(this.find) && this.find != this.arr[i].price){
-                                this.arr[i].sign =false;
-                            }
-                        }
-                    }*/
                 }
-
             },
             computed:{
                 sortObj(){
@@ -226,12 +184,16 @@
                             this.allprice += value.price;
                         }
                     });
-                   /* for(i = 0 ; i < this.arr.length ; i++){
-                        if(this.arr[i].index){
-                            this.allprice += this.arr[i].price;
-                        }
-                    }*/
                     return this.allprice;
+                },
+                addObj(){
+                    let cobj = [];
+                    this.arr.forEach(value => {
+                        if(value.index){
+                            cobj.push(value.name);
+                        }
+                    });
+                    return cobj;
                 }
             }
         })
