@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_711463_rj9adbqs9ht.css">
+    <style>
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        .content{
+            height: 400px;
+            width: 500px;
+            background: #f2f2f2;
+            border:1px solid #000;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .header{
+            width: 501px;
+            height: 30px;
+            background: #000;
+            color:white;
+        }
+        .icon-guanbi{
+            font-size:10px;
+        }
+        .close{
+            margin-top:3px;
+            float:right;
+            margin-right:10px;
+        }
+        .font{
+            float:left;
+            margin-left:10px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .infor{
+            margin-top:20px;
+            margin-left:10px;
+        }
+        input{
+            border:1px solid #f2f2f2;
+        }
+        .all{
+            background-color: rgba(0, 0, 0, 0.3);
+            position:fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <button @click="find1">登录</button>
+        <button @click="find2">注册</button>
+        <div class="all" v-if="isShow">
+            <box v-bind:dec="sty" @guan="find">
+                <div :is="sty"></div>
+            </box>
+        </div>
+    </div>
+    <template id="bigbox">
+        <div class="content">
+            <div class="header">
+                <div class="font">{{dec}}</div>
+                <div class="close" @click="$emit('guan')">[<i class="iconfont icon-guanbi"></i>]</div>
+            </div>
+            <slot></slot>
+        </div>
+    </template>
+    <template id="login0">
+        <div class="infor">
+            用户名：<input type="text">
+            <br><br>
+            密&nbsp;&nbsp;&nbsp;码：<input type="text">
+            <br><br>
+            <button>登录</button>
+        </div>
+    </template>
+    <template id="sign0">
+        <div class="infor">
+            用户名：<input type="text">
+            <br><br>
+            密&nbsp;&nbsp;&nbsp;码：<input type="text">
+            <br><br>
+            <span>电子邮件</span>
+            <button>注册</button>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component("box",{
+            template:"#bigbox",
+            props:["dec"],
+        });
+        new Vue({
+            el:"#app",
+            data:{
+                sty:"Login",
+                isShow:false
+            },
+            methods:{
+                find1(){
+                    this.isShow = true;
+                    this.sty = "Login"
+                },
+                find2(){
+                    this.sty = "Sign";
+                    this.isShow = true;
+                },
+                find(){
+                    this.isShow = false;
+                }
+            },
+            components:{
+                Login:{
+                    template:"#login0"
+                },
+                Sign:{
+                    template:"#sign0"
+                }
+            }
+        })
+    </script>
+</body>
+</html>
