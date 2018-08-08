@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <weichuang></weichuang>
+    <test></test>
+</div>
+<div id="app2">
+    <weichuang></weichuang>
+    <!--<test></test>           &lt;!&ndash;报错&ndash;&gt;-->
+</div>
+<script src="vue.js"></script>
+<script>
+    <!--全局组件-->
+    Vue.component("weichuang",{
+        template:'  <div><h1>hello world</h1>      <h1>{{wmsg}}</h1></div> ',
+        props:['wmsg']
+    });
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"fellow23",
+            msg2:"vue"
+        },
+        //局部组件
+        components:{
+            "test":{
+                template:"<h1>aaaaaa{{tmsg}}</h1>",
+                props:['tmsg']
+            }
+        }
+    });
+    new Vue({
+        el:"#app2",
+        data:{
+
+        }
+    })
+</script>
+</body>
+</html>

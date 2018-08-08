@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+   <button @click="change">Change</button>
+    {{arr}}
+    {{obj.name}}{{obj.age}}
+</div>
+<script src="vue.js"></script>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            arr:[1,2,3,4,5],
+            obj:{
+                name:"lisi"
+            }
+        },
+        methods:{
+            change(){
+                this.arr[2] = "a";
+                console.log(this.arr);
+                /*this.obj.name = "zhangsan";
+                this.obj.age = 23;*/
+                // Vue.set(this.arr,2,"a");
+            }
+        }
+    })
+</script>
+</body>
+</html>

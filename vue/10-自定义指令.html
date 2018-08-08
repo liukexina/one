@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <div v-test="'red'">fellow23</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        <!--自定义指令-->
+        Vue.directive("test",function (el,binding,vnode) {
+            console.log(el,binding,vnode);        /*el:当前对象 binding：指令集 vnode：vue虚拟dom*/
+            el.style.backgroundColor = binding.value;      /*binding-value：传入的参数*/
+        });
+        new Vue({
+            el:"#app",
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>

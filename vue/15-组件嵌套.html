@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--<com1 v-bind:co1="msg" v-bind:co3="msg2" @click.native="add"></com1>         &lt;!&ndash;组件绑定事件  @click.native&ndash;&gt;-->
+        <com1 v-bind:co1="msg" @add1="add"></com1>           <!--父级接受方法-->
+        {{num}}
+    </div>
+    <template id="com1">
+        <div>
+            <button @click="$emit('add1')">add</button>        <!--$emit发射到父级方法-->
+            <h1>com1 {{co1}}</h1>
+            <com2 v-bind:co2="co3"></com2>
+        </div>
+    </template>
+    <template id="com2">
+        <h1>com2 {{co2}}</h1>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+    <!--全局组件-->
+        Vue.component("com1",{
+            template:"#com1",
+            props:["co1","co3"]
+        });
+        Vue.component("com2",{
+            template:"#com2",
+            props:["co2"]
+        });
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"hello world",
+                msg2:"hello fellow23",
+                num:0
+            },
+            methods:{
+                add(){
+                    this.num++;
+                }
+            },
+            //局部组件
+            components:{
+                "test":{
+                    template:"<h1>aaaaaa</h1>"
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
