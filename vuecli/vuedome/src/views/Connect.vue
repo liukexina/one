@@ -18,7 +18,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped>          /*scoped 声明独立页面*/
     .router-tran{
         position: relative;
     }
