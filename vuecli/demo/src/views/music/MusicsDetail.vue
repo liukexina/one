@@ -33,7 +33,7 @@
                         console.log(response);
                         this.isif = true;
                         this.datalist.forEach((val,index)=>{
-                            this.datalist[index].lrc = 'http://localhost:8080/'+this.datalist[index].lrc;
+                            this.datalist[index].lrc = window.location.origin + '/' + this.datalist[index].lrc;
                         });
                     })
                     .catch((error) => {

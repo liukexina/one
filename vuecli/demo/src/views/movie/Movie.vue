@@ -2,21 +2,24 @@
     <div>
         <div class="container">
             <ul class="data">
-                <li v-for="(items,index) in dataList" :key='index+ "nl"'>
+                <li v-for="(items,index) in dataList" :key='index+ "nl"' @click="$router.push({name:'moviedetail',params:{id:items.id}})">
                     <img v-bind:src="items.images.large" alt="" class="tu">
                     <div class="info">
-                        <span>{{items.title}}</span><br>
+                        <span style="font-weight: bold;font-size:0.4rem;">{{items.title}}</span><br>
                         导演: <span v-for="(item) in items.directors" >{{item.name}}/</span><br>
                         <span v-for="(item,index) in items.casts" :key="index+'ul'">{{item.name}}/</span><br>
-                        <span>票房:{{items.collect_count}}</span><br>
+                        <span>{{items.collect_count}}人观看</span><br>
                         类型:<span v-for="(item) in items.genres">{{item}}/</span><br>
-                        <a v-bind:href="items.alt">详情</a>
+                        评分：<span>{{items.rating.average}}</span>
+                        <a v-bind:href="items.alt" style="float:right;">详情</a>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="image" v-show="load">
-            <img src="@/assets/image/loading.gif" alt="">
+        <div class="loading"  v-show="load">
+            <div class="image">
+                <img src="@/assets/image/loading.gif" alt="">
+            </div>
         </div>
     </div>
 </template>
@@ -29,16 +32,28 @@
         float:left;
     }
     .info{
-        margin:10px 0 10px 0;
+        box-sizing: border-box;
+        margin:0.2rem 0 0.2rem 0;
+        padding-right:0.3rem;
         width: 4rem;
         float:right;
         text-align: left;
     }
     .data li{
+        margin:0.1rem;
         overflow: hidden;
+        border-bottom:1px solid #675963;
+    }
+    .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.5);
     }
     .image {
-        position: fixed;
+        position: absolute;
         padding: 1rem;
         text-align: center;
         background: rgba(255, 255, 255, 0.5);
@@ -59,7 +74,8 @@
                 dataList:[],
                 isend:false,
                 load:true,
-                isshow:false
+                isshow:false,
+                isFinish:false
             }
         },
         created(){
@@ -88,8 +104,8 @@
         mounted () {
             window.onscroll=()=>{
                 let scrollTop = document.documentElement.scrollTop;
-                let scrollHeigth = document.documentElement.scrollHeight;
-                let clientHeight = document.documentElement.clientHeight;
+                let scrollHeigth = document.documentElement.scrollHeight;       /*滚动高度*/
+                let clientHeight = document.documentElement.clientHeight;      /*可视高度*/
                 if(scrollHeigth - clientHeight - 10 < scrollTop){
                     if(!this.load){
                         if(!this.isend){
