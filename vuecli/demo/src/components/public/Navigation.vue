@@ -1,7 +1,7 @@
 <template>
     <div v-bind:class="active">
         <nav class="header" >
-            <router-link to="/" class="home">首页</router-link>
+            <div class="home" @click="routerPush(navList[0])">首页</div>
             <div class="title">{{title}}</div>
         </nav>
         <header class="footer">
