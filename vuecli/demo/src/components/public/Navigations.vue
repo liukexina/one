@@ -66,35 +66,15 @@
 </style>
 <script>
     export default {
-        props:["arrs","navheads","titles"],
+        mounted(){
+            this.$nextTick(function () {
+                this.navhead = this.movenames;
+            });
+        },
+        props:["arrs","navheads","titles","movenames"],
         data(){
             return{
-                navList:[
-                    {
-                        name:'movie',
-                        title:"电影",
-                        id:'101',
-                        path:'/'
-                    },
-                    {
-                        name:'music',
-                        title:"音乐",
-                        id:'102',
-                        path:'/music'
-                    },
-                    {
-                        name:'book',
-                        title:"书籍",
-                        id:'103',
-                        path:'/book'
-                    },
-                    {
-                        name:'photo',
-                        title:"图片",
-                        id:'104',
-                        path:'/photo'
-                    }
-                ]
+
             }
         }
     }
