@@ -1,33 +1,39 @@
 <template>
     <div>
         <div class="container">
+            {{isend}}
             <ul class="data">
                 <li v-for="(items,index) in dataList" :key='index+ "nl"'>
                     <img v-bind:src="items.images.large" alt="">
-                    <div class="info">
+                    <span class="info">
                         <span>{{items.title}}</span><br>
+                        导演: <span v-for="(item) in items.directors" >{{item.name}}/</span><br>
                         <span v-for="(item,index) in items.casts" :key="index+'ul'">{{item.name}}/</span><br>
-                        <span>票房：{{items.collect_count}}</span>
-                    </div>
+                        <span>票房:{{items.collect_count}}</span><br>
+                        类型:<span v-for="(item) in items.genres">{{item}}/</span><br>
+                        <a v-bind:href="items.alt">详情</a>
+                    </span>
                 </li>
             </ul>
         </div>
     </div>
 </template>
 
-<style>
-    .data{
-        margin-top:10px;
-    }
+<style scoped>
     img{
-        margin:0 auto;
+        margin:10px;
         display: block;
-        /*transform: scale(0.8);*/
-        height: 241px;
-        width: 172px;
+        width: 120px;
+        float:left;
     }
     .info{
-        margin:10px 0 20px 0;
+        margin:10px 0 10px 0;
+        width: 4rem;
+        float:right;
+        text-align: left;
+    }
+    .data li{
+        overflow: hidden;
     }
 </style>
 <script>
@@ -36,28 +42,38 @@
             return{
                 title:"电影",
                 classname:"movie-nav",
-                arr:[true,false,false,false]
+                arr:[true,false,false,false],
+                dataList:[],
+                isend:false
             }
         },
         created(){
             this.$emit('routerEmit',this.title,this.classname,this.arr,'movie');
             this.getData();
         },
-        data(){
-            return {
-                dataList:[]
-            }
-        },
         methods:{
             getData(){
-                axios.get(API_PROXY+'https://api.douban.com/v2/movie/in_theaters')
+                axios.get(API_PROXY+'https://api.douban.com/v2/movie/in_theaters?start'+this.dataList.length+'&count=10')
                     .then( (response) => {
                         this.dataList = response.data.subjects;
-                        console.log(response);
+                        if(this.datalist.length == response.data.subject.length){
+                            this.isend = true;
+                        }
+                        // console.log(response);
                     })
                     .catch((error) => {
                         console.log(error)
                     })
+            }
+        },
+        mounted () {
+            window.onscroll=()=>{
+                let scrollTop = document.documentElement.scrollTop;
+                let scrollHeigth = document.documentElement.scrollHeight;
+                let clientHeight = document.documentElement.clientHeight;
+                if(scrollTop+clientHeight==scrollHeigth){
+                    this.isend = true;
+                }
             }
         }
 
