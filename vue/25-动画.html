@@ -5,8 +5,8 @@
     <title>Title</title>
     <style>
         .fade-enter-active, .fade-leave-active {
-            transition: opacity .5s;
-            animation: test 2s ease;
+            transition: opacity 5s;
+            animation: test 1s ease;
         }
         .fade-enter, .fade-leave-to {
             opacity: 0;
@@ -30,7 +30,7 @@
         <button v-on:click="show = !show">
             Toggle
         </button>
-        <transition name="fade" type="animation">
+        <transition name="fade" type="animation" duration="1000">
             <p v-if="show" >hello</p>
         </transition>
     </div>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.fade-enter-active, .fade-leave-active {
+            transition: opacity 5s;
+            animation: test 1s ease;
+        }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+        @keyframes test{
+            0%{
+                font-size:10px;
+            }
+            50%{
+                font-size: 50px;
+            }
+            100%{
+                font-size: 16px;
+            }
+        }*/
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="demo">
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition
+                v-on:before-enter="beforeEnter"
+                v-on:enter="enter"
+                v-on:after-enter="afterEnter"
+                v-on:enter-cancelled="enterCancelled"
+
+                v-on:before-leave="beforeLeave"
+                v-on:leave="leave"
+                v-on:after-leave="afterLeave"
+                v-on:leave-cancelled="leaveCancelled"
+        >
+            <p v-if="show" >hello</p>
+        </transition>
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            show:true
+        },
+        methods: {
+
+            /*el:当前对象*/
+            // --------
+            // 进入中
+            // --------
+
+            beforeEnter: function (el) {
+                // ...
+                console.log("beforeenter")
+            },
+            // 此回调函数是可选项的设置
+            // 与 CSS 结合时使用
+            enter: function (el, done) {
+                // ...
+                console.log("enter");
+                done()
+            },
+            afterEnter: function (el) {
+                // ...
+                console.log("afterenter");
+            },
+            enterCancelled: function (el) {
+                // ...
+                console.log("entercancelled");
+            },
+
+            // --------
+            // 离开时
+            // --------
+
+            beforeLeave: function (el) {
+                // ...
+                console.log("beforeleave");
+            },
+            // 此回调函数是可选项的设置
+            // 与 CSS 结合时使用
+            leave: function (el, done) {
+                // ...
+                done()
+                console.log("leave");
+            },
+            afterLeave: function (el) {
+                // ...
+                console.log("afterleave");
+            },
+            // leaveCancelled 只用于 v-show 中
+            leaveCancelled: function (el) {
+                console.log("leavecancelled");
+                // ...
+            }
+        }
+    })
+</script>
+</body>
+</html>

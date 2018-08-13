@@ -7,14 +7,24 @@
         *{
             background-color: #000;
         }
+        ul{
+            list-style: none;
+            padding:0;
+        }
         .content{
             position:relative;
-            width:600px;
+            width:608px;
             margin:0 auto;
+            overflow: hidden;
+            height: 308px;
         }
         .content-ul{
             list-style: none;
             padding:0;
+        }
+        .content-ul li{
+            position: absolute;
+            top:0;
         }
         .content-ul li img{
             height:300px;
@@ -65,15 +75,36 @@
             background-color: yellow;
             color:blueviolet;
         }
+        .list-enter-active, .list-leave-active {
+            transition: all 2s ease;
+        }
+        .list-enter
+        {
+            transform: translateX(100%);
+        }
+        .list-enter-to{
+            transform: translateX(0);
+        }
+        .list-leave{
+            transform: translateX(0);
+        }
+        .list-leave-to{
+            transform: translateX(-100%);
+        }
     </style>
 </head>
 <body>
     <div class="content" id="app" @mouseover="over" @mouseout="out">
-        <ul class="content-ul" >
+        <transition-group name="list" class="content-ul" tag="ul">          <!--tag不声明默认为span-->
+            <li v-for="(items,index) in photoList"  v-show="isshow == index" :key="index">
+                <img :src="items" alt="">
+            </li>
+        </transition-group>
+        <!--<ul class="content-ul" >
             <li v-for="(items,index) in photoList"  v-show="isshow == index">
                 <img :src="items" alt="">
             </li>
-        </ul>
+        </ul>-->
         <ul class="content-num">
             <li v-for="(items,index) in photoList" v-bind:class="{'spe':isshow == index}" @click="change(index)">{{index+1}}</li>
         </ul>
@@ -106,37 +137,42 @@
                 left(){
                     this.isshow--;
                     if(this.isshow == -1){
-                        this.isshow = 0
+                        this.isshow = 4
                     }
                 },
                 right(){
                     this.isshow++;
                     if(this.isshow == 5){
-                        this.isshow = 4;
+                        this.isshow = 0;
                     }
                 },
                 change(num){
-                    this.isshow = num;
+                    if(this.isRun){
+                        this.isshow = num;
+                    }
                 },
                 over(){
-                    this.isRun = true;
-                    console.log(1,this.isRun);
+                    clearInterval(this.timer);
                 },
                 out(){
-                    this.isRun = false;
-                    console.log(2,this.isRun);
+                    this.getData();
                 },
                 getData() {
+                    isRun = false;
                     this.timer = setInterval(()=>{
-                        if(!this.isRun){
-                            this.isshow++;
-                            if(this.isshow == 5){
-                                this.isshow = 0
-                            }
+                        isRun = true;
+                        this.isshow++;
+                        if(this.isshow == 5){
+                            this.isshow = 0;
                         }
-                    }, 1000);
+                        /*setTimeout(()=>{
+                            this.isshow = false;
+                        },1000);*/
+                    }, 2000);
+
                 }
-            }
+            },
+
         })
     </script>
 </body>
