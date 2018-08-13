@@ -95,15 +95,14 @@
                     "https://img03.sogoucdn.com/app/a/100520024/fbdb08271d318cdcda7535e61bc42119",
                     "https://img01.sogoucdn.com/app/a/100520024/a9a72b6522d6cb6a672c6520912d2f98"
                 ],
-                timmer:null,
+                timer:null,
                 isshow:0,
                 isRun:false
             },
-            created() {
+            mounted() {
                 this.getData();
             },
             methods: {
-
                 left(){
                     this.isshow--;
                     if(this.isshow == -1){
@@ -120,35 +119,22 @@
                     this.isshow = num;
                 },
                 over(){
-                    // clearInterval(this.timmer);
-                    isRun = true;
-                    console.log(1,isRun);
+                    this.isRun = true;
+                    console.log(1,this.isRun);
                 },
                 out(){
-                    isRun = false;
-                    console.log(2,isRun);
-                    // a = setInterval(function () {
-                    //     console.log(vue1.isRun);
-                    //     if(!vue1.isRun){
-                    //         vue1.isshow++;
-                    //         if(vue1.isshow == 5){
-                    //             vue1.isshow = 0
-                    //         }
-                    //     }
-                    //     console.log(vue1.isshow);
-                    // }, 2000);
+                    this.isRun = false;
+                    console.log(2,this.isRun);
                 },
                 getData() {
-                    this.timmer = setInterval(function () {
-                        console.log(vue1.isRun);
-                        if(!vue1.isRun){
-                            vue1.isshow++;
-                            if(vue1.isshow == 5){
-                                vue1.isshow = 0
+                    this.timer = setInterval(()=>{
+                        if(!this.isRun){
+                            this.isshow++;
+                            if(this.isshow == 5){
+                                this.isshow = 0
                             }
                         }
-                        console.log(vue1.isshow);
-                    }, 2000);
+                    }, 1000);
                 }
             }
         })
