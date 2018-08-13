@@ -1,16 +1,29 @@
 <template>
     <div>
         <div class="container">
-            <h2>图片</h2>
-            <v-touch v-on:tap="onSwipeTap" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" >
-
-            </v-touch>
+            <ul>
+                <li v-for="(items,index) in datalist" :key="index+'pl'" @click="$router.push({name:'photodetail',params:{id:index}})">
+                    <img :src="items.src" alt="">
+                </li>
+            </ul>
         </div>
     </div>
 </template>
-<style>
-    img{
+<style scoped>
+    .container{
+        text-align: left;
+    }
+    ul{
         width: 100%;
+        overflow: hidden;
+    }
+    ul li{
+        width:50%;
+        float:left;
+    }
+    ul li img{
+        width: 100%;
+        height: 160px;
     }
 </style>
 <script>
