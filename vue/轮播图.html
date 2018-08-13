@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            background-color: #000;
+        }
+        .content{
+            position:relative;
+            width:600px;
+            margin:0 auto;
+        }
+        .content-ul{
+            list-style: none;
+            padding:0;
+        }
+        .content-ul li img{
+            height:300px;
+            width:600px;
+            border:4px solid white;
+        }
+        .content-num .spe{
+            background-color: yellow;
+            color:blueviolet;
+        }
+
+        .content-num{
+            list-style: none;
+            padding:0;
+            position:absolute;
+            bottom:0;
+            right:5px;
+            background-color: transparent;
+        }
+        .content-num li{
+            font-size:15px;
+            width:20px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 100%;
+            background-color: paleturquoise;
+            color:#ff000f;
+
+        }
+        .content-char{
+            list-style: none;
+            padding:0;
+            position:absolute;
+            bottom:0;
+            left:10px;
+            background-color: transparent;
+        }
+        .content-char li{
+            background-color: paleturquoise;
+            border-radius: 100%;
+            color:#ff000f;
+            width:20px;
+            text-align: center;
+            display: inline-block;
+            font-size:15px;
+        }
+        .content-char li:hover{
+            background-color: yellow;
+            color:blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="app" @mouseover="over" @mouseout="out">
+        <ul class="content-ul" >
+            <li v-for="(items,index) in photoList"  v-show="isshow == index">
+                <img :src="items" alt="">
+            </li>
+        </ul>
+        <ul class="content-num">
+            <li v-for="(items,index) in photoList" v-bind:class="{'spe':isshow == index}" @click="change(index)">{{index+1}}</li>
+        </ul>
+        <ul class="content-char">
+            <li @click="left">&lt;</li>
+            <li @click="right">&gt;</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+
+        var vue1 = new Vue({
+            el:"#app",
+            data:{
+                photoList:[
+                    "https://img01.sogoucdn.com/app/a/100520024/81b9b7bf8a59c1935de8d72833937f2b",
+                    "https://img01.sogoucdn.com/app/a/100520024/b3bc2d46378e4732d6c55dd1134f13c1",
+                    "https://img02.sogoucdn.com/app/a/100520024/65942bbd107b6aae59164ce2d821971c",
+                    "https://img03.sogoucdn.com/app/a/100520024/fbdb08271d318cdcda7535e61bc42119",
+                    "https://img01.sogoucdn.com/app/a/100520024/a9a72b6522d6cb6a672c6520912d2f98"
+                ],
+                timmer:null,
+                isshow:0,
+                isRun:false
+            },
+            created() {
+                this.getData();
+            },
+            methods: {
+
+                left(){
+                    this.isshow--;
+                    if(this.isshow == -1){
+                        this.isshow = 0
+                    }
+                },
+                right(){
+                    this.isshow++;
+                    if(this.isshow == 5){
+                        this.isshow = 4;
+                    }
+                },
+                change(num){
+                    this.isshow = num;
+                },
+                over(){
+                    // clearInterval(this.timmer);
+                    isRun = true;
+                    console.log(1,isRun);
+                },
+                out(){
+                    isRun = false;
+                    console.log(2,isRun);
+                    // a = setInterval(function () {
+                    //     console.log(vue1.isRun);
+                    //     if(!vue1.isRun){
+                    //         vue1.isshow++;
+                    //         if(vue1.isshow == 5){
+                    //             vue1.isshow = 0
+                    //         }
+                    //     }
+                    //     console.log(vue1.isshow);
+                    // }, 2000);
+                },
+                getData() {
+                    this.timmer = setInterval(function () {
+                        console.log(vue1.isRun);
+                        if(!vue1.isRun){
+                            vue1.isshow++;
+                            if(vue1.isshow == 5){
+                                vue1.isshow = 0
+                            }
+                        }
+                        console.log(vue1.isshow);
+                    }, 2000);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

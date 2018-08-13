@@ -84,7 +84,7 @@
         },
         methods:{
             getData(){
-                axios.get(API_PROXY+'https://api.myjson.com/bins/nsb9g')
+                axios.get(API_PROXY+'https://api.douban.com/v2/movie/in_theaters?start='+this.dataList.length+'&count=10')
                     //https://api.douban.com/v2/movie/in_theaters?start='+this.dataList.length+'&count=10'
                     //https://api.myjson.com/bins/nsb9g
                     .then( (response) => {
