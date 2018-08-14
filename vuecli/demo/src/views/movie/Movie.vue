@@ -1,8 +1,9 @@
 <template>
     <div>
         <div class="container">
+            <div v-if="!isif">凉凉。。。。。。</div>
             <ul class="data">
-                <li v-for="(items,index) in dataList" :key='index+ "nl"' @click="$router.push({name:'moviedetail',params:{id:items.id}})">
+                <li v-if='isif' v-for="(items,index) in dataList" :key='index+ "nl"' @click="$router.push({name:'moviedetail',params:{id:items.id}})">
                     <img v-bind:src="items.images.large" alt="" class="tu">
                     <div class="info">
                         <span style="font-weight: bold;font-size:0.4rem;">{{items.title}}</span><br>
@@ -75,7 +76,8 @@
                 isend:false,
                 load:true,
                 isshow:false,
-                isFinish:false
+                isFinish:false,
+                isif:false
             }
         },
         created(){
@@ -94,7 +96,8 @@
                         if(response.data.subjects.length == 0){
                             this.isend = true;
                         }
-                        console.log(this.dataList);
+                        this.isif = true;
+                        // console.log(this.dataList);
                     })
                     .catch((error) => {
                         console.log(error);

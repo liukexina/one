@@ -1,23 +1,24 @@
 <template>
     <div class="container">
-        <v-touch v-on:tap="onSwipeTap" v-on:swipeleft="onSwipeLeft" v-on:swiperight="onSwipeRight" v-if="isif" class="warrper">
-            <img :src="datalist[this.$route.params.id].src" alt="">
+        <v-touch v-on:tap="onSwipeTap" v-on:swipeleft="onSwipeLeft(datalist.length)" v-on:swiperight="onSwipeRight" v-if="isif" class="warrper" :style="bg">
         </v-touch>
     </div>
 </template>
 
 <style scoped>
     .warrper{
-        background: rgba(0,0,0,.5);
-        width: 100%;
-        position:absolute;
-        top:50%;
-        transform: translateY(-50%);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: -1;
     }
 </style>
 
 <script>
     import Vue from 'vue';
+    import {mapState,mapMutations,mapGetters,mapActions} from 'vuex'
     var VueTouch = require('vue-touch');
     Vue.use(VueTouch, {name: 'v-touch'});
     export default {
@@ -27,39 +28,59 @@
                 classname:"photo-nav",
                 arr:[false,false,false,true],
                 datalist:[],
-                isif:false
+                isif:false,
+                // index:this.$route.params.id,
             }
         },
         created(){
             this.$emit('routerEmit',this.title,this.classname,this.arr,'photo');
             this.getData();
+            if(this.$store.state.data == -1){
+                this.$router.push('/photo');
+            }
+
+        },
+        computed:{
+            bg(){
+                return {background:`#000 url('${this.datalist[this.$store.state.data].src}') no-repeat center/contain`}
+            }
         },
         methods:{
-            onSwipeLeft(){
-                console.log("left");
-                this.$route.params.id--;
-                console.log(this.$route.params.id);
+            /*onSwipeLeft(){
+                if(this.index == 0){
+                    this.index = 0
+                }
+                else{
+                    this.index--;
+                }
             },
             onSwipeRight(){
-                console.log("right");
-                this.$route.params.id++;
-                console.log(this.$route.params.id);
+                if(this.index == this.datalist.length - 1){
+                    this.index = this.datalist.length-1;
+                }
+                else{
+                    this.index++;
+                }
             },
             onSwipeTap(){
-                console.log("top");
-                this.$router.push('/photo');
+                this.$router.go(-1);
+            },*/
+            onSwipeTap(){
+                this.onSwipe();
+                this.$router.go(-1);
             },
             getData(){
                 axios.get('./data/photodata.json')
                     .then( (response) => {
                         this.datalist = response.data.photoData;
-                        console.log(response);
+                        // console.log(response);
                         this.isif = true;
                     })
                     .catch((error) => {
                         console.log(error)
                     })
-            }
+            },
+            ...mapMutations(["onSwipeRight","onSwipeLeft","onSwipe"]),
         }
 
 

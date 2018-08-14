@@ -30,10 +30,10 @@
                 axios.get('./data/musicdata.json')
                     .then( (response) => {
                         this.datalist = response.data.musicData;
-                        console.log(response);
+                        // console.log(response);
                         this.isif = true;
                         this.datalist.forEach((val,index)=>{
-                            this.datalist[index].lrc = window.location.origin + '/' + this.datalist[index].lrc;
+                            this.datalist[index].lrc = window.location.origin + window.location.pathname + this.datalist[index].lrc;
                         });
                     })
                     .catch((error) => {

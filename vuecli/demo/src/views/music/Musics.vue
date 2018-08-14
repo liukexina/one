@@ -38,6 +38,7 @@
         },
         created(){
             this.$emit('routerEmit',this.title,this.classname,this.arr,'music');
+            this
             this.getData();
         },
         methods:{
