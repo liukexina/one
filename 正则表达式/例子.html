@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入邮箱" id="one">
+    <input type="text" placeholder="请输入网址" id="two">
+    <input type="text" placeholder="请输入数字" id="three">
+    <button id="box">提交</button>
+    <div>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $('#three').on('keydown',function (e) {
+            reg3 = /\d|Backspace/;
+            if(!reg3.test(e.key)){
+                return false;
+            }
+        });
+        /*$('#three').on('keyup',function () {
+            three = $('#three').val();
+            reg3 = /\D/;
+            if(reg3.exec(three)){
+                $('#three').val(null);
+                $('p:eq(2)').html('请输入正确数字');
+            }
+        });*/
+       $('#box').on('click',function () {
+           three = $('#three').val();
+           one = $('#one').val();
+           two = $('#two').val();
+           reg = /@/;
+           reg1 = /http:|www./;
+           reg2= /.com$/;
+           if(one && two && three){
+               $('div').html('提交成功');
+           }
+           if(!one){
+               $('p:eq(0)').html('未输入邮箱');
+           }
+           else if(!reg.exec(one)){
+               $('p:eq(0)').html('邮箱输入错误');
+           }
+           else{
+               $('p:eq(0)').html('');
+           }
+           if(!two){
+               $('p:eq(1)').html('未输入网址');
+           }
+           else if(!reg2.exec(two) || !reg1.exec(two)){
+               $('p:eq(1)').html('网址输入错误');
+           }
+           else{
+               $('p:eq(1)').html('');
+           }
+
+       })
+
+
+
+
+
+
+
+
+
+
+
+
+        /*//30cac0040       40
+        let reg = /\d{2}$/;
+        let str = '30cac0040';
+        console.log(reg.exec(str));*/
+
+        /*//蓝   天   白 云   :蓝 天 白 云
+        let reg = /\s+/g;
+        let str = '蓝   天   白 云';
+        console.log(str.replace(reg,' '));*/
+
+        /*/!* 2018-15-08
+         2018年8月15日*!/
+        let str = '2018-15-08';
+        let reg = /(\w+)-(\w+)-(\w+)/;
+        console.log(str.replace(reg,'$1年$3月$2日'));*/
+    </script>
+</body>
+</html>

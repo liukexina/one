@@ -1,0 +1,31 @@
+{
+  "photoData": [
+    {
+      "src": "20.jpg",
+      "content": "./img/1.jpg"
+    },
+    {
+      "src": "bg1.jpg",
+      "content": "./img/1.jpg"
+    },
+    {
+      "src": "ma2.jpg",
+      "content": "./img/1.jpg"
+    },
+    {
+      "src": "psb.jpg",
+      "content": "./img/1.jpg"
+    },
+    {
+      "src": "psb1.jpg",
+      "content": "./img/1.jpg"
+    },
+    {
+      "src": "psb2.jpg",
+      "content": "./img/1.jpg"
+    },
+    {
+      "src": "tu.jpg"
+    }
+  ]
+}

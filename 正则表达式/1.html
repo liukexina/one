@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*let reg = /d/;        /!**!/
+    let reg1 = new RegExp('c');
+    let str = "cba";
+    console.log(str.includes('c'));
+    console.log(reg.test(str));         /!*str中是否有reg 返回true false*!/
+    console.log(reg.exec(str));           /!*返回str中reg在的索引等信息*!/
+    console.log(reg1.test(str));
+    console.log(reg1.exec(str));
+*/
+   /* let reg = /test/;
+    let str = 'testabc';
+    console.log(reg.exec(str));*/
+
+    /*let reg = /c{1}/;             /!*c*!/
+    let reg1 = /s{2}/;           /!*ss*!/
+    let reg2 = /as{2}/;      /!*ass*!/
+    let reg3 = /s{2,3}/;         /!* ss  sss  先匹配多的在匹配少的*!/
+    let reg4 = /s{1,}/;      /!*s  或者 更多的s *!/
+    let str = 'atesssstabcss';
+    /!*从头开始*!/
+    console.log(reg.exec(str));
+    console.log(reg1.exec(str));
+    console.log(reg2.exec(str));
+    console.log(reg3.exec(str));
+    console.log(reg4.exec(str));*/
+
+    /*let reg = /s*!/;   /!*0或者多个       从第一个开始*!/
+    let reg1 = /s+/     /!*1个或者多个       从满足条件的第一个开始*!/
+    let reg2 = /s?/;           /!*0个或1个      从第一个开始*!/
+    let str = 'asscsss';
+    console.log(reg.exec(str));
+    console.log(reg1.exec(str));
+    console.log(reg2.exec(str));*/
+
+    /*let reg = /c{1,}?/;
+    str = 'cccc';
+    console.log(reg.exec(str));*/
+
+    /*let reg = /^s/;      /!*开头*!/
+    let reg1 = /^sss/;
+    let reg2 = /d$/;    /!*结尾*!/
+    let reg3 = /^sd$/;
+    let str = 'sssessed';
+    console.log(reg.exec(str));
+    console.log(reg1.exec(str));
+    console.log(reg2.exec(str));
+    console.log(reg3.exec(str));*/
+
+
+    /*let reg = /./;         /!*除/n以外的所有 但只匹配一个*!/
+    let reg1 = /.+/;    /!*除/n以外的所有 匹配一个或多个 匹配到\n就停止匹配*!/
+    let reg2 = /^.+/;
+    let reg3 = /b|c/;      /!*或运算返回一个满足一个就可以*!/
+    let reg4 = /^b|c.+/;    /!*以b开头或者c+除/n以外的所有字符*!/
+    let reg5 = /^[abc].+/;       /!*以a/b/c开头的后面所有非/n以外的所有字符*!/
+    let reg6 = /^[a-z][A-Z0-9].+/;       /!*以小写字母开头后面的为大写字母或数字*!/
+    let str = 'abc\ndefg';
+    let str1 = '\nacbd';
+    let str2 = 'acbdefg';
+    let str3 ='aBCS909';
+    console.log(reg.exec(str));
+    console.log(reg1.exec(str));
+    console.log(reg2.exec(str));
+    console.log(reg2.exec(str1));
+    console.log(reg3.exec(str));
+    console.log(reg3.exec(str1));
+    console.log(reg4.exec(str2));
+    console.log(reg5.exec(str2));
+    console.log(reg6.exec(str3));*/
+
+  /* let reg = /^[^a-z]/;       /!*非小写字母开头*!/
+   let str = 'Aabcdegg';
+   console.log(reg.exec(str));*/
+
+    /*let reg = /\bd/;        /!*  \b  判断d是否为开头边界  空格 \n 两边也属于边界    中文默认为非正常字符也当成边界*!/
+    let reg1= /a\b/;           /!*  \b  判断a是否为结尾边界*!/
+    let reg11= /\ba/;
+    let reg2= /\Bd/;        /!*匹配非边界的d*!/
+    let reg3 = /\d/;    /!*匹配数字*!/
+    let reg4 = /\B/;           /!*匹配非数字*!/
+    let reg5 = /\s/;          /!*匹配空格字符*!/
+    let reg6 = /\S/;            /!*匹配非空格字符*!/
+    let str = 'dbcdega';
+    let str1 = 'dbc abc de \n ccc';
+    console.log(reg.exec(str));
+    console.log(reg1.exec(str));
+    console.log(reg11.exec(str1));
+    console.log(reg2.exec(str));*/
+
+    /*let reg = /\w/;      /!*匹配字母数字下划线*!/
+    let reg1 = /\W/;
+    let reg2 = /\w+/;
+    let reg3 = /\w\w/;
+    let reg4 = /(\w)(\w)/;          /!*加括号把值存起来通过反向引用引用出来*!/
+    let reg5 = /(\w)(\w)c/;
+    let reg6 = /(\w)(\w)\1/;     /!*\1匹配的第一个数*!/
+    let str = 'abc de';
+    console.log(reg.exec(str));
+    console.log(reg1.exec(str));
+    console.log(reg2.exec(str));
+    console.log(reg3.exec(str));
+    console.log(reg4.exec(str));
+    console.log(reg5.exec(str));
+    console.log(reg6.exec(str));*/
+
+    /*let reg = /^(b|c).+/;  /!*以b或者c开头的并且后面是非\n的字符*!/
+    let reg1 = /^(?:b|c).+/;       /!*同上不过不保存匹配值不能反向引用 引用的话返回null*!/
+    let reg2 = /cainiao(?=8)/;    /!*字符后必须紧跟8 只返回字符不返回8*!/
+    let reg3 = /cainiao(?!8)/;        /!*?!与?=相反  后面跟不跟都行*!/
+    let str = 'cainiao';
+    let reg4 = /\*\?\+/;         /!*转义* ? + 等*!/
+    let reg5 = /a/i;       /!*后面加i ：不区分大小写*!/
+    let reg6 = /^C/m;        /!*以c为开头 m：换行时也当行首  和\b差不多*!/*/
+
+    /*let reg = /c/g;   /!*匹配所有 配合replace 但是exec方法输出不显示*!/
+    let str = 'abcdec';
+    let reg1= /b/;
+    console.log(str.replace(reg,9));
+    console.log(str.match(reg1)); /!*返回匹配的字符     多个的话就是数组。单个返回相应信息*!/*/
+
+    /*let reg =  /(\w+).(\w+).(\w+)/;
+    let str = 'bbs.blueidea.com';
+    let newStr =  str.replace(reg,'$1.$1.$1');     /!*bbs.bbs.bbs*!/
+    console.log(newStr);*/
+    /*let reg =  /(?<fir>\w+).(?<thi>\w+).(?<hah>\w+)/;               /!*存到group*!/
+    let str = 'bbs.blueidea.com';
+    console.log(reg.exec(str));*/
+
+
+</script>
+</body>
+</html>
