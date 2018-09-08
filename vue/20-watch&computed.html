@@ -18,7 +18,7 @@
                 lastName:"Bar",
                 fullName:"Foo Bar",
             },
-            watch:{                /*一变量影响多个值*/
+            watch:{                /*一个变量影响多个值*/
                 firstName(value){
                     this.fullName = value + ' ' + this.lastName
                 },
@@ -26,7 +26,7 @@
                     this.fullName = this.firstName + ' ' + value;
                 }
             },
-            computed:{           /*多个变量影响多个值*/
+            computed:{           /*多个变量影响一个值*/
                 fullName(){
                     return this.firstName + this.lastName;
                 }

@@ -24,6 +24,7 @@
             })(i)
         }
 
+        块级作用域var 中i为5  let 中i为当前索引
         let ali = document.querySelectorAll("ul li");
         for(let i = 0 ; i < ali.length ;i++){
             ali[i].onclick = function () {
@@ -68,6 +69,7 @@
         // const a = "123";
         // a = "abc";
         // console.log(a);     /*常量不能改变值*/
+        // const并不是变量的值不能改动，而是变量指向的那个内存地址不能改动
 
 
         /*const obj = {
