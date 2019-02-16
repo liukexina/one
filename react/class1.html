@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //无状态组件
+        function Person(props) {     //无状态组键   组键首字母大写   无生命周期
+            return(
+                <h1>hahah{props.text1}</h1>
+            )
+        }
+        let text = 'worl4d';
+        ReactDOM.render(
+            <Person text1={text}/>,                 //渲染组键或标签
+            document.getElementById("root")      //挂载点
+        )
+    </script>
+</body>
+</html>

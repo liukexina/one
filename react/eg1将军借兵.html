@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+    class All extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count:100
+            };
+            this.changeF = this.changeF.bind(this);
+        }
+        changeF(){
+            this.setState({
+                count:this.state.count - 10
+            })
+        }
+        render(){
+            return(
+                <div>
+                    <p>国王的士兵：{this.state.count}</p>
+                    <Git num={100} changeC={this.changeF}/>
+                    <Git num={120} changeC={this.changeF}/>
+                </div>
+            )
+        }
+    }
+    class Git extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count:this.props.num
+            };
+            this.dell = this.dell.bind(this);
+        }
+        dell(){
+            this.setState({
+                count:this.state.count + 10
+            });
+            this.props.changeC();
+        }
+        render(){
+            return(
+                <div>
+                    <p>将军的士兵：{this.state.count}</p>
+                    <button onClick={this.dell}>调兵</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <All/>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>

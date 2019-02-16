@@ -38,7 +38,7 @@
         var start = oDiv1.offsetWidth;
         var finish = 1000 + "px";
         console.log(start);
-        oDiv1.onmouseover = function () {
+        oDiv1.onmouseover = function () {     //鼠标移动到某元素
             clearInterval(sit2);
             sit1 = setInterval(function(){
                 if(oDiv1.offsetWidth > 600){
@@ -49,7 +49,7 @@
                 }
             },50)
         };
-        oDiv1.onmouseout = function () {
+        oDiv1.onmouseout = function () {   //鼠标移开
             clearInterval(sit1);
             sit2 = setInterval(function(){
                 if(oDiv1.offsetWidth <= 300){

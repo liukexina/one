@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    输入电话号码：<input type="text" id="phone">
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $("#phone").blur(function () {
+            let phone = $("#phone").val();
+            let phonelist = phone.split('-');
+            if(phonelist.length == 3){
+                phonesize = phonelist[0].split('');
+                if(phonesize.length != 3){
+                    console.log('地区号位数不为0且不为3');
+                }
+                for(var i = 0 ; i < phonesize.length ; i++){
+                    if(parseInt(phonesize[i]) != 0){
+                        if(!parseInt(phonesize[i])){
+                            console.log('地区号不为数字');
+                        }
+                    }
+                }
+            }
+            else if(phonelist.length == 2){
+                let nu = ['000'];
+                phonelist = nu.concat(phonelist);
+            }
+            let phonebf = phonelist[1].split('');
+            if(phonebf.length != 3){
+                console.log('前缀号位数不为3');
+            }
+            if(parseInt(phonebf[0]) == 0){
+                console.log('前缀号开头为0');
+            }else if(parseInt(phonebf[0]) == 1){
+                console.log('前缀号开头为1');
+            }
+            for(var i = 0 ; i < phonebf.length ; i++){
+                if(parseInt(phonebf[i]) != 0 ){
+                    if(!parseInt(phonebf[i])){
+                        console.log('前缀号不为数字');
+                    }
+                }
+            }
+            let phonebe = phonelist[2].split('');
+            if(phonebe.length != 4){
+                console.log('后缀号位数不为4');
+            }
+            for(var i = 0 ; i < phonebe.length ; i++){
+                if(parseInt(phonebe[i]) != 0 ){
+                    if(!parseInt(phonebe[i])){
+                        console.log('后缀号不为数字');
+                        return;
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

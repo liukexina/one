@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    //准备父组件  子组件  子组件结束 父组件结束    生命周期
+    class TestF extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                count:0,
+                isshow:true
+            }
+            this.del = this.del.bind(this)
+            this.add = this.add.bind(this);
+        }
+        add(){
+            this.setState({
+                count:this.state.count+1
+            })
+        }
+        componentWillMount(){
+          console.log('TestF:componentWillMount');
+        }
+        componentDidMount(){
+          console.log('TestF:componentDidMount',ReactDOM.findDOMNode(this));
+        }
+        // componentWillReceiveProps(nextProps){
+        //   console.log('componentWillReceiveProps',nextProps);
+        // }
+        // shouldComponentUpdate(nextProps,nextState){
+        //   console.log('shouldComponentUpdate',nextProps,nextState);
+        //   //nextState改变后的值，可根据值判断是否重新渲染
+        //   // return false     //不继续向下操作
+        //     return true     //继续向下操作   默认
+        // }
+        // componentWillUpdate(){
+        //   console.log('componentWillUpdate');
+        // }
+        // componentDidUpdate(){
+        //   console.log('componentDidUpdate');
+        // }
+        // componentWillUnmount (){
+        //   console.log('componentWillUnmount');
+        // }
+        del(){
+            this.setState({
+                isshow:false
+            })
+        }
+        render(){
+            let com = null;
+            com = this.state.isshow ? <TestC count={this.state.count}/> : null
+            return(
+                <div>
+                    {com}
+                    <button onClick={this.add}>加1</button>
+                    <button onClick={this.del}>remove</button>
+                </div>
+            )
+        }
+    }
+    class TestC extends React.Component{
+        constructor(props){
+            super(props);
+        }
+        componentWillMount(){
+          console.log('TestC:componentWillMount');
+        }
+        componentDidMount(){
+          console.log('TestC:componentDidMount',ReactDOM.findDOMNode(this));
+        }
+        componentWillUnmount (){   //ajax 拦截    定时函数
+            console.log('componentWillUnmount');
+        }
+        // componentWillReceiveProps(nextProps){
+        //     console.log('componentWillReceiveProps',nextProps);
+        // }
+        // shouldComponentUpdate(nextProps,nextState){
+        //     console.log('shouldComponentUpdate',nextProps,nextState);
+        //     //nextState改变后的值，可根据值判断是否重新渲染
+        //     // return false     //不继续向下操作
+        //     return true     //继续向下操作   默认
+        // }
+        render(){
+            return(
+                <div>{this.props.count}</div>
+            )
+
+        }
+    }
+    ReactDOM.render(
+        <TestF/>,
+        document.getElementById('root')
+    )
+
+</script>
+</body>
+</html>

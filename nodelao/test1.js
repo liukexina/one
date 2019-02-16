@@ -4,12 +4,10 @@ function Demo(){
         console.log(456);
     }
 }
-/*
 var demo = new Demo();
 demo.bb();
-*/
 
-exports.mm = new Demo();
+// exports.mm = new Demo();
 
 /*
 exports.mm = {

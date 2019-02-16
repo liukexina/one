@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+    <style>
+        .table{
+            width:80%;
+            position:relative;
+            left:50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin:10px 0;
+        }
+        .header{
+            background: #000;
+            color: #FFFFFF;
+        }
+        .table tr{
+            height:50px;
+
+        }
+        input{
+            margin:10px 5px;
+        }
+        .spe{
+            color: #ffffff;
+            background: #c2c1f6;
+        }
+
+    </style>
+</head>
+<body>
+    <!--<div class="table" style="margin:20px 0">-->
+        <!--<input type="text" name="name">-->
+        <!--<input type="text" name="date">-->
+        <!--<input type="text" name="time">-->
+        <!--<button>添加</button>-->
+    <!--</div>-->
+    <!--<table class="table">-->
+        <!--<thead>-->
+            <!--<tr class="header">-->
+                <!--<th>#</th>-->
+                <!--<th>待办事项</th>-->
+                <!--<th>待办时间</th>-->
+                <!--<th>预计用时</th>-->
+                <!--<th>操作</th>-->
+            <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+            <!--<tr>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+                <!--<td>1</td>-->
+            <!--</tr>-->
+
+
+        <!--</tbody>-->
+    <!--</table>-->
+
+    <div id="root"></div>
+    <script type="text/babel">
+        class ToDoList extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    todolist:[
+                        {
+                            id:1,
+                            info:"上课",
+                            isActive:false,
+                            count:1,
+                            date:'1998/08/24'
+                        },
+                        {
+                            id:2,
+                            info:"上课",
+                            isActive:false,
+                            count:2,
+                            date:'1998/08/24'
+                        },
+                        {
+                            id:3,
+                            info:"上课",
+                            isActive:false,
+                            count:4,
+                            date:'1998/08/24'
+                        },
+                        {
+                            id:4,
+                            info:"上课",
+                            isActive:false,
+                            count:3,
+                            date:'1998/08/24'
+                        },
+                        {
+                            id:5,
+                            info:"上课",
+                            isActive:false,
+                            count:2,
+                            date:'1998/08/24'
+                        },
+                        {
+                            id:6,
+                            info:"上课",
+                            isActive:false,
+                            count:5,
+                            date:'1998/08/24'
+                        }
+                    ]
+                };
+                this.add = this.add.bind(this);
+                this.change = this.change.bind(this);
+            }
+            add(item){
+               // console.log(11);
+                let items = this.state.todolist;
+                items.push(item);
+                this.setState({
+                    todolist:items
+                })
+            }
+            change(items){
+                this.setState({
+                    todolist:items
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <ToDoInput pushItem={this.add}/>
+                        <ToDoItems todoItems={this.state.todolist} changeItem={this.change} />
+                    </div>
+
+                )
+            }
+        }
+        class ToDoItems extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    todolist:[ ],
+                    sumCount:0
+                }
+                this.checkDel = this.checkDel.bind(this);
+            }
+            componentDidMount(){
+                this.setState({
+                    todolist:this.props.todoItems
+                })
+            }
+            itemCheck(id){
+                //console.log(id);
+                let newItems = this.props.todoItems;
+                let thisIndex = newItems.findIndex((item)=>{
+                    return item.id == id
+                });
+                newItems[thisIndex].isActive = !newItems[thisIndex].isActive;
+               // console.log(thisIndex);
+                this.props.changeItem(newItems);
+            }
+            delItem(id,even){
+               // console.log(id);
+                let newItems = this.props.todoItems;
+                let thisIndex = newItems.findIndex((item)=>{
+                    return item.id == id
+                });
+                newItems.splice(thisIndex,1);
+                this.props.changeItem(newItems);
+                even.stopPropagation();
+            }
+            checkDel(){
+                let nowItems = this.props.todoItems;
+                //console.log(nowItems);
+                let newItems = nowItems.filter((item)=>{
+                    if(!item.isActive){
+                        return item;
+                    }
+                });
+              //  console.log(newItems);
+                this.props.changeItem(newItems);
+            }
+            render(){
+                let value = this.props.todoItems;
+                let list = null;
+                let sum = 0;
+                list = value.map((items,index,value)=>{
+                    if(items.isActive){
+                        sum+=items.count;
+                    }
+                    return(
+                        <tr id={items.id} onClick={this.itemCheck.bind(this,items.id)} key={index} className={items.isActive?'spe':null}>
+                            <td>
+                                <input type="checkbox" checked={items.isActive}/>
+                            </td>
+                            <td>{items.info}</td>
+                            <td>{items.date}</td>
+                            <td>{items.count}</td>
+                            <td>
+                                <button onClick={this.delItem.bind(this,items.id)}>删除</button>
+                            </td>
+                        </tr>
+                    )
+                })
+                return(
+                    <div>
+                    <table className="table">
+                        <thead>
+                        <tr className="header">
+                            <th>#</th>
+                            <th>待办事项</th>
+                            <th>待办时间</th>
+                            <th>预计用时</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {list}
+                            <tr>
+                                <td>
+                                    <button onClick={this.checkDel}>删除选中</button>
+                                </td>
+                                <td colSpan="4">总共用时：{sum}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                )
+            }
+        }
+        class ToDoInput extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    info:"",
+                    count:0,
+                    date:""
+                }
+                this.change = this.change.bind(this);
+                this.onsubmit = this.onsubmit.bind(this);
+            }
+            change(even){
+                //console.log(even.target.value);
+                let name = even.target.name;
+                this.setState({
+                    [name]:even.target.value
+                })
+            }
+            onsubmit(even){
+                let maxId = 6;
+                let newItem = {
+                    id:++maxId,
+                    isActive:false,
+                    info:this.state.info,
+                    count:parseInt(this.state.count),
+                    date:this.state.date
+                };
+                this.props.pushItem(newItem);
+                even.preventDefault();
+            }
+            render(){
+                return(
+                    <form onSubmit={this.onsubmit}>
+                        <div className="table">
+                            <input type="text" name="info" onChange={this.change}/>
+                            <input type="date" name="date" onChange={this.change}/>
+                            <input type="number" name="count" onChange={this.change}/>
+                            <input type="submit"/>
+                        </div>
+                    </form>
+
+                )
+            }
+        }
+        ReactDOM.render(
+            <ToDoList/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .css{
+        color: rgba(204, 234, 246, 0.72);
+        
+    }
+    </style>
+</head>
+<body>
+
+    请输入素数选择范围：<input type="text" id="su"><br>
+    <div class="su">
+
+    </div>
+    <div class="sel">
+        请选择两个素数：<input type="text" id="p">&nbsp;<input type="text" id="q">
+        <button id="ok">确定</button>
+    </div>
+    <div class="sele">
+        随机选择整数e = <span class="e"></span>&nbsp;&nbsp;
+        则d = <span class="d"></span>&nbsp;&nbsp;
+        n = <span class="n"></span>&nbsp;&nbsp;
+        f = <span class="f"></span>&nbsp;&nbsp;
+    </div>
+    <div class="sell">
+        明文：<input type="text" id="ming">
+        密文：<input type="text" id="mi">
+        <button id="add">加密</button>
+        <button id="jie">解密</button>
+    </div>
+
+
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $(".sel").hide();
+    $(".sele").hide();
+    $(".sell").hide();
+    $("#su").blur(function () {
+        console.log(1);
+        let su = $(this).val() - 0;
+        console.log(su);
+        let arr = new Array();
+        for(let i = 2 ; i < su ; i++){
+            let issu = true;
+            for(let j = 2; j < i ; j++){
+                if(i%j == 0){
+                    issu = false;
+                    break ;
+                }
+            }
+            if(issu == true){
+                arr.push(i);
+            }
+        }
+        $('.su').append('在该范围内的素数有：');
+        for(let i = 0 ; i < arr.length ; i++){
+            $('.su').append('<span style="padding:10px;">'+ arr[i] + '</span>');
+        }
+        $(".sel").show();
+    });
+    let p,q,n,f,a,d;
+    $("#ok").on("click",function () {
+        p = $("#p").val() - 0;
+        q = $("#q").val() - 0;
+        n = p * q;
+        f = (p-1)*(q-1);
+        let is = true;
+
+        while(is){
+            a = Math.floor(Math.random()*(f-1)+ 1);
+            if(gcd(a,f) == 1){
+                is = false;
+            }
+        }
+        d = find_d(a,f);
+        $(".e").html(a);
+        $(".d").html(d);
+        $(".n").html(n);
+        $(".f").html(f);
+        $(".sele").show();
+        $(".sell").show();
+        console.log(a);
+        console.log(d);
+        console.log(p,q);
+    });
+    function gcd(a,b){
+        if (b == 0){
+            return a;
+        }
+        x = gcd(b, a % b);
+        return x;
+    }
+    function find_d(a,b) {
+        is = true;
+        let d;
+        while (is) {
+            d = Math.floor(Math.random() * (b - 1) + 1);
+            if ((a * d) % b == 1) {
+                return d;
+            }
+        }
+    }
+    $("#add").on("click",function () {
+        let ming = $("#ming").val() - 0;
+        if(ming < n){
+            let s = Math.pow(ming,a);
+            let mi = s % n;
+            $("#mi").val(mi);
+        }
+    });
+    $("#jie").on("click",function () {
+        let mi = $("#mi").val() - 0;
+        let s = Math.pow(mi,d);
+        let ming = s % n;
+        $("#ming").val(ming);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let element = <h1>hahahah</h1>;
+        ReactDOM.render(
+            element,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>

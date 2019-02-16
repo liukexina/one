@@ -78,25 +78,25 @@
              // console.log(this.name + "," + this.age);    //this指向window   this指向离他最近的那个函数
          },1000);
      };
-     //o3.sayHi();
+     o3.sayHi();
 
      var u = {
          name:"lisi",
          age:23
      };
-     //console.log(u.hasOwnProperty("name"));    //判断“a”是否为u的自有属性     true
-     //console.log(u.hasOwnProperty("construction"));             //flase   construction是 u从父类继承过来的
+     console.log(u.hasOwnProperty("name"));    //判断“a”是否为u的自有属性     true
+     console.log(u.hasOwnProperty("construction"));             //flase   construction是 u从父类继承过来的
 
 
 
-        var ff = {
+        /*var ff = {
             name:"lisi",
             age:23
         };
         for(var p in ff)     //p:属性的名字  o：属性得值   只能打印自有属性
         {
             console.log(p + ":" + ff[p]);
-        }
+        }*/
     </script>
 </body>
 </html>

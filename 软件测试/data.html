@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    年：<input type="number" id="year">
+    月：<input type="number" id="month">
+    日：<input type="number" id="date">
+    <button id="but" >获取</button>
+    <br>
+    <span></span>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        let arr;
+        let year;
+        let month;
+        let date;
+        $("button").on("click",function () {
+            year = $("#year").val();
+            month = $("#month").val();
+            date = $("#date").val();
+            if(year < 1000 || year > 2018)
+            {
+                alert("年份输入错误！");
+                Emtpy();
+            }
+            else{
+                if(month < 1 || month > 12)
+                {
+                    alert("月份输入错误！");
+                    Emtpy();
+                }
+                else{
+                    if(year % 400 == 0 || (year %4 == 0 && year % 100 !=0)){
+                        arr = [31,29,31,30,31,30,31,31,30,31,30,31];
+                    }
+                    else{
+                        arr = [31,28,31,30,31,30,31,31,30,31,30,31];
+                    }
+                    if(arr[month-1] < date || date < 1){
+                        alert("日份输入错误！");
+                        Emtpy();
+                    }
+                    else{
+                        Pro(year,month,date);
+                    }
+                }
+            }
+            console.log(year,month,date);
+        });
+        function Emtpy(){
+            $("#year").val(null);
+            $("#month").val(null);
+            $("#date").val(null);
+            $("span").html(null);
+        }
+        function Pro(){
+            if(date  == 1)
+            {
+                if(month == 1)
+                {
+                    year = year - 1 ;
+                    month = 12;
+                    date = 31;
+                }
+                else{
+                    month = month - 1;
+                    date = arr[month-1];
+                }
+            }
+            else{
+                date = date - 1;
+            }
+            $("span").html("输入日期的前一天:" + year + "/" + month  + "/" + date);
+        }
+
+    </script>
+</body>
+</html>

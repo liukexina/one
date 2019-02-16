@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+    <style>
+        .bg{
+            display: none;
+            position: fixed;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            background: #cbcbcb;
+        }
+        .main{
+            height:400px;
+            width:500px;
+            border:1px solid #000;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translateX(-50%) translateY(-50%);
+            background: #ffffff;
+        }
+        .header{
+            height:50px;
+            width:500px;
+            background: #000;
+            color:#ffffff;
+            font-size: 30px;
+        }
+        .btn{
+            float:right;
+            padding-right:10px;
+        }
+        .content{
+            height:450px;
+            width:500px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        class All extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    title:"Login",
+                    isshow:false
+                };
+                this.ex = this.ex.bind(this);
+            }
+            open(title){
+                this.setState({
+                    title:title,
+                    isshow:true
+                })
+            }
+            ex(){
+                this.setState({
+                    isshow:false
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <DiaBtn>
+                            <button onClick={this.open.bind(this,'login')}>登陆</button>
+                            <button onClick={this.open.bind(this,'sign')}>注册</button>
+                        </DiaBtn>
+
+                        <Ge title={this.state.title} show={this.state.isshow} exx={this.ex}/>
+                    </div>
+                )
+            }
+        }
+        function DiaBtn(props){
+            return(
+                <div>
+                    {props.children}
+                </div>
+            )
+        }
+        class Ge extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    count:0
+                };
+                this.ex = this.ex.bind(this);
+            }
+            ex(){
+                this.props.exx();
+            }
+            render(){
+                //                                 {this.props.title == 'login'?<Login/>:<Sign/>}
+                return(
+                    <div className={'bg'} style={{display:this.props.show?'block':'none'}}>
+                        {this.props.show}
+                        <div className={'main'}>
+                            <div className={'header'}>
+                                <span>{this.props.title}</span>
+                                <span className={'btn'} onClick={this.ex}>X</span>
+                            </div>
+                            <div className={'content'}>
+                                {this.props.title == 'sign' && <Sign/>}
+                                {this.props.title == 'login' && <Login/>}
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        }
+        function Login() {
+            return(
+                <h1>login</h1>
+            )
+        }
+        function Sign() {
+            return(
+                <h1>sign</h1>
+            )
+        }
+        ReactDOM.render(
+            <All/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>
