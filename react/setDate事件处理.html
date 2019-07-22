@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Lizi extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                sign:true
+            };
+            this.change = this.change.bind(this);
+        }
+        change(){
+            this.setState(state=>({
+                sign:!state.sign
+            }));
+        }
+        render(){
+            return(
+                <div>
+                    <button onClick={this.change}>
+                        {this.state.sign?"yes":"no"}
+                    </button>
+
+                </div>
+
+            )
+        }
+        // <button onClick={(e) => this.change(e)}>
+        // Click me
+        // </button>
+
+        // <button onClick={this.handleClick}>
+        // Click me
+        // </button>
+        // handleClick = () => {
+        //     console.log('this is:', this);
+        // }
+
+        //传参
+        // <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+        // <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+    }
+    ReactDOM.render(
+        <Lizi/>,
+        document.getElementById("root")
+    )
+</script>
+</body>
+</html>

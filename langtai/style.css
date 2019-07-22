@@ -1,0 +1,105 @@
+.all{
+    width: 800px;
+    height: 800px;
+    background: #ffffff;
+    position: relative;
+    transform: translateX(-50%);
+    left:50%;
+}
+.header{
+    width: 100%;
+    overflow: hidden;
+    height: 150px;
+    background: #f8f8f8;
+    position: relative;
+
+}
+.exit{
+    color: red;
+    position:absolute;
+    right:20px;
+    top:20px;
+}
+.header-title{
+    color: black;
+    position:absolute;
+    right:20px;
+    bottom:20px;
+}
+.header img{
+    height: 100px;
+    position:absolute;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    top:50%;
+    left:50px;
+}
+.body{
+    width: 100%;
+    margin-top:10px;
+}
+.list{
+    background: #f8f8f8;
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+.list span{
+    flex-grow: 1;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+.main{
+    width: 100%;
+    height:500px;
+}
+.only{
+    width: 100%;
+    display: none;
+    height:500px;
+    padding-top:5px;
+}
+.main .selected{
+    display: block;
+}
+.list .selected{
+    background: #21bfff;
+    color:white;
+}
+
+.left{
+    width: 150px;
+    background : #f8f8f8;
+    float:left;
+}
+.left .total{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.right{
+    width: 645px;
+    float:right;
+    height: 350px;
+    background: #f8f8f8;
+    position:relative;
+}
+.right .selected{
+    display: block;
+}
+.middle{
+    position:absolute;
+    transform: translate(-50%,-50%);
+    left:50%;
+    top:50%;
+    display: none;
+}
+.left .selected{
+    background: #21bfff;
+    color:white;
+}
+.center{
+    display: none;
+}

@@ -1,0 +1,38 @@
+/*! 维创网讯 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#box {
+  height: 200px;
+  width: 200px;
+  background: url(../images/8410b05511a3b322fbbeb09746574c22.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#content {
+  border-radius: 50%;
+}
+
+::placeholder {
+  color: gray;
+}
+
+#div1 {
+  color: aqua;
+}
+
+.div10 {
+  font-size: 10px;
+}
+
+.box3 {
+  color: red;
+}
+
+.box2 {
+  color: red;
+}

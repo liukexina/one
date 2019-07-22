@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+明文：<input type="text" id="ming">
+密文：<input type="text" id="mingo">
+密钥：<input type="text" id="mi">
+<button id="btn1">加密</button>
+<button id="btn2">解密</button>
+
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    let Ami;
+    $("#mi").blur(function () {
+        let mi = $(this).val();
+        let reg1 = /[^a-z]/;
+        if(!reg1.test(mi)) {
+            Ami = mi.split("");
+            console.log(Ami);
+            $.each(Ami, function (index, value) {
+                let i = value.charCodeAt() - 97;
+                Ami[index] = i;
+            });
+            console.log(Ami);
+        }else{
+            alert("密钥输入错误");
+            $(this).val("");
+
+            Ami = "";
+        }
+    });
+
+    $('#btn1').on("click",function () {
+        if(!Ami){
+            alert("密钥未输入！")
+        }else{
+            let str = $('#ming').val();
+            if(!str){
+                alert("明文未输入！")
+            }else{
+                str=str.replace(/\s/g,"");
+                let reg1 = /[^a-z]/;
+                if(!reg1.test(str)) {
+                    console.log(str);
+                    let array = str.split("");
+                    $.each(array, function (index, value) {
+                        let i = value.charCodeAt() - 97;
+                        array[index] = String.fromCharCode(((i + Ami[index % Ami.length] + 26) % 26 + 97));
+                    });
+                    $("#mingo").val(array.join(""));
+                }else{
+                    alert("明文输入错误！")
+                }
+            }
+        }
+    });
+    $('#btn2').on("click",function () {
+        if(!Ami){
+            alert("密钥未输入！")
+        }else{
+            let str = $('#mingo').val();
+            if(!str){
+                alert("密文未输入！")
+            }else{
+                let reg1 = /[^a-z]/;
+                if(!reg1.test(str)) {
+                    let array = str.split("");
+                    $.each(array, function (index, value) {
+                        let i = value.charCodeAt() - 97;
+                        array[index] = String.fromCharCode(((i - Ami[index % Ami.length] + 26) % 26 + 97));
+                    });
+                    $("#ming").val(array.join(""));
+                }else{
+                    alert("密文输入错误！");
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

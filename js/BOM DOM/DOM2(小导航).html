@@ -79,10 +79,12 @@
     var oDiv = oo.getElementsByTagName("div");
     var uu = document.getElementById("two");
     var arr = uu.getElementsByTagName("li");
+    console.log(hah.style);
     for(i = 0 ; i < arr.length ; i ++){
         arr[i].index = i;
         arr[i].onmouseover = function () {
             for(j = 0 ; j < arr.length ; j ++){
+
                 arr[j].style.backgroundColor = '';
                oDiv[j].style.display = "none";
                arr[j].style.color="white";

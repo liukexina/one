@@ -56,22 +56,22 @@
         let arr2 = new Array(3).fill("abc");           /!*默认3个都为abc*!/
         console.log(arr,arr1,arr2);*/
 
-        /*let arr = [1,2,3,4,5,6,7,8];
-        console.log(arr.includes(5));           /!*判断是否包含*!/
-        console.log(arr.indexOf(5));           /!*有的话返回索引。没有返回-1*!/*/
+        // let arr = [1,2,3,4,5,6,7,8];
+        // console.log(arr.includes(5));           /*判断是否包含*/
+        // console.log(arr.indexOf(5));           /*有的话返回索引。没有返回-1*/
 
         // 数组遍历 for of                对象遍历 for in
-        /*let arr = ["a","b","c","d","e"];
+        let arr = ["a","b","c","d","e"];
 
-        for(items of arr){                /!*遍历返回值*!/
+        for(items of arr){                /*遍历返回值*/
             console.log(items);
         }
-        for(items of arr.keys()){           /!*遍历返回索引*!/
+        for(items of arr.keys()){           /*遍历返回索引*/
             console.log(items);
         }
-        for(let[items,key] of arr.entries()){           /!*遍历返回索引和值*!/
+        for(let[items,key] of arr.entries()){           /*遍历返回索引和值*/
             console.log(items,key);
-        }*/
+        }
 
         // 遍历:forEach();
         /*let arr = ["a","b","c","d","e"];

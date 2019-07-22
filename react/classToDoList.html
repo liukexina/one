@@ -204,7 +204,6 @@
                         return item;
                     }
                 });
-              //  console.log(newItems);
                 this.props.changeItem(newItems);
             }
             render(){
@@ -212,9 +211,9 @@
                 let list = null;
                 let sum = 0;
                 list = value.map((items,index,value)=>{
-                    if(items.isActive){
-                        sum+=items.count;
-                    }
+                        if(items.isActive){
+                            sum+=items.count;
+                        }
                     return(
                         <tr id={items.id} onClick={this.itemCheck.bind(this,items.id)} key={index} className={items.isActive?'spe':null}>
                             <td>

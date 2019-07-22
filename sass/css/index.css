@@ -1,0 +1,226 @@
+@charset "UTF-8";
+/*多行注释*/
+/*！强制注释*/
+/*作者：$user*/
+.div20 {
+  height: 100px;
+}
+
+/*.div{
+  color: $color;
+}*/
+/*.div .box1{
+  color:#000;
+}*/
+#obox {
+  width: 1px;
+}
+
+.div {
+  color: #ff0;
+}
+.div .box1 {
+  color: #000;
+}
+.div:hover {
+  font-size: 10px;
+}
+.div-header {
+  font-weight: bold;
+}
+
+.div2 {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-background-image: url(xx.jpg);
+  border-left-color: red;
+  border-left-width: 1px;
+  border-right-color: yellow;
+  border-right-width: 2px;
+}
+
+.div3 {
+  font-size: 16px;
+}
+
+.div4, .div7 {
+  font-weight: bold;
+}
+
+.div5 {
+  width: 100px;
+  height: 100px;
+}
+
+.div6 {
+  width: 100px;
+  height: 2000px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.div8 {
+  width: 100px;
+}
+
+.div9 {
+  height: 100px;
+  /*可以前后都写px*/
+}
+
+.div10 {
+  height: 300px;
+  /*可以前后都写px*/
+}
+
+.div11 {
+  height: 1000px;
+  /*只能写一个px*/
+}
+
+.div12 {
+  height: 10px;
+  /*用括号将被除数扩住*/
+}
+
+.div13 {
+  background-image: url("a.jpg");
+}
+
+.div14 {
+  color: #6666ff;
+}
+
+.div15 {
+  color: #000099;
+}
+
+.div16 {
+  color: #000001;
+}
+
+.div17 {
+  color: rgba(0, 0, 1, 0.7);
+}
+
+.div18 {
+  color: #000;
+}
+
+.div19 {
+  color: red;
+}
+
+/*to不包含5 through包含5*/
+.div-content-1 {
+  width: "1px";
+}
+
+/*to不包含5 through包含5*/
+.div-content-2 {
+  width: "2px";
+}
+
+/*to不包含5 through包含5*/
+.div-content-3 {
+  width: "3px";
+}
+
+/*to不包含5 through包含5*/
+.div-content-4 {
+  width: "4px";
+}
+
+/*to不包含5 through包含5*/
+.div-content1-1 {
+  width: "1px";
+}
+
+/*to不包含5 through包含5*/
+.div-content1-2 {
+  width: "2px";
+}
+
+/*to不包含5 through包含5*/
+.div-content1-3 {
+  width: "3px";
+}
+
+/*to不包含5 through包含5*/
+.div-content1-4 {
+  width: "4px";
+}
+
+/*to不包含5 through包含5*/
+.div-content1-5 {
+  width: "5px";
+}
+
+/*each遍历列表*/
+.div-a {
+  background: #000;
+}
+
+/*each遍历列表*/
+.div-b {
+  background: #000;
+}
+
+/*each遍历列表*/
+.div-c {
+  background: #000;
+}
+
+/*each遍历列表*/
+.div-d {
+  background: #000;
+}
+
+.div-footer-0 {
+  background: #000;
+}
+
+.div-footer-1 {
+  background: #000;
+}
+
+.div-footer-2 {
+  background: #000;
+}
+
+.div-footer-3 {
+  background: #000;
+}
+
+.div-footer-4 {
+  background: #000;
+}
+
+.div-footer-5 {
+  background: #000;
+}
+
+.div-footer-6 {
+  background: #000;
+}
+
+.div-footer-7 {
+  background: #000;
+}
+
+.div-footer-8 {
+  background: #000;
+}
+
+.div-footer-9 {
+  background: #000;
+}
+
+/*# sourceMappingURL=index.css.map */

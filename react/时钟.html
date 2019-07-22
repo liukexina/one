@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    // function tick() {
+    //     const element = (
+    //         <div>
+    //             <h1>Hello, world!</h1>
+    //             <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    //         </div>
+    //     );
+    //     ReactDOM.render(
+    //         element,
+    //         document.getElementById('root')
+    //     );
+    // }
+    // setInterval(tick,1000);
+
+    class Tick extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                date: new Date()
+            };
+        }
+        componentDidMount() {    //将组件输出呈现给DOM后运行
+            this.timerID = setInterval(
+                () => this.tick(),
+                1000
+            );
+        }
+
+        componentWillUnmount() {   //如果Clock组件从DOM中删除，调用componentWillUnmount()生命周期方法，以便停止计时器。
+            clearInterval(this.timerID);
+        }
+        tick(){
+            this.setState({
+                date: new Date()
+            });
+        }
+        render(){
+            return(
+                <div>
+                    <h1>Hello, world!</h1>
+                    <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                </div>
+            );
+        }
+    }
+    ReactDOM.render(
+        <Tick/>,
+        document.getElementById("root")
+    )
+
+
+
+
+
+</script>
+</body>
+</html>

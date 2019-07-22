@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="number" id="one">
+    <input type="number" id="two">
+    <button id="btn">计算</button>
+    <script>
+
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var one = document.getElementById("one").value;
+            var two = document.getElementById("two").value;
+            one = parseInt(one);
+            two = parseInt(two);
+            if(two > one){
+                var [one,two] = [two,one];
+            }
+            if(one%two != 0 ){
+                console.log(-1);
+            }
+            else{
+                chuone(one/two,0);
+            }
+        };
+        function chuone(a,sum){
+            if(a == 1){
+                console.log(0);
+                return;
+            }
+            if((a/2 == 1 && a%2 == 0) || (a/3 == 1 && a%3 == 0)){
+                sum++;
+                console.log(sum);
+                return;
+            }
+            if(a%2 != 0 && a%3 != 0){
+                console.log(-1);
+            }
+            else if(a%2 == 0){
+                a = a/2;
+                sum++;
+                chuone(a,sum);
+            }
+            else if(a%3 == 0){
+                a = a/3;
+                sum++;
+                chuone(a,sum);
+            }
+        }
+    </script>
+</body>
+</html>
